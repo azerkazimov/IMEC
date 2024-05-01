@@ -1,0 +1,22 @@
+.page-header {
+    position: relative;
+    @extend .py-10;
+    @extend .flex-container;
+    @extend .flex-justify-center;
+    @extend .flex-align-center;
+    height: 20vh;
+
+
+    color: map-get($colors, natural);
+    background-color: map-get($colors, primary);
+    margin-top: 150px;
+    text-transform: uppercase;
+
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: inherit;
+        opacity: 0.3;
+    }
+}

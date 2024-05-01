@@ -1,0 +1,83 @@
+// colums quantity
+$grid-columns: 12;
+
+// width varaibles
+$widths: 0%, 25%, 50%, 75%, 100%;
+
+// breakpoints for responsive 
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// spacers margins and padding
+$spacer: 5px;
+$spacers: (
+  0: ($spacer * 0,
+  ),
+  1: ($spacer * 1,
+  ),
+  2: ($spacer * 2,
+  ),
+  3: ($spacer * 3,
+  ),
+  4: ($spacer * 4,
+  ),
+  5: ($spacer * 5,
+  ),
+  6: ($spacer * 6,
+  ),
+  7: ($spacer * 7,
+  ),
+  8: ($spacer * 8,
+  ),
+  9: ($spacer * 9,
+  ),
+  10: ($spacer * 10,
+  ),
+);
+
+// page main colors
+$colors: (
+  "primary": #01A0E2,
+  "secondary": #143256,
+  "info": #72FFFF,
+  "success": #FF7602,
+  "danger": #d9534f,
+  "light": #F4F2FF,
+  "dark": #292b2c,
+  "natural": #fff,
+  "inky": #14142B,
+  "silvery": #AFB0B9,
+  "overlay": #292b2c89
+  
+);
+
+$offset-values: 1, 2, 3, 4, 5;
+
+// generate font varaibles from 10 till 100
+$font-sizes: (
+);
+
+@for $i from 10 through 100 {
+  $font-sizes: map-merge($font-sizes, (#{$i}: #{$i}px));
+}
+
+$font-weights: (
+  lighter: lighter,
+  light: 300,
+  normal: normal,
+  bold: bold,
+  bolder: bolder,
+);
+
+$flex-values: (
+  start,
+  end,
+  center,
+  space-between,
+  space-around
+);

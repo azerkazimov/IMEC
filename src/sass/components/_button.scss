@@ -1,0 +1,41 @@
+.btn {
+    @extend .font-weight-700;
+    @extend .py-3;
+    @extend .px-5;
+
+
+    border: none;
+    text-transform: uppercase;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, natural);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: map-get($colors, secondary);
+    }
+}
+
+.btn-content {
+    text-transform: uppercase;
+    @extend .flex-container;
+    @extend .flex-align-center;
+    @extend .font-weight-700;
+    gap: 10px;
+    transition: all 0.2s ease;
+    color: map-get($colors, info);
+
+    span {
+        transform: translateX(0px);
+        transition: all 0.2s ease;
+
+        svg {
+            @extend .font-size-24;
+        }
+    }
+
+    &:hover {
+        span {
+            transform: translateX(10px);
+        }
+    }
+}

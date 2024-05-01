@@ -1,0 +1,41 @@
+#about {
+    color: map-get($colors, natural);
+
+    .about-image {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .about-counter {
+            position: absolute;
+            @extend .p-5;
+
+            text-align: end;
+            bottom: 5px;
+            right: 0;
+            width: 30%;
+            background-color: map-get($colors, natural);
+            color: map-get($colors, inky);
+
+            span {
+                @extend .font-size-46;
+                @extend .font-weight-700;
+            }
+
+            &::after {
+                content: "";
+                width: 60%;
+                height: 60%;
+                background-color: transparent;
+                border: 30px solid rgba(0, 0, 0, .1);
+                border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(66, 190, 247, 0.712) 0, rgba(15, 203, 255, 0.745) 3px) 30;
+                position: absolute;
+                z-index: -1;
+                bottom: -25px;
+                right: -25px;
+            }
+        }
+    }
+}
