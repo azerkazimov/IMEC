@@ -184,7 +184,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, #about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, #service-section .service-item, #about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -1422,11 +1422,11 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .page-header, .btn-content, .dropdown, nav ul li a, .header .main-content .main-counter {
+.flex-container, .page-header, .btn-content, .dropdown, nav ul li a, #service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .dropdown, .header .main-content .main-counter {
+.flex-column, .dropdown, #service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -2170,13 +2170,25 @@ a {
   right: -25px;
 }
 
-#service {
+#service-section {
   background-image: url("../../../assets/images/industry-bg.png");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
   height: 80vh;
+}
+#service-section .service-item {
+  border: 2px solid #72FFFF;
+  border-radius: 20px;
+  gap: 20px;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+#service-section .service-item:hover {
+  background-color: #72FFFF;
+  color: #14142B;
+  transform: translateY(-10px);
 }
 
 nav {
@@ -2279,6 +2291,9 @@ nav svg {
   transform: translateX(10px);
 }
 
+#slider {
+  user-select: none;
+}
 #slider img {
   width: 100%;
 }

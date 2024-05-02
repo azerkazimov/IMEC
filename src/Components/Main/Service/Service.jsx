@@ -1,19 +1,29 @@
 import SectionHeader from "../../SectionHeader/SectionHeader";
+import ServiceItem from "./ServiceItem";
 
 function Service() {
   return (
-    <div id="service">
+    <section id="service-section">
       <div className="container">
         <div className="row text-center">
           <SectionHeader span="Services" head="What we do" />
         </div>
         <div className="row">
-          <div className="col-12 col-md-4"></div>
-          <div className="col-12 col-md-4"></div>
-          <div className="col-12 col-md-4"></div>
+          <ServiceItem
+            head="Service"
+            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, iure sint voluptatum laboriosam veritatis."
+          />
+          <ServiceItem
+            head="Service"
+            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, iure sint voluptatum laboriosam veritatis."
+          />
+          <ServiceItem
+            head="Service"
+            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, iure sint voluptatum laboriosam veritatis."
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

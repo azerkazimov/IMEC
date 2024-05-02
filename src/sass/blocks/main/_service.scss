@@ -1,8 +1,25 @@
-#service {
+#service-section {
     background-image: url('../../../assets/images/industry-bg.png');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
     height: 80vh;
+
+    .service-item {
+        @extend .flex-container;
+        @extend .flex-column;
+        @extend .p-5;
+        border: 2px solid map-get($colors, info );
+        border-radius: 20px;
+        gap: 20px;
+        color: map-get($colors, natural);
+        transition: all 0.2s ease;
+
+        &:hover{
+            background-color: map-get($colors, info );
+            color: map-get($colors, inky );
+            transform: translateY(-10px);
+        }
+    }
 }
