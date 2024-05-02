@@ -31,7 +31,7 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/nav-bar")
+      .get("https://imec-db.vercel.app/nav-bar")
       .then((res) => setData(res.data))
       .catch((error) => console.log(error));
   }, []);
