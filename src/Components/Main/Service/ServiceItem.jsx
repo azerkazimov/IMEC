@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from "prop-types";
 
 function ServiceItem({ head, content }) {
@@ -7,7 +7,7 @@ function ServiceItem({ head, content }) {
     <div className="col-12 col-md-4 p-4">
       <div className="service-item text-center">
         <div className="icon">
-          <FontAwesomeIcon icon={faChevronRight} />
+          <FontAwesomeIcon icon={faCircleInfo} />
         </div>
         <h4>{head}</h4>
         <p>{content}</p>
