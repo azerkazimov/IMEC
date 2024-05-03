@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { Link as RouterLink } from "react-router-dom";
 
 function Dropdown({ items }) {
   const [dropdown, setDropDown] = useState(false);
@@ -16,7 +17,7 @@ function Dropdown({ items }) {
       >
         {items.map((item, index) => (
           <li key={index} className="dropdown-item">
-            {item}
+            <RouterLink to="/product">{item}</RouterLink>
           </li>
         ))}
       </ul>
