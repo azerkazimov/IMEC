@@ -1,10 +1,10 @@
-#service-section {
-    background-image: url('../../../assets/images/industry-bg.png');
+.service-section {
+    background-image: url('../assets/images/industry-bg.png');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
-    height: 80vh;
+    background-size: 25%;
 
     .service-item {
         @extend .flex-container;

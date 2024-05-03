@@ -3,7 +3,7 @@ import ServiceItem from "./ServiceItem";
 
 function Service() {
   return (
-    <section id="service-section">
+    <section className="service-section">
       <div className="container">
         <div className="row text-center">
           <SectionHeader span="Services" head="What we do" />

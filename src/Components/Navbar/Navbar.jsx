@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
-// import { Link } from "react-scroll";
 import { Link as RouteLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import axios from "axios";
