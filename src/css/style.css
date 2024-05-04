@@ -2154,8 +2154,8 @@ a {
   bottom: 5px;
   right: 0;
   width: 30%;
-  background-color: #fff;
-  color: #14142B;
+  background-color: #14142B;
+  color: #fff;
 }
 #about .about-image .about-counter::after {
   content: "";

@@ -17,7 +17,7 @@ function Dropdown({ items }) {
       >
         {items.map((item, index) => (
           <li key={index} className="dropdown-item">
-            <RouterLink to="/product">{item}</RouterLink>
+            <RouterLink to={item.path}>{item.name}</RouterLink>
           </li>
         ))}
       </ul>

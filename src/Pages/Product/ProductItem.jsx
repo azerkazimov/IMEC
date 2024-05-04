@@ -8,7 +8,7 @@ function ProductItem() {
         <div className="products-description">
           <h4>Pump</h4>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          <RouterLink to="/product">
+          <RouterLink to="/product-overview">
             <button className="btn">Add To Card</button>
           </RouterLink>
         </div>

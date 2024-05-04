@@ -16,8 +16,8 @@
             bottom: 5px;
             right: 0;
             width: 30%;
-            background-color: map-get($colors, natural);
-            color: map-get($colors, inky);
+            background-color: map-get($colors, inky);
+            color: map-get($colors, natural);
 
             span {
                 @extend .font-size-46;

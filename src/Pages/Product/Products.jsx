@@ -17,7 +17,7 @@ function Products() {
                 Consectetur explicabo veniam placeat impedit numquam deserunt
                 incidunt nihil ipsa facere praesentium id.
               </p>
-              <RouterLink to="/product-list">
+              <RouterLink to="/product-overview">
                 <button className="btn">View More</button>
               </RouterLink>
             </div>
