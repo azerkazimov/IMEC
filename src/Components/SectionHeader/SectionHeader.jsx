@@ -26,8 +26,8 @@ function SectionHeader({ span, head, content, btn }) {
 SectionHeader.propTypes = {
   span: PropTypes.string.isRequired,
   head: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  btn: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  btn: PropTypes.string,
 };
 
 export default SectionHeader;

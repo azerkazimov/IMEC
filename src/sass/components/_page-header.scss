@@ -5,8 +5,7 @@
     @extend .flex-justify-center;
     @extend .flex-align-center;
     height: 20vh;
-
-
+    user-select: none;
     color: map-get($colors, natural);
     background-color: map-get($colors, primary);
     margin-top: 150px;

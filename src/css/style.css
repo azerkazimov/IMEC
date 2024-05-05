@@ -84,7 +84,7 @@ a {
   padding-left: 5px !important;
 }
 
-.px-1 {
+.px-1, nav .basket {
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
@@ -94,7 +94,7 @@ a {
   padding-bottom: 5px !important;
 }
 
-.p-2, nav svg {
+.p-2 {
   padding: 10px !important;
 }
 
@@ -184,7 +184,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .service-section .service-item, #about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .basket-tab, .service-section .service-item, #about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -982,11 +982,11 @@ a {
   justify-content: center !important;
 }
 
-.flex-align-center, .page-header, .btn-content {
+.flex-align-center, .basket-tab .basket-title, .page-header, .btn-content {
   align-items: center !important;
 }
 
-.flex-justify-space-between {
+.flex-justify-space-between, .basket-tab .basket-title {
   justify-content: space-between !important;
 }
 
@@ -1422,7 +1422,7 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .page-header, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .basket-tab .basket-title, .page-header, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
@@ -1598,7 +1598,7 @@ a {
   font-size: 17px !important;
 }
 
-.font-size-18, nav svg {
+.font-size-18 {
   font-size: 18px !important;
 }
 
@@ -1622,7 +1622,7 @@ a {
   font-size: 23px !important;
 }
 
-.font-size-24, .products-item .products-description h4, .btn-content span svg {
+.font-size-24, .products-item .products-description h4, .btn-content span svg, nav .basket {
   font-size: 24px !important;
 }
 
@@ -2238,10 +2238,9 @@ nav .burger-menu span {
   background: #01A0E2;
   transition: ease-out 0.3s;
 }
-nav svg {
+nav .basket {
+  background-color: transparent;
   color: #fff;
-  background: #FF7602;
-  border-radius: 50%;
 }
 
 .active {
@@ -2324,6 +2323,7 @@ nav svg {
 .page-header {
   position: relative;
   height: 20vh;
+  user-select: none;
   color: #fff;
   background-color: #01A0E2;
   margin-top: 150px;
@@ -2335,6 +2335,49 @@ nav svg {
   right: 0;
   height: inherit;
   opacity: 0.3;
+}
+
+.basket {
+  color: #fff;
+}
+
+.basket-tab {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background-color: #14142B;
+  color: #fff;
+  inset: 0 0 0 auto;
+  display: none;
+  grid-template-rows: 50px 1fr 50px;
+}
+.basket-tab.open {
+  display: grid;
+}
+.basket-tab .basket-title span {
+  width: 25px;
+  height: 4px;
+  background-color: #01A0E2;
+  transform: rotate(45deg);
+  position: relative;
+  transition: all 0.2s ease;
+}
+.basket-tab .basket-title span::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 4px;
+  background-color: #01A0E2;
+  transform: rotate(90deg);
+}
+.basket-tab .basket-title span:hover {
+  transform: rotate(135deg);
+}
+.basket-tab .order {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
 }
 
 .product-categories {

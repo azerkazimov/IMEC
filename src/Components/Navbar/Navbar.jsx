@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../../assets/logo.png";
-import { Link as RouteLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown";
 import axios from "axios";
 
@@ -11,6 +13,8 @@ const Navbar = () => {
   const [burger_class, setBurgerClass] = useState(false);
   const [burger_bar, setBurgerBar] = useState(false);
   const [data, setData] = useState([]);
+  const [basketTab, setBasketTab] = useState(false);
+  const basketTabRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +39,18 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (basketTabRef.current && !basketTabRef.current.contains(e.target)) {
+        setBasketTab(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [basketTab]);
+
   const handleMouseEnter = (id) => {
     setDropDown(id);
   };
@@ -53,14 +69,21 @@ const Navbar = () => {
     setBurgerBar(!burger_bar);
   };
 
+  const openBasket = () => {
+    setBasketTab(!basketTab);
+  };
+  const closeBasket = () => {
+    setBasketTab(false);
+  };
+
   return (
     <nav className={nav ? "nav active" : "nav"}>
       <div className="container">
         <div className={row ? "row" : "column"}>
           <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-start">
-            <RouteLink to="/" className="logo">
-              <img src={logo} alt="Pizza" />
-            </RouteLink>
+            <RouterLink to="/" className="logo">
+              <img src={logo} alt="IMEC" />
+            </RouterLink>
           </div>
           <div className="col-12 col-md-6 flex-container flex-align-center flex-justify-center">
             <label htmlFor="menu-btn" className="menu-icon">
@@ -74,22 +97,37 @@ const Navbar = () => {
             <ul className={burger_class ? "open" : "menu"}>
               {data.map((item) => (
                 <li
-                key={item.id}
-                onMouseEnter={() => handleMouseEnter(item.id)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <RouteLink to={item.path}>{item.name}</RouteLink>
-                {dropdown === item.id && item.items && (
-                  <Dropdown items={item.items} />
-                )}
-              </li>
+                  key={item.id}
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <RouterLink to={item.path}>{item.name}</RouterLink>
+                  {dropdown === item.id && item.items && (
+                    <Dropdown items={item.items} />
+                  )}
+                </li>
               ))}
             </ul>
           </div>
-          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-end px-5">
+          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-space-between px-5">
             <button className="btn d-none">
-              <RouteLink to="/">Get a Quote</RouteLink>
+              <RouterLink to="/">Get a Quote</RouterLink>
             </button>
+            <button className="basket d-none" onClick={openBasket}>
+              <FontAwesomeIcon icon={faCartArrowDown} />
+            </button>
+            <div
+              ref={basketTabRef}
+              className={`basket-tab ${basketTab ? "open" : ""}`}
+            >
+              <div className="basket-title">
+                <h3>Order</h3>
+                <span onClick={closeBasket}></span>
+              </div>
+              <RouterLink to="/basket">
+                <button className="btn order">Order List</button>
+              </RouterLink>
+            </div>
           </div>
         </div>
       </div>

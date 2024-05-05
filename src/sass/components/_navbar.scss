@@ -63,12 +63,11 @@ nav {
         }
     }
 
-    svg {
-        @extend .p-2;
-        @extend .font-size-18;
+    .basket {
+        @extend .font-size-24;
+        @extend .px-1;
+        background-color: transparent;
         color: map-get($colors, natural);
-        background: map-get($colors, success);
-        border-radius: 50%;
     }
 }
 

@@ -5,7 +5,8 @@ import Industry from "./Pages/Industry/Industry";
 import Product from "./Pages/Product/Product";
 import Service from "./Pages/Service/Service";
 import Company from "./Pages/Company/Company";
-import ProductList from "./Pages/Product/ProductList"
+import ProductList from "./Pages/Product/ProductList";
+import Basket from "./Components/Basket/Basket";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/service" element={<Service />} />
           <Route path="/company" element={<Company />} />
+          <Route path="/basket" element={<Basket />} />
           <Route path="/product-overview" element={<ProductList />} />
         </Routes>
       </div>

@@ -21,7 +21,6 @@ function Counter({ end, interval }) {
 }
 
 Counter.propTypes = {
-  start: PropTypes.number.isRequired,
   end: PropTypes.number.isRequired,
   interval: PropTypes.number.isRequired,
 };
