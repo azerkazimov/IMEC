@@ -1670,7 +1670,7 @@ a {
   font-size: 35px !important;
 }
 
-.font-size-36 {
+.font-size-36, .basket-tab .basket-title span {
   font-size: 36px !important;
 }
 
@@ -2356,20 +2356,11 @@ nav .basket {
   display: grid;
 }
 .basket-tab .basket-title span {
-  width: 25px;
-  height: 4px;
-  background-color: #01A0E2;
+  color: #01A0E2;
   transform: rotate(45deg);
   position: relative;
   transition: all 0.2s ease;
-}
-.basket-tab .basket-title span::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 4px;
-  background-color: #01A0E2;
-  transform: rotate(90deg);
+  cursor: pointer;
 }
 .basket-tab .basket-title span:hover {
   transform: rotate(135deg);

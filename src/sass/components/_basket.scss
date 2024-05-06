@@ -24,28 +24,18 @@
         @extend .flex-align-center;
 
         span {
-            width: 25px;
-            height: 4px;
-            background-color: map-get($colors, primary);
+            @extend .font-size-36;
+            color: map-get($colors, primary);
             transform: rotate(45deg);
             position: relative;
             transition: all 0.2s ease;
+            cursor: pointer;
 
-            &::after {
-                content: '';
-                position: absolute;
-                width: 25px;
-                height: 4px;
-                background-color: map-get($colors, primary);
-                transform: rotate(90deg);
-            }
 
             &:hover {
                 transform: rotate(135deg);
             }
         }
-
-
     }
 
     .order {

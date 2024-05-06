@@ -17,6 +17,13 @@ const Navbar = () => {
   const basketTabRef = useRef(null);
 
   useEffect(() => {
+    axios
+      .get("https://imec-db.vercel.app/nav-bar")
+      .then((res) => setData(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+  
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 993) {
         setRow(false);
@@ -30,13 +37,6 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/nav-bar")
-      .then((res) => setData(res.data))
-      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const Navbar = () => {
             >
               <div className="basket-title">
                 <h3>Order</h3>
-                <span onClick={closeBasket}></span>
+                <span onClick={closeBasket}>+</span>
               </div>
               <RouterLink to="/basket">
                 <button className="btn order">Order List</button>
