@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import PageHeader from "../../Components/PageHeader/PageHeader";
 import _Categories from "../../Components/ProductComponents/Categories";
 import axios from "axios";
-import pump from "../../assets/images/pump.png";
 
 function Categories() {
   const [data, setData] = useState([]);
@@ -16,7 +15,7 @@ function Categories() {
 
   return (
     <>
-      <PageHeader name="Product" />
+      <PageHeader name="Products" />
       <div className="container">
         <div className="product-categories">
           {data.map((item) => (
@@ -25,7 +24,7 @@ function Categories() {
               title={item.title}
               description={item.description}
               categoryId={item.id}
-              src={pump}
+              src={`https://imec-db.vercel.app${item.img}`}
             />
           ))}
         </div>

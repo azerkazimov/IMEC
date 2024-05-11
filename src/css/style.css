@@ -204,7 +204,7 @@ a {
   padding-left: 25px !important;
 }
 
-.px-5, .btn {
+.px-5 {
   padding-left: 25px !important;
   padding-right: 25px !important;
 }
@@ -234,7 +234,7 @@ a {
   padding-left: 30px !important;
 }
 
-.px-6 {
+.px-6, .btn {
   padding-left: 30px !important;
   padding-right: 30px !important;
 }
@@ -970,12 +970,20 @@ a {
   align-items: start !important;
 }
 
+.text-align-start {
+  text-align: start !important;
+}
+
 .flex-justify-end {
   justify-content: end !important;
 }
 
 .flex-align-end {
   align-items: end !important;
+}
+
+.text-align-end {
+  text-align: end !important;
 }
 
 .flex-justify-center, .page-header {
@@ -986,6 +994,10 @@ a {
   align-items: center !important;
 }
 
+.text-align-center {
+  text-align: center !important;
+}
+
 .flex-justify-space-between, .basket-tab .basket-title {
   justify-content: space-between !important;
 }
@@ -994,12 +1006,20 @@ a {
   align-items: space-between !important;
 }
 
+.text-align-space-between {
+  text-align: space-between !important;
+}
+
 .flex-justify-space-around {
   justify-content: space-around !important;
 }
 
 .flex-align-space-around {
   align-items: space-around !important;
+}
+
+.text-align-space-around {
+  text-align: space-around !important;
 }
 
 @media (min-width: 0) {
@@ -1422,16 +1442,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .basket-tab .basket-title, .page-header, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
 .flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .dropdown, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
-}
-
-.text-center {
-  text-align: center !important;
 }
 
 .bg-primary {
@@ -2273,7 +2289,7 @@ nav .basket {
   transition: all 0.2s ease;
 }
 .btn:hover {
-  background-color: #143256;
+  background-color: #14142B;
 }
 
 .btn-content {
@@ -2288,6 +2304,10 @@ nav .basket {
 }
 .btn-content:hover span {
   transform: translateX(10px);
+}
+
+.btn-store {
+  gap: 10px;
 }
 
 #slider {
@@ -2343,8 +2363,6 @@ nav .basket {
 
 .basket-tab {
   position: fixed;
-  top: 0;
-  bottom: 0;
   width: 30%;
   background-color: #14142B;
   color: #fff;
@@ -2354,6 +2372,9 @@ nav .basket {
 }
 .basket-tab.open {
   display: grid;
+}
+.basket-tab .basket-title {
+  user-select: none;
 }
 .basket-tab .basket-title span {
   color: #01A0E2;
@@ -2400,6 +2421,7 @@ nav .basket {
   color: #fff;
   transition: all 0.2s ease;
   text-align: center;
+  height: 100%;
 }
 .products-item img {
   width: 100%;
@@ -2417,4 +2439,24 @@ nav .basket {
 }
 .products-item:hover img {
   transform: scale(1.1);
+}
+
+.products-page {
+  position: relative;
+  background: url("../assets/images/isis-franca-hsPFuudRg5I-unsplash.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.products-page::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */

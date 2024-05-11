@@ -15,7 +15,7 @@ function SubCategories() {
     axios.get(url + catId).then(({ data }) => {
       setSubCats(data);
     });
-  }, []);
+  }, [catId]);
   return (
     <>
       <PageHeader name="Products" />
@@ -24,16 +24,21 @@ function SubCategories() {
         <div className="row">
           {subCats.map(({ id, name, description }) => {
             return (
-              <div className="col-12 col-md-4 p-1" key={id}>
+              <div className="col-12 col-md-6 p-1" key={id}>
                 <div className="products-item">
-                  <img src={pump} alt="" />
-                  <div className="products-description">
-                    <h4>{name}</h4>
-                    <p>{description}</p>
-                    <RouterLink to={"/products/"+ id}>
-                      <button className="btn">Add To Card</button>
-                    </RouterLink>
-                  </div>
+                  <RouterLink to={"/products/" + id}>
+                    <div className="row">
+                      <div className="col-2">
+                        <img src={pump} alt="" />
+                      </div>
+                      <div className="col-10 text-align-start">
+                        <div className="products-description">
+                          <h4>{name}</h4>
+                          <p>{description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </RouterLink>
                 </div>
               </div>
             );

@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import logo from "../../assets/logo.png";
-import { Link as RouterLink } from "react-router-dom";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
-import Dropdown from "./Dropdown";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import Dropdown from "./Dropdown";
+import BasketTab from "../Basket/BasketTab";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -14,7 +15,6 @@ const Navbar = () => {
   const [burger_bar, setBurgerBar] = useState(false);
   const [data, setData] = useState([]);
   const [basketTab, setBasketTab] = useState(false);
-  const basketTabRef = useRef(null);
 
   useEffect(() => {
     axios
@@ -22,7 +22,7 @@ const Navbar = () => {
       .then((res) => setData(res.data))
       .catch((error) => console.log(error));
   }, []);
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 993) {
@@ -38,18 +38,6 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (basketTabRef.current && !basketTabRef.current.contains(e.target)) {
-        setBasketTab(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [basketTab]);
 
   const handleMouseEnter = (id) => {
     setDropDown(id);
@@ -114,20 +102,9 @@ const Navbar = () => {
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>
             <button className="basket d-none" onClick={openBasket}>
-              <FontAwesomeIcon icon={faCartArrowDown} />
+              <FontAwesomeIcon icon={faBagShopping} />
             </button>
-            <div
-              ref={basketTabRef}
-              className={`basket-tab ${basketTab ? "open" : ""}`}
-            >
-              <div className="basket-title">
-                <h3>Order</h3>
-                <span onClick={closeBasket}>+</span>
-              </div>
-              <RouterLink to="/basket">
-                <button className="btn order">Order List</button>
-              </RouterLink>
-            </div>
+            <BasketTab basketTab={basketTab} closeBasket={closeBasket} />
           </div>
         </div>
       </div>

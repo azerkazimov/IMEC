@@ -1,19 +1,30 @@
-import pump from "../../assets/images/pump.png";
-import { Link as RouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import pump from "../../assets/images/pump.png";
+import useOrderStore from "../../Components/store/orderStore";
 
-function ProductItem({ name, img, description, brand }) {
+function ProductItem({ id, name, description, brand /*img*/ }) {
+  const state = useOrderStore((state) => state);
+
+  const handleOrder = () => {
+    const newOrder = {
+      id: id,
+      name: name,
+      description: description,
+    };
+    state.addToOrder(newOrder);
+  };
+
   return (
     <div className="col-12 col-md-4 p-1">
       <div className="products-item">
-        <img src={pump} alt="" />
-        <div className="products-description">
+        <img src={pump} alt={name} />
+        <div className="products-description" id={id}>
           <h4>{name}</h4>
           <p>{description}</p>
           <p>{brand}</p>
-          <RouterLink to="/product-overview">
-            <button className="btn">Add To Card</button>
-          </RouterLink>
+          <button className="btn" onClick={handleOrder}>
+            Order
+          </button>
         </div>
       </div>
     </div>
@@ -21,6 +32,7 @@ function ProductItem({ name, img, description, brand }) {
 }
 
 ProductItem.propTypes = {
+  id: PropTypes.number,
   name: PropTypes.string,
   img: PropTypes.string,
   description: PropTypes.string,

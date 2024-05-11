@@ -5,8 +5,6 @@
 .basket-tab {
     @extend .p-5;
     position: fixed;
-    top: 0;
-    bottom: 0;
     width: 30%;
     background-color: map-get($colors, inky);
     color: map-get($colors, natural);
@@ -22,6 +20,7 @@
         @extend .flex-container;
         @extend .flex-justify-space-between;
         @extend .flex-align-center;
+        user-select: none;
 
         span {
             @extend .font-size-36;

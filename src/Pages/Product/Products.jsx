@@ -13,7 +13,7 @@ function Products() {
       .get("https://imec-db.vercel.app/products?subCatId=" + subCatId)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [subCatId]);
 
   return (
     <>

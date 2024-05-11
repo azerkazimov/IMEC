@@ -1,7 +1,7 @@
 .btn {
     @extend .font-weight-700;
     @extend .py-3;
-    @extend .px-5;
+    @extend .px-6;
 
 
     border: none;
@@ -11,7 +11,7 @@
     transition: all 0.2s ease;
 
     &:hover {
-        background-color: map-get($colors, secondary);
+        background-color: map-get($colors, inky);
     }
 }
 
@@ -38,4 +38,9 @@
             transform: translateX(10px);
         }
     }
+}
+
+.btn-store{
+    @extend .flex-container;
+    gap: 10px;
 }

@@ -4,9 +4,11 @@
   .flex-justify-#{$value} {
     justify-content: $value !important;
   }
-
   .flex-align-#{$value} {
     align-items: $value !important;
+  }
+  .text-align-#{$value} {
+    text-align: $value !important;
   }
 }
 
@@ -54,8 +56,4 @@
 
 .flex-column {
   flex-direction: column;
-}
-
-.text-center{
-  text-align: center !important;
 }
