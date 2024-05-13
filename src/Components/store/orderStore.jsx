@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist  } from "zustand/middleware";
 
 const useOrderStore = create(
   persist(
@@ -29,6 +29,7 @@ const useOrderStore = create(
     }),
     {
       name: "product-order",
+      // storage: createJSONStorage((AsyncStorage) => AsyncStorage), // <==  pay attention
       getStorage: ()=> localStorage,
       serialize: (data) => JSON.stringify(data),
       deserialize: (data) => JSON.parse(data),

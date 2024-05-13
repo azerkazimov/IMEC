@@ -18,7 +18,7 @@ function SubCategories() {
   }, [catId]);
   return (
     <>
-      <PageHeader name="Products" />
+      <PageHeader name="Subcategories" />
 
       <div className="container mt-5">
         <div className="row">

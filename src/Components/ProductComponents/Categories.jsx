@@ -14,7 +14,7 @@ function Categories({ title, description, categoryId, src }) {
               <h4>{title}</h4>
               <p>{description}</p>
               <RouterLink to={`/subcategories/${categoryId}`}>
-                <button className="btn">View More</button>
+                <button className="btn">View Subcategories</button>
               </RouterLink>
             </div>
           </div>

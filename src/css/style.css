@@ -2412,7 +2412,7 @@ nav .basket {
 
 .pop-up {
   position: fixed;
-  width: 80%;
+  width: 70%;
   background-color: #143256;
   border-radius: 6px;
   top: 0;
@@ -2443,7 +2443,7 @@ nav .basket {
 }
 .pop-up.open-pop-up {
   visibility: visible;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 999;
 }

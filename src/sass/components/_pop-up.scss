@@ -1,6 +1,6 @@
 .pop-up {
     position: fixed;
-    width: 80%;
+    width: 70%;
     background-color: map-get($colors, secondary);
     border-radius: 6px;
     top: 0;
@@ -40,7 +40,7 @@
 
     &.open-pop-up {
         visibility: visible;
-        top: 50%;
+        top: 60%;
         transform: translate(-50%, -50%) scale(1);
         z-index: 999;
     }
