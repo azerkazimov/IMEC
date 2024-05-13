@@ -94,7 +94,7 @@ a {
   padding-bottom: 5px !important;
 }
 
-.p-2 {
+.p-2, .products-item {
   padding: 10px !important;
 }
 
@@ -154,7 +154,7 @@ a {
   padding-bottom: 15px !important;
 }
 
-.p-4, .products-item {
+.p-4 {
   padding: 20px !important;
 }
 
@@ -539,7 +539,7 @@ a {
   margin-right: 25px !important;
 }
 
-.my-5, .section-header h2, .section-header {
+.my-5, .orders-tab, .section-header h2, .section-header {
   margin-top: 25px !important;
   margin-bottom: 25px !important;
 }
@@ -1442,11 +1442,11 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1622,7 +1622,7 @@ a {
   font-size: 19px !important;
 }
 
-.font-size-20 {
+.font-size-20, .btn-remove {
   font-size: 20px !important;
 }
 
@@ -2306,7 +2306,20 @@ nav .basket {
   transform: translateX(10px);
 }
 
+.btn-remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #d9534f;
+  color: #fff;
+  width: 0%;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.2s ease;
+}
+
 .btn-store {
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -2392,6 +2405,10 @@ nav .basket {
   display: flex;
 }
 
+.orders-tab {
+  gap: 10px;
+}
+
 .product-categories {
   gap: 20px;
   color: #fff;
@@ -2416,6 +2433,8 @@ nav .basket {
 }
 
 .products-item {
+  overflow: hidden;
+  position: relative;
   border: 2px solid #72FFFF;
   border-radius: 10px;
   color: #fff;
@@ -2439,6 +2458,9 @@ nav .basket {
 }
 .products-item:hover img {
   transform: scale(1.1);
+}
+.products-item:hover .btn-remove {
+  width: 12%;
 }
 
 .products-page {

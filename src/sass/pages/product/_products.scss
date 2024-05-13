@@ -39,7 +39,9 @@
 }
 
 .products-item {
-    @extend .p-4;
+    @extend .p-2;
+    overflow: hidden;
+    position: relative;
     border: 2px solid map-get($colors, info);
     border-radius: 10px;
     color: map-get($colors, natural);
@@ -71,10 +73,13 @@
         background-color: map-get($colors, secondary);
         border: 2px solid map-get($colors, secondary);
 
+        .btn-remove {
+            width: 12%;
+        }
     }
 }
 
-.products-page{
+.products-page {
     position: relative;
     background: url("../assets/images/isis-franca-hsPFuudRg5I-unsplash.jpg");
     background-attachment: fixed;
@@ -82,7 +87,7 @@
     background-repeat: no-repeat;
     z-index: 0;
 
-    &::after{
+    &::after {
         position: absolute;
         content: "";
         top: 0;

@@ -43,3 +43,11 @@
         display: flex;
     }
 }
+
+.orders-tab {
+    @extend .flex-container;
+    @extend .flex-column;
+    @extend .my-5;
+    gap: 10px;
+
+}

@@ -8,7 +8,7 @@ function Basket() {
     <div className="basket">
       <PageHeader name="Basket" />
       <div className="container">
-        <div className="row">
+        <div className="orders-tab">
           {order.map((item) => {
             return (
               <Order
