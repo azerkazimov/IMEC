@@ -102,7 +102,8 @@ a {
   padding-top: 10px !important;
 }
 
-.pb-2 {
+.pb-2, .pop-up h4,
+.pop-up p {
   padding-bottom: 10px !important;
 }
 
@@ -184,7 +185,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .basket-tab, .service-section .service-item, #about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .basket-tab, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -1010,7 +1011,7 @@ a {
   text-align: space-between !important;
 }
 
-.flex-justify-space-around {
+.flex-justify-space-around, .pop-up .pop-up-description {
   justify-content: space-around !important;
 }
 
@@ -1442,11 +1443,11 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1686,7 +1687,7 @@ a {
   font-size: 35px !important;
 }
 
-.font-size-36, .basket-tab .basket-title span {
+.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span {
   font-size: 36px !important;
 }
 
@@ -1726,7 +1727,7 @@ a {
   font-size: 45px !important;
 }
 
-.font-size-46, .section-header h2, #about .about-image .about-counter span {
+.font-size-46, .section-header h2, .about .about-image .about-counter span {
   font-size: 46px !important;
 }
 
@@ -1986,7 +1987,7 @@ a {
   font-weight: 600 !important;
 }
 
-.font-weight-700, .btn-content, .btn, #about .about-image .about-counter span, .header .main-content .main-counter span, .header .main-content h1 {
+.font-weight-700, .btn-content, .btn, .about .about-image .about-counter span, .header .main-content .main-counter span, .header .main-content h1 {
   font-weight: 700 !important;
 }
 
@@ -2155,16 +2156,16 @@ a {
   color: #01A0E2;
 }
 
-#about {
+.about {
   color: #fff;
 }
-#about .about-image {
+.about .about-image {
   position: relative;
 }
-#about .about-image img {
+.about .about-image img {
   width: 100%;
 }
-#about .about-image .about-counter {
+.about .about-image .about-counter {
   position: absolute;
   text-align: end;
   bottom: 5px;
@@ -2173,7 +2174,7 @@ a {
   background-color: #14142B;
   color: #fff;
 }
-#about .about-image .about-counter::after {
+.about .about-image .about-counter::after {
   content: "";
   width: 60%;
   height: 60%;
@@ -2323,10 +2324,10 @@ nav .basket {
   gap: 10px;
 }
 
-#slider {
+.slider {
   user-select: none;
 }
-#slider img {
+.slider img {
   width: 100%;
 }
 
@@ -2409,6 +2410,43 @@ nav .basket {
   gap: 10px;
 }
 
+.pop-up {
+  position: fixed;
+  width: 80%;
+  background-color: #143256;
+  border-radius: 6px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  text-align: center;
+  transition: transform 0.4s, top 0.4s;
+}
+.pop-up .pop-up-description {
+  position: relative;
+  height: 100%;
+}
+.pop-up .pop-up-description span {
+  color: #01A0E2;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pop-up .pop-up-description span:hover {
+  transform: rotate(135deg);
+}
+.pop-up img {
+  width: 100%;
+}
+.pop-up.open-pop-up {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 999;
+}
 .product-categories {
   gap: 20px;
   color: #fff;
@@ -2441,10 +2479,12 @@ nav .basket {
   transition: all 0.2s ease;
   text-align: center;
   height: 100%;
+  cursor: pointer;
 }
 .products-item img {
   width: 100%;
   transition: all 0.2s;
+  user-select: none;
 }
 .products-item .products-description {
   gap: 10px;

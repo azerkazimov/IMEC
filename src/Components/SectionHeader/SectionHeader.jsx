@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 function SectionHeader({ span, head, content, btn }) {
   return (
     <div className="container">
-      <div id="section-header" className="section-header">
+      <div className="section-header">
         <span className="head">{span}</span>
         <h2>{head}</h2>
         <p>{content}</p>

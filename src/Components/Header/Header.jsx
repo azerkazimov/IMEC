@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import bannerVideo from "../../assets/Mastering Milling_ Flotation Concentration.mp4";
 import Counter from "../Counter/Counter";
 
 function Header() {
+  const headerRef = useRef(null);
   return (
-    <div id="header" className="header">
+    <div ref={headerRef} className="header">
       <div className="bg-video">
         <div className="overlay">
           <video src={bannerVideo} autoPlay loop muted />

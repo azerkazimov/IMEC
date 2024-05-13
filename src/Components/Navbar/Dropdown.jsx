@@ -11,7 +11,6 @@ function Dropdown({ items }) {
   return (
     <>
       <ul
-        id="dropdown"
         className={dropdown ? "dropdown clicked" : "dropdown"}
         onClick={handleDropDown}
       >

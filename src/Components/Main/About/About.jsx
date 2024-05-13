@@ -4,7 +4,7 @@ import Counter from "../../Counter/Counter";
 
 function About() {
   return (
-    <div id="about">
+    <section className="about">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 p-5">
@@ -26,7 +26,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

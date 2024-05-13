@@ -9,7 +9,7 @@ import { Autoplay } from "swiper/modules";
 
 function Slider() {
   return (
-    <div id="slider">
+    <div className="slider">
       <div className="container">
         <Swiper
           modules={[Autoplay]}

@@ -9,6 +9,7 @@ import Basket from "./Components/Basket/Basket";
 import Products from "./Pages/Product/Products";
 import SubCategories from "./Pages/Product/SubCategories";
 import AllProducts from "./Pages/Product/AllProducts";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/products/:subCatId" element={<Products />} />
           <Route path="/products" element={<AllProducts />} />
         </Routes>
+        <Toaster position="top-right" />
       </div>
     </>
   );

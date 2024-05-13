@@ -48,10 +48,12 @@
     transition: all 0.2s ease;
     text-align: center;
     height: 100%;
+    cursor: pointer;
 
     img {
         width: 100%;
         transition: all 0.2s;
+        user-select: none;
     }
 
     .products-description {
