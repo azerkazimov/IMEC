@@ -38,9 +38,12 @@ function BasketTab({ basketTab, closeBasket }) {
           );
         })}
       </div>
-      <RouterLink to="/basket">
-        <button className="btn order">Order List</button>
-      </RouterLink>
+      <div className="btn-store">
+        <RouterLink to="/basket">
+          <button className="btn order">Order List</button>
+        </RouterLink>
+        <button className="btn">Submit</button>
+      </div>
     </div>
   );
 }

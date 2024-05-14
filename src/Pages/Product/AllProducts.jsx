@@ -40,7 +40,7 @@ function AllProducts() {
               Pump
             </button>
             <button className="btn" onClick={() => handleButtonClick("bears")}>
-              Bears
+              Bearings
             </button>
             <button className="btn" onClick={() => handleButtonClick("valve")}>
               Valves
