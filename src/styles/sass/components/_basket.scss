@@ -1,0 +1,60 @@
+.basket {
+  color: map-get($colors, natural);
+}
+
+.basket-tab {
+  @extend .p-5;
+  position: fixed;
+  width: 30%;
+  background-color: map-get($colors, inky);
+  color: map-get($colors, natural);
+  inset: 0 0 0 auto;
+  display: grid;
+  right: -100%;
+  transition: right 0.3s ease-in-out;
+  grid-template-rows: 50px 1fr 50px;
+
+  &.open {
+    right: 0;
+  }
+
+  .basket-title {
+    @extend .flex-container;
+    @extend .flex-justify-space-between;
+    @extend .flex-align-center;
+    user-select: none;
+
+    span {
+      @extend .font-size-36;
+      color: map-get($colors, primary);
+      transform: rotate(45deg);
+      position: relative;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+
+      &:hover {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  .basket-btns {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  //.order {
+  //  //position: absolute;
+  //  //bottom: 20px;
+  //  display: flex;
+  //}
+}
+
+.orders-tab {
+  @extend .flex-container;
+  @extend .flex-column;
+  @extend .my-5;
+  gap: 10px;
+
+}
