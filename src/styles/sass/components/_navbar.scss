@@ -1,4 +1,4 @@
-nav {
+.nav-bar {
     @extend .py-4;
 
     position: fixed;
@@ -6,7 +6,6 @@ nav {
     top: 0;
     width: 100%;
     z-index: 999;
-    background-color: transparent;
     transition: 0.6s ease-in-out;
 
 
@@ -18,7 +17,7 @@ nav {
 
     ul {
         display: flex;
-        gap: 30px;
+        gap: 0px 30px;
 
         li {
             a {
@@ -44,9 +43,9 @@ nav {
 
     .burger-menu {
         display: none;
-        position: absolute;
-        top: 40px;
-        right: 40px;
+        // position: absolute;
+        // top: 40px;
+        // right: 40px;
         flex-direction: column;
         justify-content: space-between;
         width: 35px;
@@ -74,4 +73,8 @@ nav {
 .active {
     box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
     background-color: map-get($colors, inky);
+}
+
+.other-page {
+    background-color: map-get($colors, natural);
 }

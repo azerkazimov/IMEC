@@ -3,10 +3,10 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link as RouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function SectionHeader({ span, head, content, btn }) {
+function SectionHeader({ span, head, content, btn, textPosition }) {
   return (
     <div className="container">
-      <div className="section-header">
+      <div className={`section-header text-align-${textPosition}`}>
         <span className="head">{span}</span>
         <h2>{head}</h2>
         <p>{content}</p>
@@ -28,6 +28,7 @@ SectionHeader.propTypes = {
   head: PropTypes.string.isRequired,
   content: PropTypes.string,
   btn: PropTypes.string,
+  textPosition: PropTypes.string,
 };
 
 export default SectionHeader;

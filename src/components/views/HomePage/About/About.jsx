@@ -5,18 +5,18 @@ import Counter from "../../../common/Counter/Counter.jsx";
 function About() {
   return (
     <section className="about">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-6 p-5">
-            <div className="about-image">
-              <img src={about} alt="about" />
-              <div className="about-counter">
-                <Counter end={7} interval={500} />
-                <p>Project of successful work</p>
-              </div>
+      <div className="row">
+        <div className="col-12 col-md-6">
+          <div className="about-image">
+            <img src={about} alt="about" />
+            <div className="about-counter">
+              <Counter end={7} interval={500} />
+              <p>Project of successful work</p>
             </div>
           </div>
-          <div className="col-12 col-md-6 flex-container flex-align-center">
+        </div>
+        <div className="col-12 col-md-6 flex-container flex-align-center">
+          <div className="container">
             <SectionHeader
               span="About us"
               head="Great Experience"

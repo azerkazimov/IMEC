@@ -5,9 +5,10 @@
 
     .head {
         @extend .font-size-16;
+        @extend .font-weight-700;
         text-transform: uppercase;
         position: relative;
-        color: map-get($colors, info);
+        color: map-get($colors, primary);
         letter-spacing: 0.5rem;
 
         &::after {
@@ -16,8 +17,8 @@
             bottom: -10px;
             left: 0;
             min-width: 95%;
-            border-bottom: 6px solid rgba(255, 255, 255, 0.1);
-            border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255, 255, 255, 0.622) 0, rgba(255, 255, 255, 0.485) 3px) 3;
+            border-bottom: 6px solid rgba(19, 73, 118, 0.1);
+            border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(99, 122, 191, 0.622) 0, rgba(86, 116, 181, 0.485) 3px) 3;
         }
     }
 
@@ -25,7 +26,7 @@
         @extend .my-5;
         @extend .font-size-46;
         text-transform: uppercase;
-        color: map-get($colors, natural)
+        color: map-get($colors, inky)
     }
 
     p {

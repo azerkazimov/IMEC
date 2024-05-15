@@ -2,14 +2,13 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-import Dropdown from "./Dropdown.jsx";
 import BasketTab from "../../common/Basket/BasketTab.jsx";
+import Dropdown from "./Dropdown.jsx";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [row, setRow] = useState(true);
   const [dropdown, setDropDown] = useState(null);
   const [burger_class, setBurgerClass] = useState(false);
   const [burger_bar, setBurgerBar] = useState(false);
@@ -23,21 +22,8 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 993) {
-        setRow(false);
-      } else {
-        setRow(true);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
 
   const handleMouseEnter = (id) => {
     setDropDown(id);
@@ -48,7 +34,7 @@ const Navbar = () => {
   };
 
   const changeBG = () => {
-    setNav(window.scrollY >= 50);
+    setNav(window.scrollY >= 20);
   };
   window.addEventListener("scroll", changeBG);
 
@@ -65,18 +51,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={nav ? "nav active" : "nav"}>
+    <nav
+      className={
+        nav
+          ? isMainPage
+            ? "nav-bar active"
+            : "nav-bar active other-page"
+          : "nav-bar"
+      }
+    >
       <div className="container">
-        <div className={row ? "row" : "column"}>
-          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-start">
+        <div className="row">
+          <div className="col-4 col-md-3 flex-container flex-align-center flex-justify-start">
             <RouterLink to="/" className="logo">
               <img src={logo} alt="IMEC" />
             </RouterLink>
           </div>
-          <div className="col-12 col-md-6 flex-container flex-align-center flex-justify-center">
-            <label htmlFor="menu-btn" className="menu-icon">
-              <span className="nav-icon"></span>
-            </label>
+          <div className="col-6 col-md-6 flex-container flex-align-center flex-justify-center flex-justify-xs-end">
+            
             <div className="burger-menu" onClick={updateBurger}>
               <span className={burger_bar ? "click" : "unclick"}></span>
               <span className={burger_bar ? "click" : "unclick"}></span>
@@ -89,7 +81,12 @@ const Navbar = () => {
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <RouterLink to={item.path}>{item.name}</RouterLink>
+                  <RouterLink
+                    to={item.path}
+                    className={isMainPage ? "text-natural" : "text-inky"}
+                  >
+                    {item.name}
+                  </RouterLink>
                   {dropdown === item.id && item.items && (
                     <Dropdown items={item.items} />
                   )}
@@ -97,11 +94,16 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-space-between px-5">
+          <div className="col-2 col-md-3 flex-container flex-align-center flex-justify-space-between px-5">
             <button className="btn d-none">
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>
-            <button className="basket d-none" onClick={openBasket}>
+            <button
+              className={
+                isMainPage ? "basket text-natural" : "basket text-secondary"
+              }
+              onClick={openBasket}
+            >
               <FontAwesomeIcon icon={faBagShopping} />
             </button>
             <BasketTab basketTab={basketTab} closeBasket={closeBasket} />
