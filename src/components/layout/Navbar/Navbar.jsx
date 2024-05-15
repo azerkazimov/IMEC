@@ -4,8 +4,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-import Dropdown from "./Dropdown.jsx";
 import BasketTab from "../../common/Basket/BasketTab.jsx";
+import Dropdown from "./Dropdown.jsx";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   const changeBG = () => {
-    setNav(window.scrollY >= 50);
+    setNav(window.scrollY >= 20);
   };
   window.addEventListener("scroll", changeBG);
 
@@ -68,7 +68,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={nav ? "nav active" : "nav"}>
+    <nav
+      className={
+        nav
+          ? isMainPage
+            ? "nav-bar active"
+            : "nav-bar active other-page"
+          : "nav-bar"
+      }
+    >
       <div className="container">
         <div className={row ? "row" : "column"}>
           <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-start">
@@ -109,7 +117,14 @@ const Navbar = () => {
             <button className="btn d-none">
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>
-            <button className="basket d-none" onClick={openBasket}>
+            <button
+              className={
+                isMainPage
+                  ? "basket d-none text-natural"
+                  : "basket d-none text-secondary"
+              }
+              onClick={openBasket}
+            >
               <FontAwesomeIcon icon={faBagShopping} />
             </button>
             <BasketTab basketTab={basketTab} closeBasket={closeBasket} />

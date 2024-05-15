@@ -17,7 +17,7 @@ html {
 
 body {
   position: relative;
-  background-color: #080811;
+  background-color: white;
 }
 
 main {
@@ -84,7 +84,7 @@ a {
   padding-left: 5px !important;
 }
 
-.px-1, nav .basket {
+.px-1, .nav-bar .basket {
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
@@ -175,12 +175,12 @@ a {
   padding-left: 20px !important;
 }
 
-.px-4, nav ul li a {
+.px-4, .nav-bar ul li a {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
 
-.py-4, nav {
+.py-4, .nav-bar {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
@@ -1443,7 +1443,7 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, nav ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, .nav-bar ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
@@ -1639,7 +1639,7 @@ a {
   font-size: 23px !important;
 }
 
-.font-size-24, .products-item .products-description h4, .btn-content span svg, nav .basket {
+.font-size-24, .products-item .products-description h4, .btn-content span svg, .nav-bar .basket {
   font-size: 24px !important;
 }
 
@@ -1987,7 +1987,7 @@ a {
   font-weight: 600 !important;
 }
 
-.font-weight-700, .btn-content, .btn, .about .about-image .about-counter span, .header .main-content .main-counter span, .header .main-content h1 {
+.font-weight-700, .section-header .head, .btn-content, .btn, .about .about-image .about-counter span, .about, .header .main-content .main-counter span, .header .main-content h1 {
   font-weight: 700 !important;
 }
 
@@ -2160,7 +2160,7 @@ a {
 }
 
 .about {
-  color: #fff;
+  color: #14142B;
 }
 .about .about-image {
   position: relative;
@@ -2202,7 +2202,7 @@ a {
   border: 2px solid #72FFFF;
   border-radius: 20px;
   gap: 20px;
-  color: #fff;
+  color: #14142B;
   transition: all 0.2s ease;
 }
 .service-section .service-item:hover {
@@ -2211,24 +2211,23 @@ a {
   transform: translateY(-10px);
 }
 
-nav {
+.nav-bar {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 999;
-  background-color: transparent;
   transition: 0.6s ease-in-out;
 }
-nav .logo img {
+.nav-bar .logo img {
   width: 60%;
   max-width: 200px;
 }
-nav ul {
+.nav-bar ul {
   display: flex;
-  gap: 30px;
+  gap: 0px 30px;
 }
-nav ul li a {
+.nav-bar ul li a {
   height: 40px;
   line-height: 43px;
   font-size: 0.9rem;
@@ -2236,10 +2235,10 @@ nav ul li a {
   color: #fff;
   text-transform: uppercase;
 }
-nav ul li a:hover {
+.nav-bar ul li a:hover {
   background-color: #01A0E2;
 }
-nav .burger-menu {
+.nav-bar .burger-menu {
   display: none;
   position: absolute;
   top: 40px;
@@ -2251,14 +2250,14 @@ nav .burger-menu {
   cursor: pointer;
   z-index: 9;
 }
-nav .burger-menu span {
+.nav-bar .burger-menu span {
   height: 5px;
   width: 100%;
   border-radius: 0.1rem;
   background: #01A0E2;
   transition: ease-out 0.3s;
 }
-nav .basket {
+.nav-bar .basket {
   background-color: transparent;
   color: #fff;
 }
@@ -2266,6 +2265,10 @@ nav .basket {
 .active {
   box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
   background-color: #14142B;
+}
+
+.other-page {
+  background-color: #fff;
 }
 
 .dropdown {
@@ -2346,12 +2349,12 @@ nav .basket {
   bottom: -10px;
   left: 0;
   min-width: 95%;
-  border-bottom: 6px solid rgba(255, 255, 255, 0.1);
-  border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(255, 255, 255, 0.622) 0, rgba(255, 255, 255, 0.485) 3px) 3;
+  border-bottom: 6px solid rgba(19, 73, 118, 0.1);
+  border-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(99, 122, 191, 0.622) 0, rgba(86, 116, 181, 0.485) 3px) 3;
 }
 .section-header h2 {
   text-transform: uppercase;
-  color: #fff;
+  color: #14142B;
 }
 .section-header p {
   font-weight: 100;
@@ -2479,7 +2482,7 @@ nav .basket {
   position: relative;
   border: 2px solid #72FFFF;
   border-radius: 10px;
-  color: #fff;
+  color: #143256;
   transition: all 0.2s ease;
   text-align: center;
   height: 100%;
@@ -2499,32 +2502,13 @@ nav .basket {
 .products-item:hover {
   background-color: #143256;
   border: 2px solid #143256;
+  color: #fff;
 }
 .products-item:hover img {
   transform: scale(1.1);
 }
 .products-item:hover .btn-remove {
   width: 12%;
-}
-
-.products-page {
-  position: relative;
-  background: url("../assets/images/isis-franca-hsPFuudRg5I-unsplash.jpg");
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-.products-page::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.8;
-  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
 .about {
-    color: map-get($colors, natural);
+    color: map-get($colors, inky);
+    @extend .font-weight-700;
 
     .about-image {
         position: relative;

@@ -6,7 +6,7 @@ function Service() {
     <section className="service-section">
       <div className="container">
         <div className="row text-center">
-          <SectionHeader span="Services" head="What we do" />
+          <SectionHeader span="Services" head="What we do" textPosition="center"/>
         </div>
         <div className="row">
           <ServiceItem
