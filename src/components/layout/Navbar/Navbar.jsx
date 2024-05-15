@@ -68,7 +68,6 @@ const Navbar = () => {
             </RouterLink>
           </div>
           <div className="col-6 col-md-6 flex-container flex-align-center flex-justify-center flex-justify-xs-end">
-            
             <div className="burger-menu" onClick={updateBurger}>
               <span className={burger_bar ? "click" : "unclick"}></span>
               <span className={burger_bar ? "click" : "unclick"}></span>
@@ -84,6 +83,7 @@ const Navbar = () => {
                   <RouterLink
                     to={item.path}
                     className={isMainPage ? "text-natural" : "text-inky"}
+                    onClick={updateBurger}
                   >
                     {item.name}
                   </RouterLink>
