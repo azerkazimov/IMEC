@@ -3,7 +3,7 @@
     @extend .flex-container;
     @extend .flex-column;
     gap: 20px;
-    color: map-get($colors, natural);
+    color: map-get($colors, secondary);
 
     .product-item {
         transition: all 0.2s;

@@ -9,7 +9,6 @@ import Dropdown from "./Dropdown.jsx";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [row, setRow] = useState(true);
   const [dropdown, setDropDown] = useState(null);
   const [burger_class, setBurgerClass] = useState(false);
   const [burger_bar, setBurgerBar] = useState(false);
@@ -21,22 +20,6 @@ const Navbar = () => {
       .get("https://imec-db.vercel.app/nav-bar")
       .then((res) => setData(res.data))
       .catch((error) => console.log(error));
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 993) {
-        setRow(false);
-      } else {
-        setRow(true);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   const location = useLocation();
@@ -78,13 +61,13 @@ const Navbar = () => {
       }
     >
       <div className="container">
-        <div className={row ? "row" : "column"}>
-          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-start">
+        <div className="row">
+          <div className="col-4 col-md-3 flex-container flex-align-center flex-justify-start">
             <RouterLink to="/" className="logo">
               <img src={logo} alt="IMEC" />
             </RouterLink>
           </div>
-          <div className="col-12 col-md-6 flex-container flex-align-center flex-justify-center">
+          <div className="col-6 col-md-6 flex-container flex-align-center flex-justify-center flex-justify-xs-end">
             <label htmlFor="menu-btn" className="menu-icon">
               <span className="nav-icon"></span>
             </label>
@@ -113,15 +96,13 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <div className="col-12 col-md-3 flex-container flex-align-center flex-justify-space-between px-5">
+          <div className="col-2 col-md-3 flex-container flex-align-center flex-justify-space-between px-5">
             <button className="btn d-none">
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>
             <button
               className={
-                isMainPage
-                  ? "basket d-none text-natural"
-                  : "basket d-none text-secondary"
+                isMainPage ? "basket text-natural" : "basket text-secondary"
               }
               onClick={openBasket}
             >

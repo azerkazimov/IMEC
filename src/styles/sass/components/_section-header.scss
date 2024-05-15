@@ -8,7 +8,7 @@
         @extend .font-weight-700;
         text-transform: uppercase;
         position: relative;
-        color: map-get($colors, info);
+        color: map-get($colors, primary);
         letter-spacing: 0.5rem;
 
         &::after {
