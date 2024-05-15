@@ -2081,7 +2081,7 @@ a {
     font-size: 52px !important;
   }
   .about-counter::after {
-    right: 0;
+    right: 0 !important;
     width: 80% !important;
   }
 }
