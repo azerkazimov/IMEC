@@ -2,7 +2,7 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import Dropdown from "./Dropdown.jsx";
 import BasketTab from "../../common/Basket/BasketTab.jsx";
@@ -38,6 +38,9 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
 
   const handleMouseEnter = (id) => {
     setDropDown(id);
@@ -89,7 +92,12 @@ const Navbar = () => {
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <RouterLink to={item.path}>{item.name}</RouterLink>
+                  <RouterLink
+                    to={item.path}
+                    className={isMainPage ? "text-natural" : "text-inky"}
+                  >
+                    {item.name}
+                  </RouterLink>
                   {dropdown === item.id && item.items && (
                     <Dropdown items={item.items} />
                   )}
