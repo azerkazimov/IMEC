@@ -68,9 +68,7 @@ const Navbar = () => {
             </RouterLink>
           </div>
           <div className="col-6 col-md-6 flex-container flex-align-center flex-justify-center flex-justify-xs-end">
-            <label htmlFor="menu-btn" className="menu-icon">
-              <span className="nav-icon"></span>
-            </label>
+            
             <div className="burger-menu" onClick={updateBurger}>
               <span className={burger_bar ? "click" : "unclick"}></span>
               <span className={burger_bar ? "click" : "unclick"}></span>
