@@ -11,10 +11,25 @@
         @extend .flex-column;
         @extend .p-5;
         border: 2px solid map-get($colors, info );
+        background-color: map-get($colors, natural );
         border-radius: 20px;
         gap: 20px;
-        color: map-get($colors, inky);
         transition: all 0.2s ease;
+
+        .icon{
+            @extend .font-size-50;
+            color: map-get($colors, primary );
+        }
+
+        h4{
+            @extend .font-size-36;
+            color: map-get($colors, secondary );
+        }
+
+        p{
+            @extend .font-size-14;
+            color: map-get($colors, silvery );
+        }
 
         &:hover{
             background-color: map-get($colors, info );

@@ -1,14 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from "prop-types";
 
-function ServiceItem({ head, content }) {
+function ServiceItem({ head, content, icon }) {
   return (
     <div className="col-12 col-md-4 p-4">
-      <div className="service-item text-center">
-        <div className="icon">
-          <FontAwesomeIcon icon={faCircleInfo} />
-        </div>
+      <div className="service-item text-align-center">
+        <div className="icon">{icon}</div>
         <h4>{head}</h4>
         <p>{content}</p>
       </div>
@@ -17,6 +13,7 @@ function ServiceItem({ head, content }) {
 }
 
 ServiceItem.propTypes = {
+  icon: PropTypes.element,
   head: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };

@@ -1599,7 +1599,7 @@ a {
   font-size: 13px !important;
 }
 
-.font-size-14, .section-header p {
+.font-size-14, .section-header p, .service-section .service-item p {
   font-size: 14px !important;
 }
 
@@ -1687,7 +1687,7 @@ a {
   font-size: 35px !important;
 }
 
-.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span {
+.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span, .service-section .service-item h4 {
   font-size: 36px !important;
 }
 
@@ -1743,7 +1743,7 @@ a {
   font-size: 49px !important;
 }
 
-.font-size-50 {
+.font-size-50, .service-section .service-item .icon {
   font-size: 50px !important;
 }
 
@@ -2207,10 +2207,19 @@ a {
 }
 .service-section .service-item {
   border: 2px solid #72FFFF;
+  background-color: #fff;
   border-radius: 20px;
   gap: 20px;
-  color: #14142B;
   transition: all 0.2s ease;
+}
+.service-section .service-item .icon {
+  color: #01A0E2;
+}
+.service-section .service-item h4 {
+  color: #143256;
+}
+.service-section .service-item p {
+  color: #AFB0B9;
 }
 .service-section .service-item:hover {
   background-color: #72FFFF;
