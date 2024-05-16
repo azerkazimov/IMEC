@@ -1,15 +1,16 @@
-import Main from "./views/HomePage/Main";
-import Navbar from "./components/layout/Navbar/Navbar";
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
-import Industry from "./views/IndustryPage/Industry";
-import Categories from "./views/ProductPage/Categories";
-import Service from "./views/ServicePage/Service";
-import Company from "./views/CompanyPage/Company";
 import Basket from "./components/common/Basket/Basket";
+import Navbar from "./components/layout/Navbar/Navbar";
+import Company from "./views/CompanyPage/Company";
+import Main from "./views/HomePage/Main";
+import Industry from "./views/IndustryPage/Industry";
+import AllProducts from "./views/ProductPage/AllProducts";
+import Catalogue from "./views/CataloguePage/Catalogue";
+import Categories from "./views/ProductPage/Categories";
 import Products from "./views/ProductPage/Products";
 import SubCategories from "./views/ProductPage/SubCategories";
-import AllProducts from "./views/ProductPage/AllProducts";
-import { Toaster } from "react-hot-toast";
+import Service from "./views/ServicePage/Service";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/subcategories/:catId" element={<SubCategories />} />
           <Route path="/products/:subCatId" element={<Products />} />
           <Route path="/products" element={<AllProducts />} />
+          <Route path="/catalogue" element={<Catalogue />} />
         </Routes>
         <Toaster position="bottom-left" />
       </div>
