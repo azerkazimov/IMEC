@@ -14,7 +14,7 @@
     width: 15px;
     height: 15px;
     background-color: map-get($colors, primary);
-    color: map-get($colors, natural );
+    color: map-get($colors, natural);
     border-radius: 50%
   }
 
@@ -60,13 +60,16 @@
   .basket-btns {
     justify-content: space-between;
     align-items: center;
+
+    .btn {
+      border: 1px solid map-get($colors, secondary);
+
+      &:hover {
+        border: 1px solid map-get($colors, primary)
+      }
+    }
   }
 
-  //.order {
-  //  //position: absolute;
-  //  //bottom: 20px;
-  //  display: flex;
-  //}
 }
 
 .orders-tab {

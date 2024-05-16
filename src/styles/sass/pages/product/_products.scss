@@ -72,8 +72,12 @@
             transform: scale(1.1);
         }
 
-        background-color: map-get($colors, secondary);
+        .btn {
+            border: 1px solid map-get($colors, primary);
+        }
+
         border: 2px solid map-get($colors, secondary);
+        background-color: map-get($colors, secondary);
         color: map-get($colors, natural);
 
         .btn-remove {

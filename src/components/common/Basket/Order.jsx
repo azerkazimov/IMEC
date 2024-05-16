@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { MdDeleteForever } from "react-icons/md";
 import useOrderStore from "../../../store/orderStore.jsx";
 
 function Order({ id, name, description }) {
@@ -16,7 +15,7 @@ function Order({ id, name, description }) {
           <span>{description}</span>
         </div>
         <button className="btn-remove" onClick={removeOrder}>
-          <FontAwesomeIcon icon={faTrashAlt} />
+          <MdDeleteForever />
         </button>
       </div>
     </div>

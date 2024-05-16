@@ -2327,7 +2327,7 @@ a {
   transition: all 0.2s ease;
 }
 .btn:hover {
-  background-color: #14142B;
+  background-color: #143256;
 }
 
 .btn-content {
@@ -2352,7 +2352,6 @@ a {
   color: #fff;
   width: 0%;
   height: 100%;
-  border-radius: 0 8px 8px 0;
   transition: all 0.2s ease;
 }
 
@@ -2459,6 +2458,12 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+.basket-tab .basket-btns .btn {
+  border: 1px solid #143256;
+}
+.basket-tab .basket-btns .btn:hover {
+  border: 1px solid #01A0E2;
+}
 
 .orders-tab {
   gap: 10px;
@@ -2547,15 +2552,31 @@ a {
   text-transform: uppercase;
 }
 .products-item:hover {
-  background-color: #143256;
   border: 2px solid #143256;
+  background-color: #143256;
   color: #fff;
 }
 .products-item:hover img {
   transform: scale(1.1);
 }
+.products-item:hover .btn {
+  border: 1px solid #01A0E2;
+}
 .products-item:hover .btn-remove {
   width: 12%;
+}
+
+.catalogue-item iframe {
+  width: 100%;
+  height: 400px;
+}
+.catalogue-item h4 {
+  color: #01A0E2;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.catalogue-item:hover h4 {
+  color: #143256;
 }
 
 /*# sourceMappingURL=style.css.map */
