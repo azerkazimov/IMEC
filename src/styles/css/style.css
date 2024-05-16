@@ -2206,25 +2206,43 @@ a {
   background-size: 25%;
 }
 .service-section .service-item {
-  border: 2px solid #72FFFF;
+  border: 2px solid #01A0E2;
   background-color: #fff;
-  border-radius: 20px;
   gap: 20px;
   transition: all 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 .service-section .service-item .icon {
+  transform: scale(1);
   color: #01A0E2;
+  transition: all 0.2s ease;
 }
 .service-section .service-item h4 {
   color: #143256;
+  transform: translateY(0) scale(1);
+  transition: all 0.2s ease;
 }
 .service-section .service-item p {
   color: #AFB0B9;
+  transition: all 0.2s ease;
 }
 .service-section .service-item:hover {
-  background-color: #72FFFF;
-  color: #14142B;
+  background-color: #01A0E2;
   transform: translateY(-10px);
+}
+.service-section .service-item:hover .icon {
+  transform: scale(1.4);
+  color: #fff;
+}
+.service-section .service-item:hover h4 {
+  transform: translateY(30px) scale(1.4);
+  color: #fff;
+}
+.service-section .service-item:hover p {
+  color: #fff;
+  transform: scale(0.1);
+  visibility: hidden;
 }
 
 .nav-bar {
@@ -2391,7 +2409,23 @@ a {
 }
 
 .basket {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.basket .basket-count {
+  position: absolute;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #01A0E2;
   color: #fff;
+  border-radius: 50%;
 }
 
 .basket-tab {
@@ -2474,7 +2508,7 @@ a {
 .product-categories .product-item {
   transition: all 0.2s;
   border: 2px solid #72FFFF;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .product-categories .product-item img {
   width: 100%;
@@ -2494,7 +2528,7 @@ a {
   overflow: hidden;
   position: relative;
   border: 2px solid #72FFFF;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #143256;
   transition: all 0.2s ease;
   text-align: center;

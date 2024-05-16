@@ -1,5 +1,23 @@
 .basket {
-  color: map-get($colors, natural);
+  position: relative;
+  height: 40px;
+  width: 40px;
+
+  .basket-count {
+    position: absolute;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, natural );
+    border-radius: 50%
+  }
+
 }
 
 .basket-tab {

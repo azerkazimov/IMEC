@@ -1,11 +1,11 @@
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import BasketTab from "../../common/Basket/BasketTab.jsx";
 import Dropdown from "./Dropdown.jsx";
+import useOrderStore from "../../../store/orderStore.jsx";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -24,6 +24,9 @@ const Navbar = () => {
 
   const location = useLocation();
   const isMainPage = location.pathname === "/";
+
+  const order = useOrderStore((state) => state.order);
+  const basketTabCount = order.length;
 
   const handleMouseEnter = (id) => {
     setDropDown(id);
@@ -104,7 +107,10 @@ const Navbar = () => {
               }
               onClick={openBasket}
             >
-              <FontAwesomeIcon icon={faBagShopping} />
+              <HiOutlineShoppingBag />
+              {basketTabCount > 0 && (
+                <span className="basket-count">{basketTabCount}</span>
+              )}
             </button>
             <BasketTab basketTab={basketTab} closeBasket={closeBasket} />
           </div>

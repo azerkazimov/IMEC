@@ -10,30 +10,51 @@
         @extend .flex-container;
         @extend .flex-column;
         @extend .p-5;
-        border: 2px solid map-get($colors, info );
-        background-color: map-get($colors, natural );
-        border-radius: 20px;
+        border: 2px solid map-get($colors, primary);
+        background-color: map-get($colors, natural);
         gap: 20px;
         transition: all 0.2s ease;
+        cursor: pointer;
+        overflow: hidden;
 
-        .icon{
+        .icon {
             @extend .font-size-50;
-            color: map-get($colors, primary );
+            transform: scale(1);
+            color: map-get($colors, primary);
+            transition: all 0.2s ease
         }
 
-        h4{
+        h4 {
             @extend .font-size-36;
-            color: map-get($colors, secondary );
+            color: map-get($colors, secondary);
+            transform: translateY(0) scale(1);
+            transition: all 0.2s ease;
         }
 
-        p{
+        p {
             @extend .font-size-14;
-            color: map-get($colors, silvery );
+            color: map-get($colors, silvery);
+            transition: all 0.2s ease;
         }
 
-        &:hover{
-            background-color: map-get($colors, info );
-            color: map-get($colors, inky );
+        &:hover {
+            .icon {
+                transform: scale(1.4);
+                color: map-get($colors, natural);
+            }
+
+            h4 {
+                transform: translateY(30px) scale(1.4);
+                color: map-get($colors, natural);
+            }
+
+            p {
+                color: map-get($colors, natural);
+                transform: scale(0.1);
+                visibility: hidden;
+            }
+
+            background-color: map-get($colors, primary);
             transform: translateY(-10px);
         }
     }
