@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import PageHeader from "../../components/layout/PageHeader/PageHeader.jsx";
 import { Link as RouterLink } from "react-router-dom";
-import pump from "../../assets/images/pump.png";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -22,14 +21,17 @@ function SubCategories() {
 
       <div className="container mt-5">
         <div className="row">
-          {subCats.map(({ id, name, description }) => {
+          {subCats.map(({ id, name, description, image }) => {
             return (
               <div className="col-12 col-md-6 p-1" key={id}>
                 <div className="products-item">
                   <RouterLink to={"/products/" + id}>
                     <div className="row">
                       <div className="col-2">
-                        <img src={pump} alt="" />
+                        <img
+                          src={`https://imec-db.vercel.app${image}`}
+                          alt={name}
+                        />
                       </div>
                       <div className="col-10 text-align-start">
                         <div className="products-description">
