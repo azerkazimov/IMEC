@@ -53,6 +53,15 @@
     transition: all 0.2s ease;
 }
 
+.danger {
+    background-color: map-get($colors, danger);
+
+    &:hover {
+        background-color: map-get($colors, danger);
+        border: 2px solid map-get($colors, natural )
+    }
+}
+
 .btn-store {
     @extend .flex-container;
     flex-wrap: wrap;

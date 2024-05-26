@@ -2355,6 +2355,14 @@ a {
   transition: all 0.2s ease;
 }
 
+.danger {
+  background-color: #d9534f;
+}
+.danger:hover {
+  background-color: #d9534f;
+  border: 2px solid #fff;
+}
+
 .btn-store {
   flex-wrap: wrap;
   gap: 10px;
@@ -2488,11 +2496,13 @@ a {
   color: #fff;
   border-radius: 6px;
   top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
+  right: -20%;
+  transform: translate(100%, -50%) scale(0.1);
   visibility: hidden;
   text-align: center;
   transition: transform 0.4s, top 0.4s;
+  overflow-y: auto;
+  z-index: 999;
 }
 .pop-up .pop-up-description {
   position: relative;
@@ -2517,7 +2527,6 @@ a {
   visibility: visible;
   top: 60%;
   transform: translate(-50%, -50%) scale(1);
-  z-index: 999;
 }
 .product-categories {
   gap: 20px;

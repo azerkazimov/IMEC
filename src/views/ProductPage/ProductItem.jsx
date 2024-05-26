@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import pump from "../../assets/images/pump.png";
 import useOrderStore from "../../store/orderStore.jsx";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -10,11 +9,13 @@ function ProductItem({ id, name, category, description, brand, img }) {
   const formattedName = name.replace(/\s+/g, "-");
   const navigate = useNavigate();
 
+
   const handleOrder = () => {
     const newOrder = {
       id: id,
       name: name,
       description: description,
+      img: img,
     };
     const itemExist = state.order.some((order) => order.id === id);
     if (itemExist) {
@@ -37,7 +38,7 @@ function ProductItem({ id, name, category, description, brand, img }) {
             );
           }}
         >
-          <img src={pump} alt={name} />
+          <img src={`https://imec-db.vercel.app${img}`} alt={name} />
           <div className="products-description" id={id}>
             <h4>{name}</h4>
             <p>{description}</p>
@@ -54,7 +55,6 @@ function ProductItem({ id, name, category, description, brand, img }) {
           </div>
         </div>
       </div>
-      
     </>
   );
 }

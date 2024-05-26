@@ -29,7 +29,6 @@ const useOrderStore = create(
     }),
     {
       name: "product-order",
-      // storage: createJSONStorage((AsyncStorage) => AsyncStorage), // <==  pay attention
       getStorage: ()=> localStorage,
       serialize: (data) => JSON.stringify(data),
       deserialize: (data) => JSON.parse(data),

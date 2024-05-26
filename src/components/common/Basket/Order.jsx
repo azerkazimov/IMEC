@@ -4,17 +4,19 @@ import useOrderStore from "../../../store/orderStore.jsx";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
-function Order({ id, name, description }) {
+function Order({ id, name, description, img }) {
   const state = useOrderStore((state) => state);
   const removeFromOrder = useOrderStore((state) => state.removeFromOrder);
   const [popUp, setPopUp] = useState(false);
   const popUpRef = useRef(null);
+  const [isRemoving, setIsRemoving] = useState(true);
 
   const handleOrder = () => {
     const newOrder = {
       id: id,
       name: name,
       description: description,
+      img: img,
     };
     const itemExist = state.order.some((order) => order.id === id);
     if (itemExist) {
@@ -31,6 +33,15 @@ function Order({ id, name, description }) {
 
   const removeOrder = () => {
     removeFromOrder(id);
+  };
+
+  const handleClick = () => {
+    if (isRemoving) {
+      removeOrder();
+      setIsRemoving(false);
+    } else {
+      handleOrder();
+    }
   };
 
   const closePopUp = () => {
@@ -70,14 +81,20 @@ function Order({ id, name, description }) {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <img src={".."} alt="" />
+              <img src={`https://imec-db.vercel.app${img}`} alt={name} />
             </div>
             <div className="col-6">
               <div className="pop-up-description" id={id}>
                 <h4>{name}</h4>
                 <p>{description}</p>
-                <button className="btn" onClick={handleOrder}>
-                  Order
+                <button
+                  className={`btn ${isRemoving ? "danger" : ""}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleClick();
+                  }}
+                >
+                  {isRemoving ? "Remove" : "Order"}
                 </button>
                 <span onClick={closePopUp}>+</span>
               </div>
@@ -93,5 +110,6 @@ Order.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string,
+  img: PropTypes.string,
 };
 export default Order;

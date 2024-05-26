@@ -5,11 +5,14 @@
     color: map-get($colors, natural);
     border-radius: 6px;
     top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
+    right: -20%;
+    transform: translate(100%, -50%) scale(0.1);
     visibility: hidden;
     text-align: center;
     transition: transform 0.4s, top 0.4s;
+    overflow-y: auto;
+    z-index: 999;
+
 
     .pop-up-description {
         position: relative;
@@ -43,7 +46,6 @@
         visibility: visible;
         top: 60%;
         transform: translate(-50%, -50%) scale(1);
-        z-index: 999;
     }
 
     h4,
