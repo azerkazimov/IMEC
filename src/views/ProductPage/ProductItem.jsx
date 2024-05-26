@@ -50,7 +50,7 @@ function ProductItem({ id, name, category, description, brand, img }) {
                 handleOrder();
               }}
             >
-              Order
+              Add to Order
             </button>
           </div>
         </div>

@@ -84,7 +84,7 @@ a {
   padding-left: 5px !important;
 }
 
-.px-1, .nav-bar .basket {
+.px-1, .orders-tab, .nav-bar .basket {
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
@@ -480,7 +480,7 @@ a {
   margin-right: 15px !important;
 }
 
-.my-3 {
+.my-3, .orders-tab {
   margin-top: 15px !important;
   margin-bottom: 15px !important;
 }
@@ -540,7 +540,7 @@ a {
   margin-right: 25px !important;
 }
 
-.my-5, .orders-tab, .section-header h2, .section-header {
+.my-5, .section-header h2, .section-header {
   margin-top: 25px !important;
   margin-bottom: 25px !important;
 }
@@ -1443,11 +1443,11 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, .nav-bar ul li a, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, .nav-bar ul li a, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1639,7 +1639,7 @@ a {
   font-size: 23px !important;
 }
 
-.font-size-24, .products-item .products-description h4, .btn-content span svg, .nav-bar .basket {
+.font-size-24, .product-element .element-description p, .products-item .products-description h4, .btn-content span svg, .nav-bar .basket {
   font-size: 24px !important;
 }
 
@@ -1719,7 +1719,7 @@ a {
   font-size: 43px !important;
 }
 
-.font-size-44 {
+.font-size-44, .product-element .element-description h2 {
   font-size: 44px !important;
 }
 
@@ -2355,6 +2355,14 @@ a {
   transition: all 0.2s ease;
 }
 
+.danger {
+  background-color: #d9534f;
+}
+.danger:hover {
+  background-color: #d9534f;
+  border: 2px solid #fff;
+}
+
 .btn-store {
   flex-wrap: wrap;
   gap: 10px;
@@ -2465,6 +2473,20 @@ a {
 
 .orders-tab {
   gap: 10px;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+.orders-tab::-webkit-scrollbar {
+  width: 7px;
+}
+.orders-tab::-webkit-scrollbar-track {
+  background: transparent;
+}
+.orders-tab::-webkit-scrollbar-thumb {
+  background-color: #01A0E2;
+  border-radius: 15px;
 }
 
 .pop-up {
@@ -2566,6 +2588,15 @@ a {
   width: 12%;
 }
 
+.product-element img {
+  width: 100%;
+}
+.product-element .element-description {
+  gap: 20px;
+}
+.product-element .element-description span {
+  color: #AFB0B9;
+}
 .catalogue-item iframe {
   width: 100%;
   height: 400px;

@@ -88,7 +88,7 @@ function Order({ id, name, description, img }) {
                 <h4>{name}</h4>
                 <p>{description}</p>
                 <button
-                  className={`btn ${isRemoving ? "danger" : ""}`}
+                  className={`btn ${isRemoving ? "danger" : "danger"}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     handleClick();
