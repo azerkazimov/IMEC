@@ -13,6 +13,7 @@ import Categories from "./views/ProductPage/Categories";
 import Products from "./views/ProductPage/Products";
 import SubCategories from "./views/ProductPage/SubCategories";
 import Service from "./views/ServicePage/Service";
+import ItemPage from "./views/ProductPage/ItemPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/products/:subCatId" element={<Products />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/product-item/:prodId/:name" element={<ItemPage />} />
         </Routes>
         <Toaster position="bottom-left" />
       </div>

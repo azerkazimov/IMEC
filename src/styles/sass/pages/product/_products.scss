@@ -44,7 +44,7 @@
     position: relative;
     border: 2px solid map-get($colors, info);
     border-radius: 5px;
-    color: map-get($colors, secondary );
+    color: map-get($colors, secondary);
     transition: all 0.2s ease;
     text-align: center;
     height: 100%;
@@ -82,6 +82,30 @@
 
         .btn-remove {
             width: 12%;
+        }
+    }
+}
+
+.product-element {
+    img {
+        width: 100%;
+    }
+
+    .element-description{
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 20px;
+
+        h2{
+            @extend .font-size-44;
+        }
+
+        span{
+            color: map-get($colors, silvery );
+        }
+
+        p{
+            @extend .font-size-24;
         }
     }
 }

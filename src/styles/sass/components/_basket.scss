@@ -74,7 +74,27 @@
 .orders-tab {
   @extend .flex-container;
   @extend .flex-column;
-  @extend .my-5;
+  @extend .my-3;
+  @extend .px-1;
   gap: 10px;
 
+  max-height: 100%;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, primary);
+    border-radius: 15px;
+  }
 }
