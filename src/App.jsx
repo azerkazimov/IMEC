@@ -1,5 +1,7 @@
+// ------ IMEC Main Routes -------
+
 import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom"; 
 import Basket from "./components/common/Basket/Basket";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Company from "./views/CompanyPage/Company";

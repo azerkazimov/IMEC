@@ -2,6 +2,7 @@
     position: fixed;
     width: 70%;
     background-color: map-get($colors, secondary);
+    color: map-get($colors, natural);
     border-radius: 6px;
     top: 0;
     left: 50%;

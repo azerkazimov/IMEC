@@ -2409,8 +2409,6 @@ a {
 
 .basket {
   position: relative;
-  height: 40px;
-  width: 40px;
 }
 .basket .basket-count {
   position: absolute;
@@ -2473,6 +2471,7 @@ a {
   position: fixed;
   width: 70%;
   background-color: #143256;
+  color: #fff;
   border-radius: 6px;
   top: 0;
   left: 50%;

@@ -44,7 +44,7 @@
     position: relative;
     border: 2px solid map-get($colors, info);
     border-radius: 5px;
-    color: map-get($colors, secondary);
+    color: map-get($colors, secondary );
     transition: all 0.2s ease;
     text-align: center;
     height: 100%;

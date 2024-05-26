@@ -35,8 +35,13 @@ function ProductItem({ id, name, description, brand /*img*/ }) {
       name: name,
       description: description,
     };
-    state.addToOrder(newOrder);
-    toast.success(`${name} added successfully`);
+    const itemExist = state.order.some((order) => order.id === id);
+    if (itemExist) {
+      toast.error(`${name} is alredy in the order`);
+    } else {
+      state.addToOrder(newOrder);
+      toast.success(`${name} added successfully`);
+    }
   };
 
   return (
