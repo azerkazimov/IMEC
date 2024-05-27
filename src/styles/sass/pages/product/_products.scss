@@ -86,26 +86,3 @@
     }
 }
 
-.product-element {
-    img {
-        width: 100%;
-    }
-
-    .element-description{
-        @extend .flex-container;
-        @extend .flex-column;
-        gap: 20px;
-
-        h2{
-            @extend .font-size-44;
-        }
-
-        span{
-            color: map-get($colors, silvery );
-        }
-
-        p{
-            @extend .font-size-24;
-        }
-    }
-}
