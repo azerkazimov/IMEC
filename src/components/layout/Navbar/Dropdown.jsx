@@ -1,19 +1,10 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router-dom";
 
-function Dropdown({ items }) {
-  const [dropdown, setDropDown] = useState(false);
-  const handleDropDown = () => {
-    setDropDown(!dropdown);
-  };
-
+function Dropdown({ items, isOpen }) {
   return (
     <>
-      <ul
-        className={dropdown ? "dropdown clicked" : "dropdown"}
-        onClick={handleDropDown}
-      >
+      <ul className={isOpen ? "dropdown-r open" : "dropdown-r"}>
         {items.map((item, index) => (
           <li key={index} className="dropdown-item">
             <RouterLink to={item.path}>{item.name}</RouterLink>
@@ -25,6 +16,7 @@ function Dropdown({ items }) {
 }
 
 Dropdown.propTypes = {
+  isOpen: PropTypes.bool,
   items: PropTypes.array.isRequired,
 };
 

@@ -15,12 +15,14 @@ import ItemPage from "./views/ProductPage/ItemPage";
 import Products from "./views/ProductPage/Products";
 import SubCategories from "./views/ProductPage/SubCategories";
 import Service from "./views/ServicePage/Service";
+import NavbarNew from "./components/layout/Navbar/NavbarNew";
 
 function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
+        <NavbarNew />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/industry" element={<Industry />} />
@@ -31,7 +33,10 @@ function App() {
           <Route path="/subcategories/:catId" element={<SubCategories />} />
           <Route path="/products/:subCatId" element={<Products />} />
           <Route path="/products" element={<AllProducts />} />
-          <Route path="/products/category/:category" element={<FilteredProducts />} />
+          <Route
+            path="/products/category/:category"
+            element={<FilteredProducts />}
+          />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/product-item/:prodId/:name" element={<ItemPage />} />
         </Routes>

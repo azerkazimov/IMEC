@@ -1,7 +1,6 @@
 .basket {
   position: relative;
 
-
   .basket-count {
     position: absolute;
     font-size: 10px;
@@ -14,9 +13,8 @@
     height: 15px;
     background-color: map-get($colors, primary);
     color: map-get($colors, natural);
-    border-radius: 50%
+    border-radius: 50%;
   }
-
 }
 
 .basket-tab {
@@ -49,7 +47,6 @@
       transition: all 0.2s ease;
       cursor: pointer;
 
-
       &:hover {
         transform: rotate(135deg);
       }
@@ -64,11 +61,10 @@
       border: 1px solid map-get($colors, secondary);
 
       &:hover {
-        border: 1px solid map-get($colors, primary)
+        border: 1px solid map-get($colors, primary);
       }
     }
   }
-
 }
 
 .orders-tab {
@@ -90,7 +86,6 @@
 
   &::-webkit-scrollbar-track {
     background: transparent;
-
   }
 
   &::-webkit-scrollbar-thumb {
