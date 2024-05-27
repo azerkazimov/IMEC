@@ -1,39 +1,21 @@
 import PropTypes from "prop-types";
-import pump from "../../assets/images/pump.png";
 import useOrderStore from "../../store/orderStore.jsx";
-import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-function ProductItem({ id, name, description, brand /*img*/ }) {
+function ProductItem({ id, name, category, description, brand, img }) {
   const state = useOrderStore((state) => state);
-  const [popUp, setPopUp] = useState(false);
-  const popUpRef = useRef(null);
 
-  const togglePopUp = () => {
-    setPopUp(!popUp);
-  };
+  const formattedName = name.replace(/\s+/g, "-");
+  const navigate = useNavigate();
 
-  const closePopUp = () => {
-    setPopUp(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (popUpRef.current && !popUpRef.current.contains(e.target)) {
-        closePopUp();
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [popUpRef]);
 
   const handleOrder = () => {
     const newOrder = {
       id: id,
       name: name,
       description: description,
+      img: img,
     };
     const itemExist = state.order.some((order) => order.id === id);
     if (itemExist) {
@@ -47,8 +29,16 @@ function ProductItem({ id, name, description, brand /*img*/ }) {
   return (
     <>
       <div className="col-12 col-md-4 p-1">
-        <div className="products-item" onClick={togglePopUp}>
-          <img src={pump} alt={name} />
+        <div
+          className="products-item"
+          onClick={() => {
+            navigate(
+              `/product-item/${id}/${encodeURIComponent(formattedName)}`,
+              { state: { category, description, brand, img } }
+            );
+          }}
+        >
+          <img src={`https://imec-db.vercel.app${img}`} alt={name} />
           <div className="products-description" id={id}>
             <h4>{name}</h4>
             <p>{description}</p>
@@ -60,28 +50,8 @@ function ProductItem({ id, name, description, brand /*img*/ }) {
                 handleOrder();
               }}
             >
-              Order
+              Add to Order
             </button>
-          </div>
-        </div>
-      </div>
-      <div className={`pop-up ${popUp ? "open-pop-up" : ""}`} ref={popUpRef}>
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <img src={pump} alt="" />
-            </div>
-            <div className="col-6">
-              <div className="pop-up-description" id={id}>
-                <h4>{name}</h4>
-                <p>{description}</p>
-                <p>{brand}</p>
-                <button className="btn" onClick={handleOrder}>
-                  Order
-                </button>
-                <span onClick={closePopUp}>+</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -92,6 +62,7 @@ function ProductItem({ id, name, description, brand /*img*/ }) {
 ProductItem.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
+  category: PropTypes.string,
   img: PropTypes.string,
   description: PropTypes.string,
   brand: PropTypes.string,
