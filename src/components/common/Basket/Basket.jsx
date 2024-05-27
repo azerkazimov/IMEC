@@ -16,6 +16,7 @@ function Basket() {
                 id={item.id}
                 name={item.name}
                 description={item.description}
+                img={item.img}
               />
             );
           })}

@@ -35,6 +35,7 @@ function BasketTab({ basketTab, closeBasket }) {
               name={item.name}
               description={item.description}
               img={item.img}
+              textColor={"text-natural"}
             />
           );
         })}

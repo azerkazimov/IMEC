@@ -4,7 +4,7 @@ import useOrderStore from "../../../store/orderStore.jsx";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
-function Order({ id, name, description, img }) {
+function Order({ id, name, description, img, textColor }) {
   const state = useOrderStore((state) => state);
   const removeFromOrder = useOrderStore((state) => state.removeFromOrder);
   const [popUp, setPopUp] = useState(false);
@@ -68,10 +68,10 @@ function Order({ id, name, description, img }) {
           onClick={togglePopUp}
           id={id}
         >
-          <div className="products-description text-align-start text-natural">
+          <div className={`products-description text-align-start ${textColor}`}>
             <h5>{name}</h5>
             <span>{description}</span>
-          </div>
+          </div>  
           <button className="btn-remove" onClick={removeOrder}>
             <MdDeleteForever />
           </button>
@@ -111,5 +111,6 @@ Order.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   img: PropTypes.string,
+  textColor: PropTypes.string,
 };
 export default Order;

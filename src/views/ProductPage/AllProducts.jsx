@@ -2,11 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PageHeader from "../../components/layout/PageHeader/PageHeader.jsx";
 import ProductItem from "./ProductItem.jsx";
+import { useNavigate } from "react-router-dom";
 
 function AllProducts() {
   const url = "https://imec-db.vercel.app/products";
   const [data, setData] = useState([]);
-  const [activeProd, setActiveProd] = useState("All product");
+  const [activeProd, setActiveProd] = useState("all");
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios
@@ -15,12 +17,13 @@ function AllProducts() {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleButtonClick = (name) => {
-    setActiveProd(name);
+  const handleButtonClick = (category) => {
+    navigate(`/products/category/${category}`)
+    setActiveProd(category);
   };
 
   const filteredProd =
-    activeProd === "All product"
+    activeProd === "all"
       ? data
       : data.filter((item) => item.category === activeProd);
 
@@ -30,10 +33,7 @@ function AllProducts() {
         <PageHeader name="All Products" />
         <div className="container pt-5">
           <div className="btn-store">
-            <button
-              className="btn"
-              onClick={() => handleButtonClick("All product")}
-            >
+            <button className="btn" onClick={() => handleButtonClick("all")}>
               All product
             </button>
             <button className="btn" onClick={() => handleButtonClick("pump")}>
