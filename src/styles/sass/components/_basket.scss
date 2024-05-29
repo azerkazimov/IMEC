@@ -1,4 +1,5 @@
 .basket {
+  @extend .flex-container;
   position: relative;
 
   .basket-count {
@@ -20,7 +21,7 @@
 .basket-tab {
   @extend .p-5;
   position: fixed;
-  width: 30%;
+  width: 50%;
   background-color: map-get($colors, inky);
   color: map-get($colors, natural);
   inset: 0 0 0 auto;
@@ -28,6 +29,7 @@
   right: -100%;
   transition: right 0.3s ease-in-out;
   grid-template-rows: 50px 1fr 50px;
+  z-index: 99;
 
   &.open {
     right: 0;

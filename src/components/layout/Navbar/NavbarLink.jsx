@@ -9,7 +9,7 @@ const NavbarLink = ({ item }) => {
 
   const location = useLocation();
   const isMainPage = location.pathname === "/";
-  const handleClickDropdown = (e, id) => {
+  const handleClickDropdown = () => {
     setDropDown(!dropdown);
   };
   const router = useNavigate();
@@ -24,22 +24,21 @@ const NavbarLink = ({ item }) => {
     <li
       className="nav-link-wrapper"
       key={item.id}
-      onClick={(e) => handleClickDropdown(e, item.id)}
-      // onMouseEnter={() => handleMouseEnter(item.id)}
-      // onMouseLeave={handleMouseLeave}
+      onClick={handleClickDropdown}
     >
       <div className="flex-container flex-align-center flex-justify-center">
         <RouterLink
           to={item.path}
-          onClick={(e) => handleClickLink(e, item)}
           className={isMainPage ? "text-natural" : "text-inky"}
-          // onClick={updateBurger}
         >
           {item.name}
         </RouterLink>
         {item.items && (
           <div className="ml-1 flex-container flex-justify-center flex-align-center">
-            <HiOutlineChevronDown color="#fff" />
+            <HiOutlineChevronDown
+              color="#fff"
+              onClick={(e) => handleClickLink(e, item)}
+            />
           </div>
         )}
       </div>

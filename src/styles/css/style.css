@@ -987,11 +987,11 @@ a {
   text-align: end !important;
 }
 
-.flex-justify-center, .page-header {
+.flex-justify-center, .page-header, .btn-store {
   justify-content: center !important;
 }
 
-.flex-align-center, .basket-tab .basket-title, .page-header, .btn-content {
+.flex-align-center, .basket-tab .basket-title, .page-header, .btn-store, .btn-content {
   align-items: center !important;
 }
 
@@ -1443,7 +1443,7 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .btn-store, .btn-content, .dropdown, .service-section .service-item, .header .main-content .main-counter {
   display: flex;
 }
 
@@ -2160,6 +2160,7 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 4px;
+  transition: right 0.3s ease-in-out;
 }
 .nav-links li {
   cursor: pointer;
@@ -2181,6 +2182,23 @@ a {
 .nav-links li:hover .dropdown-r {
   background: #01a0e2;
   clip-path: inset(0% 0% 0% 0%);
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 9;
+}
+.burger-menu span {
+  height: 2px;
+  width: 100%;
+  border-radius: 0.1rem;
+  background: #fff;
+  transition: ease-out 0.3s;
 }
 
 .active {
@@ -2352,7 +2370,7 @@ a {
 
 .basket-tab {
   position: fixed;
-  width: 30%;
+  width: 50%;
   background-color: #1d1d27;
   color: #fff;
   inset: 0 0 0 auto;
@@ -2360,6 +2378,7 @@ a {
   right: -100%;
   transition: right 0.3s ease-in-out;
   grid-template-rows: 50px 1fr 50px;
+  z-index: 99;
 }
 .basket-tab.open {
   right: 0;
@@ -2570,6 +2589,19 @@ a {
   }
   .d-none {
     display: none;
+  }
+  .click:nth-child(1) {
+    transform: rotate(-45deg) translate(-4px, 8px);
+  }
+  .click:nth-child(2) {
+    transform: scale(0.01);
+  }
+  .click:nth-child(3) {
+    transform: rotate(45deg) translate(-4px, -9px);
+  }
+  .burger-menu {
+    display: flex !important;
+    background-color: transparent;
   }
   .nav-links.open .basket {
     position: absolute;

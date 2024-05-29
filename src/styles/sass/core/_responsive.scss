@@ -67,32 +67,36 @@
   //     transition: 0.3s ease-out;
   //   }
 
-  //   .click:nth-child(1) {
-  //     transform: rotate(-45deg) translate(-2px, 11px);
-  //   }
-
-  //   .click:nth-child(2) {
-  //     transform: scale(0.01);
-  //   }
-
-  //   .click:nth-child(3) {
-  //     transform: rotate(45deg) translate(-7px, -15px);
-  //   }
-
-  //   .burger-menu {
-  //     display: flex !important;
-  //   }
   // }
+  .click:nth-child(1) {
+    transform: rotate(-45deg) translate(-4px, 8px);
+  }
+
+  .click:nth-child(2) {
+    transform: scale(0.01);
+  }
+
+  .click:nth-child(3) {
+    transform: rotate(45deg) translate(-4px, -9px);
+  }
+
+  .burger-menu {
+    display: flex !important;
+    background-color: transparent;
+  }
+
   .nav-links.open {
     .basket {
       position: absolute;
       right: 5%;
     }
+
     .nav-toggle {
       position: absolute;
       right: 10%;
     }
   }
+
   .nav-toggle {
     margin-left: auto;
     background: transparent;
@@ -100,19 +104,23 @@
     z-index: 5;
     display: block;
   }
+
   .nav {
     &-bar {
       .container {
         position: relative;
       }
     }
+
     &-links {
       position: fixed;
       top: 0;
       right: -100%;
+
       &.open {
         right: 0;
       }
+
       // padding-top: ;
       padding-top: 70px;
       background-color: map-get($colors, inky);
@@ -122,17 +130,22 @@
       display: flex;
       justify-content: flex-start !important;
       flex-direction: column;
+
       .nav-link-wrapper {
         flex-direction: column;
+
         &:hover {
           background-color: transparent;
         }
+
         height: fit-content;
+
         .dropdown-r {
           display: none;
           clip-path: none;
           position: static;
         }
+
         .dropdown-r.open {
           display: block;
           clip-path: none;
@@ -141,6 +154,7 @@
       }
     }
   }
+
   .dropdown {
     width: 100vw !important;
   }
@@ -159,6 +173,7 @@
     right: 0 !important;
     width: 80% !important;
   }
+
   .dropdown-r {
     position: static !important;
   }

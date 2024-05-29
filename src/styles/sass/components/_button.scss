@@ -64,6 +64,8 @@
 
 .btn-store {
     @extend .flex-container;
+    @extend .flex-align-center;
+    @extend .flex-justify-center;
     flex-wrap: wrap;
     gap: 10px;
 }

@@ -13,6 +13,7 @@
       width: 60%;
       max-width: 200px;
     }
+
     .basket {
       @extend .font-size-24;
       @extend .px-1;
@@ -20,11 +21,14 @@
       color: map-get($colors, natural);
     }
   }
+
   &-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4px;
+    transition: right 0.3s ease-in-out;
+
     li {
       cursor: pointer;
       transition: all 0.4s ease-in-out;
@@ -41,8 +45,10 @@
         background-color: map-get($colors, primary);
       }
     }
+
     li:hover {
       background-color: map-get($colors, primary);
+
       .dropdown-r {
         background: map-get($colors, primary);
         clip-path: inset(0% 0% 0% 0%);
@@ -88,26 +94,25 @@
 //       }
 //     }
 //   }
-
-//   .burger-menu {
-//     display: none;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     width: 35px;
-//     height: 30px;
-//     cursor: pointer;
-//     z-index: 9;
-
-//     span {
-//       height: 5px;
-//       width: 100%;
-//       border-radius: 0.1rem;
-//       background: map-get($colors, primary);
-//       transition: ease-out 0.3s;
-//     }
-//   }
-
 // }
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 9;
+
+  span {
+    height: 2px;
+    width: 100%;
+    border-radius: 0.1rem;
+    background: map-get($colors, natural);
+    transition: ease-out 0.3s;
+  }
+}
 
 .active {
   box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
@@ -117,12 +122,7 @@
 .other-page {
   background-color: map-get($colors, natural);
 }
+
 .nav-toggle {
   display: none;
 }
-// .nav-links li:hover .dropdown-r {
-//   background: map-get($colors, primary);
-// }
-// .nav-links li:hover .dropdown-r {
-//   display: flex !important;
-// }

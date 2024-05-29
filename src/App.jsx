@@ -3,7 +3,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Basket from "./components/common/Basket/Basket";
-import Navbar from "./components/layout/Navbar/Navbar";
+import NavbarNew from "./components/layout/Navbar/NavbarNew";
 import Catalogue from "./views/CataloguePage/Catalogue";
 import Company from "./views/CompanyPage/Company";
 import Main from "./views/HomePage/Main";
@@ -15,7 +15,6 @@ import ItemPage from "./views/ProductPage/ItemPage";
 import Products from "./views/ProductPage/Products";
 import SubCategories from "./views/ProductPage/SubCategories";
 import Service from "./views/ServicePage/Service";
-import NavbarNew from "./components/layout/Navbar/NavbarNew";
 
 function App() {
   return (
