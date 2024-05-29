@@ -1,6 +1,6 @@
 .basket {
+  @extend .flex-container;
   position: relative;
-
 
   .basket-count {
     position: absolute;
@@ -14,15 +14,14 @@
     height: 15px;
     background-color: map-get($colors, primary);
     color: map-get($colors, natural);
-    border-radius: 50%
+    border-radius: 50%;
   }
-
 }
 
 .basket-tab {
   @extend .p-5;
   position: fixed;
-  width: 30%;
+  width: 50%;
   background-color: map-get($colors, inky);
   color: map-get($colors, natural);
   inset: 0 0 0 auto;
@@ -30,6 +29,7 @@
   right: -100%;
   transition: right 0.3s ease-in-out;
   grid-template-rows: 50px 1fr 50px;
+  z-index: 99;
 
   &.open {
     right: 0;
@@ -49,7 +49,6 @@
       transition: all 0.2s ease;
       cursor: pointer;
 
-
       &:hover {
         transform: rotate(135deg);
       }
@@ -64,11 +63,10 @@
       border: 1px solid map-get($colors, secondary);
 
       &:hover {
-        border: 1px solid map-get($colors, primary)
+        border: 1px solid map-get($colors, primary);
       }
     }
   }
-
 }
 
 .orders-tab {
@@ -90,7 +88,6 @@
 
   &::-webkit-scrollbar-track {
     background: transparent;
-
   }
 
   &::-webkit-scrollbar-thumb {

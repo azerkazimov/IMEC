@@ -1,5 +1,5 @@
-import {Header, Service, About} from "../../components/views/HomePage/index.jsx";
 import Slider from "../../components/sliders/Slider/Slider.jsx";
+import { About, Header, Service } from "../../components/views/HomePage/index.jsx";
 function Main() {
   return (
     <>

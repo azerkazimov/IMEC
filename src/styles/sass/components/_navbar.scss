@@ -1,4 +1,5 @@
-.nav-bar {
+.nav {
+  &-bar {
     @extend .py-4;
 
     position: fixed;
@@ -6,72 +7,122 @@
     top: 0;
     width: 100%;
     z-index: 999;
-    transition: 0.6s ease-in-out;
-
-
+    transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
     .logo img {
-        width: 60%;
-        max-width: 200px;
-    }
-
-    ul {
-        display: flex;
-        gap: 0px 30px;
-
-        li {
-            a {
-                @extend .px-4;
-                @extend .flex-container;
-
-                height: 40px;
-                line-height: 43px;
-                font-size: 0.9rem;
-                transition: all 0.2s ease;
-                color: map-get($colors, natural);
-                text-transform: uppercase;
-
-
-                &:hover {
-                    background-color: map-get($colors, primary);
-                }
-            }
-        }
-    }
-
-
-
-    .burger-menu {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 35px;
-        height: 30px;
-        cursor: pointer;
-        z-index: 9;
-
-        span {
-            height: 5px;
-            width: 100%;
-            border-radius: 0.1rem;
-            background: map-get($colors, primary);
-            transition: ease-out 0.3s;
-        }
+      width: 60%;
+      max-width: 200px;
     }
 
     .basket {
-        @extend .font-size-24;
-        @extend .px-1;
-        background-color: transparent;
-        color: map-get($colors, natural);
+      @extend .font-size-24;
+      @extend .px-1;
+      background-color: transparent;
+      color: map-get($colors, natural);
     }
+  }
+
+  &-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    transition: right 0.3s ease-in-out;
+
+    li {
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      @extend .px-4;
+      height: 40px;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+      color: map-get($colors, natural);
+
+      &:hover {
+        background-color: map-get($colors, primary);
+      }
+    }
+
+    li:hover {
+      background-color: map-get($colors, primary);
+
+      .dropdown-r {
+        background: map-get($colors, primary);
+        clip-path: inset(0% 0% 0% 0%);
+      }
+    }
+  }
+}
+
+// .nav-bar {
+//   @extend .py-4;
+
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   z-index: 999;
+//   transition: 0.6s ease-in-out;
+
+//   .logo img {
+//     width: 60%;
+//     max-width: 200px;
+//   }
+
+//   ul {
+//     display: flex;
+//     gap: 0px 30px;
+
+//     li {
+//       a {
+//         @extend .px-4;
+//         @extend .flex-container;
+
+//         height: 40px;
+//         line-height: 43px;
+//         font-size: 0.9rem;
+//         transition: all 0.2s ease;
+//         color: map-get($colors, natural);
+//         text-transform: uppercase;
+
+//         &:hover {
+//           background-color: map-get($colors, primary);
+//         }
+//       }
+//     }
+//   }
+// }
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 9;
+
+  span {
+    height: 2px;
+    width: 100%;
+    border-radius: 0.1rem;
+    background: map-get($colors, natural);
+    transition: ease-out 0.3s;
+  }
 }
 
 .active {
-    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
-    background-color: map-get($colors, inky);
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
+  background-color: map-get($colors, inky);
 }
 
 .other-page {
-    background-color: map-get($colors, natural);
+  background-color: map-get($colors, natural);
+}
+
+.nav-toggle {
+  display: none;
 }

@@ -3,7 +3,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Basket from "./components/common/Basket/Basket";
-import Navbar from "./components/layout/Navbar/Navbar";
+import NavbarNew from "./components/layout/Navbar/NavbarNew";
 import Catalogue from "./views/CataloguePage/Catalogue";
 import Company from "./views/CompanyPage/Company";
 import Main from "./views/HomePage/Main";
@@ -20,7 +20,8 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
+        <NavbarNew />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/industry" element={<Industry />} />
@@ -31,7 +32,10 @@ function App() {
           <Route path="/subcategories/:catId" element={<SubCategories />} />
           <Route path="/products/:subCatId" element={<Products />} />
           <Route path="/products" element={<AllProducts />} />
-          <Route path="/products/category/:category" element={<FilteredProducts />} />
+          <Route
+            path="/products/category/:category"
+            element={<FilteredProducts />}
+          />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/product-item/:prodId/:name" element={<ItemPage />} />
         </Routes>
