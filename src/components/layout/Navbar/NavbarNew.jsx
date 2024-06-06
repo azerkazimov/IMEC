@@ -86,7 +86,7 @@ const NavbarNew = () => {
             ref={navRef}
           >
             {data.map((item) => (
-              <NavbarLink key={item.id} item={item} />
+              <NavbarLink key={item.id} item={item} navOpen={isOpenNav}/>
             ))}
           </menu>
           <div className="col-2 col-md-3 btn-store px-5">

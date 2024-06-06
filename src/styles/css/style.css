@@ -125,7 +125,7 @@ a {
   padding-bottom: 10px !important;
 }
 
-.p-3, .product-categories .product-item .product-category, .dropdown .dropdown-item {
+.p-3, .product-categories .product-item .product-category {
   padding: 15px !important;
 }
 
@@ -155,7 +155,7 @@ a {
   padding-bottom: 15px !important;
 }
 
-.p-4 {
+.p-4, .dropdown-item {
   padding: 20px !important;
 }
 
@@ -175,7 +175,7 @@ a {
   padding-left: 20px !important;
 }
 
-.px-4, .nav-links li {
+.px-4, .nav-links .nav-link-wrapper {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
@@ -185,7 +185,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .basket-tab, .dropdown-item, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .basket-tab, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -2162,7 +2162,7 @@ a {
   gap: 4px;
   transition: right 0.3s ease-in-out;
 }
-.nav-links li {
+.nav-links .nav-link-wrapper {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   height: 40px;
@@ -2173,13 +2173,13 @@ a {
   transition: all 0.2s ease;
   color: #fff;
 }
-.nav-links li:hover {
+.nav-links .nav-link-wrapper:hover {
   background-color: #01a0e2;
 }
-.nav-links li:hover {
+.nav-links .nav-link-wrapper:hover {
   background-color: #01a0e2;
 }
-.nav-links li:hover .dropdown-r {
+.nav-links .nav-link-wrapper:hover .dropdown-r {
   background: #01a0e2;
   clip-path: inset(0% 0% 0% 0%);
 }
@@ -2219,14 +2219,6 @@ a {
   width: 30vw;
   gap: 0;
 }
-.dropdown .dropdown-item {
-  background-color: #01a0e2;
-  color: #fff;
-  transition: all 0.2s ease;
-}
-.dropdown .dropdown-item:hover {
-  background-color: #143256;
-}
 .dropdown.clicked {
   display: none;
 }
@@ -2238,7 +2230,7 @@ a {
   clip-path: inset(0% 0% 100% 0%);
   width: 100%;
   display: flex;
-  min-width: 200px;
+  min-width: 250px;
   flex-direction: column;
   transition: all 0.1s cubic-bezier(0.51, 0.16, 0.87, 0.54);
   background-color: #01a0e2;
@@ -2246,9 +2238,11 @@ a {
 
 .dropdown-item {
   color: #fff;
+  background-color: #01a0e2;
   transition: all 0.4s ease;
   justify-content: flex-start !important;
   text-align: left;
+  transition: all 0.2s ease;
 }
 .dropdown-item:hover {
   background-color: #143256;

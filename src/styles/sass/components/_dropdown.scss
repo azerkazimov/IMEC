@@ -5,20 +5,11 @@
   width: 30vw;
   gap: 0;
 
-  .dropdown-item {
-    @extend .p-3;
-    background-color: map-get($colors, primary);
-    color: map-get($colors, natural);
-    transition: all 0.2s ease;
-    &:hover {
-      background-color: map-get($colors, secondary);
-    }
-  }
-
   &.clicked {
     display: none;
   }
 }
+
 .dropdown-r {
   position: absolute;
   top: 100%;
@@ -26,17 +17,21 @@
   clip-path: inset(0% 0% 100% 0%);
   width: 100%;
   display: flex;
-  min-width: 200px;
+  min-width: 250px;
   flex-direction: column;
   transition: all 0.1s cubic-bezier(0.51, 0.16, 0.87, 0.54);
   background-color: map-get($colors, primary);
 }
+
 .dropdown-item {
-  @extend .p-5;
   color: map-get($colors, natural);
+  background-color: map-get($colors, primary);
   transition: all 0.4s ease;
   justify-content: flex-start !important;
   text-align: left;
+  transition: all 0.2s ease;
+  @extend .p-4;
+
   &:hover {
     background-color: map-get($colors, secondary);
   }

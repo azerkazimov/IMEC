@@ -4,7 +4,7 @@ import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "./Dropdown.jsx";
 import { useState } from "react";
 
-const NavbarLink = ({ item }) => {
+const NavbarLink = ({ item, navOpen }) => {
   const [dropdown, setDropDown] = useState(null);
 
   const location = useLocation();
@@ -20,6 +20,13 @@ const NavbarLink = ({ item }) => {
       router(e.target.href);
     }
   };
+
+  const linkClassName = navOpen
+    ? "text-natural"
+    : isMainPage
+    ? "text-natural"
+    : "text-inky";
+
   return (
     <li
       className="nav-link-wrapper"
@@ -29,7 +36,7 @@ const NavbarLink = ({ item }) => {
       <div className="flex-container flex-align-center flex-justify-center">
         <RouterLink
           to={item.path}
-          className={isMainPage ? "text-natural" : "text-inky"}
+          className={linkClassName}
         >
           {item.name}
         </RouterLink>
