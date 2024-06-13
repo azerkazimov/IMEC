@@ -2069,6 +2069,7 @@ a {
 .footer .map-container iframe {
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 .footer .footer-blog {
   color: #fff;
