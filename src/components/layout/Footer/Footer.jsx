@@ -10,8 +10,6 @@ function Footer() {
           <div className="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.7346014103387!2d49.83649331523463!3d40.37841947936862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d8336c3e4e3%3A0xd7e5d585ed54c4b6!2zMjggTWF5IFN0LCBCYWt1LCDQnNCw0LvQvtCy0L7QvQ!5e0!3m2!1sen!2saz!4v1628560524411!5m2!1sen!2saz"
-              width="100%"
-              style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               title="Google Map"
