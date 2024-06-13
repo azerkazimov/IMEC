@@ -1,1 +1,45 @@
-.footer {}
+.footer {
+
+    .footer-blog {
+        color: map-get($colors, natural);
+
+        p,
+        li {
+            @extend .my-1;
+            @extend .flex-container;
+            @extend .flex-align-center;
+            gap: 5px;
+            color: map-get($colors, silvery);
+            font-weight: lighter;
+        }
+
+        svg {
+            @extend .font-size-12;
+        }
+
+        a {
+            transition: all 0.3s ease;
+
+            &:hover {
+                font-weight: 500;
+                margin-left: 10px;
+            }
+        }
+
+        h4 {
+            @extend .my-3;
+            text-transform: uppercase;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background-color: map-get($colors, primary);
+            }
+        }
+    }
+}

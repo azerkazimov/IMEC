@@ -1,0 +1,76 @@
+.advantage {
+    @extend .p-5;
+    
+    &-item {
+        @extend .flex-container;
+        @extend .flex-column;
+        @extend .flex-justify-center;
+        @extend .flex-align-center;
+
+        gap: 20px;
+
+        &-icon {
+            @extend .font-size-70;
+            @extend .flex-container;
+            @extend .flex-justify-center;
+            @extend .flex-align-center;
+            color: map-get($colors, silvery);
+            background-color: map-get($colors, light);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            transition: all 0.3s ease;
+
+            svg {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+
+
+        }
+
+        p {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -8px;
+                left: 0;
+                width: 0px;
+                height: 3px;
+                background-color: map-get($colors, primary);
+                transition: all 0.3s ease;
+            }
+        }
+
+        &:hover {
+            svg {
+                animation: slide-in-from-left 0.3s forwards;
+            }
+
+            .advantage-item-icon {
+                background-color: map-get($colors, primary);
+                color: map-get($colors, natural );
+            }
+
+            p{
+                &::after{
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

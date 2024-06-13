@@ -89,7 +89,7 @@ const NavbarNew = () => {
               <NavbarLink key={item.id} item={item} navOpen={isOpenNav}/>
             ))}
           </menu>
-          <div className="col-2 col-md-3 btn-store px-5">
+          <div className="col-2 col-md-3 btn-store">
             <button className="btn d-none">
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>

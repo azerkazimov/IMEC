@@ -125,7 +125,7 @@ a {
   padding-bottom: 10px !important;
 }
 
-.p-3, .product-categories .product-item .product-category {
+.p-3, .product-categories .product-item .product-category, .form-group .form-control {
   padding: 15px !important;
 }
 
@@ -185,7 +185,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .basket-tab, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .basket-tab, .advantage, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -193,7 +193,7 @@ a {
   padding-top: 25px !important;
 }
 
-.pb-5 {
+.pb-5, .service-section {
   padding-bottom: 25px !important;
 }
 
@@ -335,7 +335,7 @@ a {
   padding-bottom: 45px !important;
 }
 
-.p-10 {
+.p-10, .partnership .partner-item {
   padding: 50px !important;
 }
 
@@ -420,7 +420,8 @@ a {
   margin-right: 5px !important;
 }
 
-.my-1 {
+.my-1, .footer .footer-blog p,
+.footer .footer-blog li {
   margin-top: 5px !important;
   margin-bottom: 5px !important;
 }
@@ -450,7 +451,7 @@ a {
   margin-right: 10px !important;
 }
 
-.my-2 {
+.my-2, .partnership .partner-item .partner-item-content h4 {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
@@ -480,7 +481,7 @@ a {
   margin-right: 15px !important;
 }
 
-.my-3, .orders-tab {
+.my-3, .orders-tab, .footer .footer-blog h4 {
   margin-top: 15px !important;
   margin-bottom: 15px !important;
 }
@@ -987,11 +988,12 @@ a {
   text-align: end !important;
 }
 
-.flex-justify-center, .page-header, .btn-store {
+.flex-justify-center, .page-header, .btn-store, .partnership .partner-item, .advantage-item-icon, .advantage-item {
   justify-content: center !important;
 }
 
-.flex-align-center, .basket-tab .basket-title, .page-header, .btn-store, .btn-content {
+.flex-align-center, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.footer .footer-blog li {
   align-items: center !important;
 }
 
@@ -1443,11 +1445,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .btn-store, .btn-content, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-container, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .btn-store, .btn-content, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .dropdown, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .product-element .element-description, .products-item .products-description, .product-categories .product-item .product-category, .product-categories, .pop-up .pop-up-description, .orders-tab, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1591,7 +1594,7 @@ a {
   font-size: 11px !important;
 }
 
-.font-size-12 {
+.font-size-12, .footer .footer-blog svg {
   font-size: 12px !important;
 }
 
@@ -1687,7 +1690,7 @@ a {
   font-size: 35px !important;
 }
 
-.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span, .service-section .service-item h4 {
+.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span, .partnership .partner-item .partner-item-content h4, .service-section .service-item h4 {
   font-size: 36px !important;
 }
 
@@ -1823,7 +1826,7 @@ a {
   font-size: 69px !important;
 }
 
-.font-size-70 {
+.font-size-70, .advantage-item-icon {
   font-size: 70px !important;
 }
 
@@ -2060,6 +2063,36 @@ a {
   color: #01a0e2;
 }
 
+.footer .footer-blog {
+  color: #fff;
+}
+.footer .footer-blog p,
+.footer .footer-blog li {
+  gap: 5px;
+  color: #afb0b9;
+  font-weight: lighter;
+}
+.footer .footer-blog a {
+  transition: all 0.3s ease;
+}
+.footer .footer-blog a:hover {
+  font-weight: 500;
+  margin-left: 10px;
+}
+.footer .footer-blog h4 {
+  text-transform: uppercase;
+  position: relative;
+}
+.footer .footer-blog h4::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #01a0e2;
+}
+
 .about {
   color: #1d1d27;
 }
@@ -2137,6 +2170,64 @@ a {
   color: #fff;
   transform: scale(0.1);
   visibility: hidden;
+}
+
+.advantage-item {
+  gap: 20px;
+}
+.advantage-item-icon {
+  color: #afb0b9;
+  background-color: #f4f2ff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  transition: all 0.3s ease;
+}
+.advantage-item-icon svg {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.advantage-item p {
+  position: relative;
+}
+.advantage-item p::after {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  left: 0;
+  width: 0px;
+  height: 3px;
+  background-color: #01a0e2;
+  transition: all 0.3s ease;
+}
+.advantage-item:hover svg {
+  animation: slide-in-from-left 0.3s forwards;
+}
+.advantage-item:hover .advantage-item-icon {
+  background-color: #01a0e2;
+  color: #fff;
+}
+.advantage-item:hover p::after {
+  width: 80px;
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.partnership {
+  user-select: none;
+}
+.partnership .partner-item .partner-item-content {
+  text-align: center;
+}
+.partnership .partner-item .partner-item-content h4 {
+  text-transform: uppercase;
 }
 
 .nav-bar {
@@ -2295,6 +2386,10 @@ a {
 .btn-store {
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.form-group .form-control {
+  border: none;
 }
 
 .slider {
