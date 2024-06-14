@@ -34,10 +34,7 @@ const NavbarLink = ({ item, navOpen }) => {
       onClick={handleClickDropdown}
     >
       <div className="flex-container flex-align-center flex-justify-center">
-        <RouterLink
-          to={item.path}
-          className={linkClassName}
-        >
+        <RouterLink to={item.path} className={linkClassName}>
           {item.name}
         </RouterLink>
         {item.items && (
