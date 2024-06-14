@@ -1,10 +1,31 @@
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const handleWhatsappClick = () => {
+    const phoneNumber = "+994777224001";
+    const message = "Welcome to IMEC! I need more information";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   return (
-    <section className="footer mt-5">
+    <section className="footer mt-10">
+      <div className="container footer-contact p-10">
+        <div className="row">
+          <div className="col-6 flex-container flex-align-center">
+            <FaWhatsapp />
+            <h2 className="ml-2">Request a free quote</h2>
+          </div>
+          <div className="col-6 flex-container flex-align-center flex-justify-end">
+            <button className="btn wp" onClick={handleWhatsappClick}>
+              What&apos;s App
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="row">
         <div className="col-12 col-md-4">
           <div className="map-container">

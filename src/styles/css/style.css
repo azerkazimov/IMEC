@@ -1730,7 +1730,7 @@ a {
   font-size: 45px !important;
 }
 
-.font-size-46, .section-header h2, .about .about-image .about-counter span {
+.font-size-46, .section-header h2, .about .about-image .about-counter span, .footer .footer-contact svg {
   font-size: 46px !important;
 }
 
@@ -2063,6 +2063,13 @@ a {
   color: #01a0e2;
 }
 
+.footer .footer-contact {
+  background-color: #01a0e2;
+  color: #fff;
+}
+.footer .footer-contact svg {
+  color: #25D366;
+}
 .footer .map-container {
   height: 100%;
 }
@@ -2394,6 +2401,14 @@ a {
 .btn-store {
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.wp {
+  background-color: #25D366 !important;
+  transition: all 0.2s ease;
+}
+.wp:hover {
+  background-color: #128C7E !important;
 }
 
 .form-group .form-control {

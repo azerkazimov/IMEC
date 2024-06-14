@@ -1,4 +1,13 @@
 .footer {
+    .footer-contact{
+        background-color: map-get($colors, primary );
+        color: map-get($colors, natural );
+
+        svg{
+            @extend .font-size-46;
+            color: #25D366;
+        }
+    }
     .map-container{
         height: 100%;
 
