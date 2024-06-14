@@ -1,0 +1,21 @@
+.partnership {
+user-select: none;
+    .partner-item {
+        @extend .flex-container;
+        @extend .flex-column;
+        @extend .flex-justify-center;
+        @extend .flex-align-center;
+        @extend .p-10;
+        .partner-item-content{
+            text-align: center;
+
+            h4{
+                @extend .font-size-36;
+                @extend .my-2;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    
+}

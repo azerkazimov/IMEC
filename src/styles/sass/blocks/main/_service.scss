@@ -1,4 +1,5 @@
 .service-section {
+    @extend .pb-5; 
     background-image: url('/public/industry-bg.png');
     background-attachment: fixed;
     background-position: center;

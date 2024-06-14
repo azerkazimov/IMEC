@@ -15,12 +15,12 @@ import ItemPage from "./views/ProductPage/ItemPage";
 import Products from "./views/ProductPage/Products";
 import SubCategories from "./views/ProductPage/SubCategories";
 import Service from "./views/ServicePage/Service";
+import Footer from "./components/layout/Footer/Footer";
 
 function App() {
   return (
     <>
       <div className="App">
-        {/* <Navbar /> */}
         <NavbarNew />
         <Routes>
           <Route path="/" element={<Main />} />
@@ -40,6 +40,7 @@ function App() {
           <Route path="/product-item/:prodId/:name" element={<ItemPage />} />
         </Routes>
         <Toaster position="bottom-left" />
+        <Footer/>
       </div>
     </>
   );

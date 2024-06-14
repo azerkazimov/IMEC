@@ -58,7 +58,7 @@
 
     &:hover {
         background-color: map-get($colors, danger);
-        border: 2px solid map-get($colors, natural )
+        border: 2px solid map-get($colors, natural)
     }
 }
 
@@ -68,4 +68,13 @@
     @extend .flex-justify-center;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.wp {
+    background-color: #25D366 !important;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #128C7E !important;
+    }
 }

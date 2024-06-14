@@ -72,6 +72,12 @@ const NavbarNew = () => {
       : "nav-bar active other-page"
     : "nav-bar";
 
+  const burgerMenuColor = isOpenNav
+    ? "bg-natural"
+    : isMainPage
+    ? "bg-natural"
+    : "bg-inky";
+
   return (
     <div className={navCondition}>
       <div className="container">
@@ -86,10 +92,10 @@ const NavbarNew = () => {
             ref={navRef}
           >
             {data.map((item) => (
-              <NavbarLink key={item.id} item={item} />
+              <NavbarLink key={item.id} item={item} navOpen={isOpenNav} />
             ))}
           </menu>
-          <div className="col-2 col-md-3 btn-store px-5">
+          <div className="col-2 col-md-3 btn-store">
             <button className="btn d-none">
               <RouterLink to="/">Get a Quote</RouterLink>
             </button>
@@ -109,9 +115,21 @@ const NavbarNew = () => {
               onClick={toggleNav}
               ref={burgerButtonRef}
             >
-              <span className={isOpenNav ? "click" : "unclick"}></span>
-              <span className={isOpenNav ? "click" : "unclick"}></span>
-              <span className={isOpenNav ? "click" : "unclick"}></span>
+              <span
+                className={`${
+                  isOpenNav ? "click" : "unclick"
+                } ${burgerMenuColor}`}
+              ></span>
+              <span
+                className={`${
+                  isOpenNav ? "click" : "unclick"
+                } ${burgerMenuColor}`}
+              ></span>
+              <span
+                className={`${
+                  isOpenNav ? "click" : "unclick"
+                } ${burgerMenuColor}`}
+              ></span>
             </button>
 
             <BasketTab basketTab={basketTab} closeBasket={closeBasket} />
