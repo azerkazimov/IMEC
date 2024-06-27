@@ -5,11 +5,13 @@ function Dropdown({ items, isOpen }) {
   return (
     <>
       <ul className={isOpen ? "dropdown-r open" : "dropdown-r"}>
-        {items.map((item, index) => (
-          <li key={index} className="dropdown-item">
-            <RouterLink to={item.path}>{item.name}</RouterLink>
-          </li>
-        ))}
+        <div className="row dropdown-c">
+          {items.map((item, index) => (
+            <li key={index} className="dropdown-item col-12 col-lg-4">
+              <RouterLink to={item.path}>{item.name}</RouterLink>
+            </li>
+          ))}
+        </div>
       </ul>
     </>
   );

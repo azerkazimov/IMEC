@@ -11,25 +11,25 @@
 }
 
 .dropdown-r {
+  @extend .p-1;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 5%;
   clip-path: inset(0% 0% 100% 0%);
-  width: 100%;
+  width: 90%;
   display: flex;
-  min-width: 250px;
   flex-direction: column;
   transition: all 0.1s cubic-bezier(0.51, 0.16, 0.87, 0.54);
-  background-color: map-get($colors, primary);
 }
 
 .dropdown-item {
   color: map-get($colors, natural);
-  background-color: map-get($colors, primary);
+  background-color: map-get($colors, danger);
   transition: all 0.4s ease;
   justify-content: flex-start !important;
   text-align: left;
   transition: all 0.2s ease;
+  border: 1px solid map-get($colors, natural);
   @extend .p-4;
 
   &:hover {

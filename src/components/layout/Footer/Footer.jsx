@@ -9,8 +9,7 @@ function Footer() {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(url, "_blank");
-  };
+    window.open(url, "_blank");  };
   return (
     <section className="footer mt-10">
       <div className="container footer-contact p-10">

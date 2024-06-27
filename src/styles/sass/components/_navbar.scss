@@ -30,12 +30,11 @@
     transition: right 0.3s ease-in-out;
 
     .nav-link-wrapper {
+      @extend .px-4;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
-      @extend .px-4;
       height: 40px;
       display: flex;
-      position: relative;
       justify-content: center;
       align-items: center;
       transition: all 0.2s ease;
@@ -49,8 +48,12 @@
     .nav-link-wrapper:hover {
       background-color: map-get($colors, primary);
 
+      a {
+        color: map-get($colors, natural) !important;
+      }
+
       .dropdown-r {
-        background: map-get($colors, primary);
+        background: map-get($colors, natural);
         clip-path: inset(0% 0% 0% 0%);
       }
     }
