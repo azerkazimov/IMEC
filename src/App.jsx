@@ -3,7 +3,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Basket from "./components/common/Basket/Basket";
-import NavbarNew from "./components/layout/Navbar/NavbarNew";
+import Navbar from "./components/layout/Navbar/Navbar";
 import Catalogue from "./views/CataloguePage/Catalogue";
 import Company from "./views/CompanyPage/Company";
 import Main from "./views/HomePage/Main";
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <NavbarNew />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/industry" element={<Industry />} />
@@ -40,7 +40,7 @@ function App() {
           <Route path="/product-item/:prodId/:name" element={<ItemPage />} />
         </Routes>
         <Toaster position="bottom-left" />
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
