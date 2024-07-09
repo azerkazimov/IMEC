@@ -5,7 +5,7 @@ import ProductItem from "./ProductItem.jsx";
 import { useNavigate } from "react-router-dom";
 
 function AllProducts() {
-  const url = "https://imec-db.vercel.app/products";
+  const url = "https://imec-db.vercel.app/products"; 
   const [data, setData] = useState([]);
   const [activeProd, setActiveProd] = useState("all");
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ function AllProducts() {
   return (
     <>
       <div className="products-page">
-        <PageHeader name="All Products" />
+        <PageHeader name="Products" />
         <div className="container pt-5">
           <div className="btn-store">
             <button className="btn" onClick={() => handleButtonClick("all")}>

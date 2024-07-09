@@ -11,9 +11,9 @@
 }
 
 .dropdown-r {
-  @extend .p-1;
+  @extend .p-4;
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 5%;
   clip-path: inset(0% 0% 100% 0%);
   width: 90%;
@@ -23,16 +23,62 @@
 }
 
 .dropdown-item {
-  color: map-get($colors, natural);
-  background-color: map-get($colors, danger);
+  @extend .p-2;
+  @extend .flex-container;
+  @extend .flex-column;
+  @extend .flex-justify-start;
+  gap: 14px;
   transition: all 0.4s ease;
-  justify-content: flex-start !important;
   text-align: left;
   transition: all 0.2s ease;
   border: 1px solid map-get($colors, natural);
-  @extend .p-4;
 
-  &:hover {
-    background-color: map-get($colors, secondary);
+  .sub-category-header {
+    @extend .font-weight-700;
+    @extend .font-size-18;
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: map-get($colors, primary);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 30px;
+      background-color: map-get($colors, primary);
+      bottom: -5px;
+      left: 0;
+    }
+  }
+
+  ul {
+    @extend .flex-container;
+    @extend .flex-column;
+    @extend .font-size-14;
+
+    gap: 8px;
+
+    li {
+      @extend .flex-container;
+      @extend .flex-align-center;
+
+      a {
+        @extend .px-1;
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        a {
+          transform: translateX(10px);
+        }
+      }
+    }
+
+    svg {
+      color: map-get($colors, inky);
+    }
   }
 }

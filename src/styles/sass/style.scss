@@ -8,6 +8,9 @@
 @import "core/colors";
 @import "core/typography";
 
+// Loader
+@import "components/loader";
+
 // import blocks
 @import "blocks/header";
 @import "blocks/footer";
@@ -27,8 +30,16 @@
 @import "components/basket";
 @import "components/pop-up";
 @import "components/image-zoom";
+@import "components/category";
+@import "components/card";
+
+
 
 // import pages
 @import "pages/product/products";
 @import "pages/catalogue/catalogue";
+@import "pages/engineering/engineering";
+@import "pages/maintenance/maintenance";
+@import "pages/partnership/partnership";
+@import "pages/industry/industry";
 @import "core/responsive";

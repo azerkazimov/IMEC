@@ -29,7 +29,7 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("https://imec-db.vercel.app/nav-bar")
+      .get("https://imec-db.vercel.app/navBar")
       .then((res) => setData(res.data))
       .catch((error) => console.log(error));
   }, []);
@@ -88,11 +88,11 @@ const Navbar = () => {
             </RouterLink>
           </div>
           <menu
-            className={`${isOpenNav ? "open text-natural" : "menu"} nav-links`}
+            className={`${isOpenNav ? "open text-natural" : "menu"} col-7 nav-links`}
             ref={navRef}
           >
-            {data.map((item) => (
-              <NavbarLink key={item.id} item={item} navOpen={isOpenNav} />
+            {data.map((category) => (
+              <NavbarLink key={category.id} category={category} navOpen={isOpenNav} />
             ))}
           </menu>
           <div className="col-2 col-md-3 btn-store">

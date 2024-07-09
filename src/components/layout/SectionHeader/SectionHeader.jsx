@@ -3,12 +3,14 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link as RouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function SectionHeader({ span, head, content, btn, textPosition }) {
+function SectionHeader({ span, head, content, btn, textPosition, textColor }) {
   return (
     <div className="container">
       <div className={`section-header text-align-${textPosition}`}>
-        <span className="head">{span}</span>
-        <h2>{head}</h2>
+        <span className="head" style={{ color: textColor }}>
+          {span}
+        </span>
+        <h2 style={{ color: textColor }}>{head}</h2>
         <p>{content}</p>
         {btn && (
           <RouterLink to="/" className="btn-content">
@@ -24,11 +26,12 @@ function SectionHeader({ span, head, content, btn, textPosition }) {
 }
 
 SectionHeader.propTypes = {
-  span: PropTypes.string.isRequired,
-  head: PropTypes.string.isRequired,
+  span: PropTypes.string,
+  head: PropTypes.string,
   content: PropTypes.string,
   btn: PropTypes.string,
   textPosition: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 export default SectionHeader;

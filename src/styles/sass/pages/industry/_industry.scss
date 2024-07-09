@@ -1,0 +1,14 @@
+.industry {
+    .industry-overlay {
+        @extend .flex-container;
+        @extend .flex-align-start;
+        @extend .flex-justify-end;
+        background: url("/images/industry/industry-bg.jpg") center center / cover no-repeat fixed;
+        height: 100vh;
+        position: relative;
+
+        .industry-header{
+            width: 100%;
+        }
+    }
+}

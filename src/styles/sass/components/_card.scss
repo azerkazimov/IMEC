@@ -1,0 +1,32 @@
+.card {
+    transition: all 0.2s ease;
+
+    img {
+        max-height: 350px;
+        max-width: 500px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    h2 {
+        @extend .font-size-34;
+        @extend .font-weight-700;
+    }
+
+    p {
+        color: map-get($colors, overlay);
+    }
+
+    .card-content {
+        @extend .flex-container;
+        @extend .flex-column;
+        @extend .flex-justify-space-between;
+    }
+
+    &:hover {
+        background-color: map-get($colors, light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+}

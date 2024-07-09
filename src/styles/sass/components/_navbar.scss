@@ -26,19 +26,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 4px;
+    font-size: 12px;
+    gap: 8px;
     transition: right 0.3s ease-in-out;
 
     .nav-link-wrapper {
-      @extend .px-4;
+      @extend .px-2;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
-      height: 40px;
+      height: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
       transition: all 0.2s ease;
-      color: map-get($colors, natural);
+      color: map-get($colors, inky);
 
       &:hover {
         background-color: map-get($colors, primary);
@@ -47,10 +48,6 @@
 
     .nav-link-wrapper:hover {
       background-color: map-get($colors, primary);
-
-      a {
-        color: map-get($colors, natural) !important;
-      }
 
       .dropdown-r {
         background: map-get($colors, natural);
@@ -90,3 +87,4 @@
 .nav-toggle {
   display: none;
 }
+

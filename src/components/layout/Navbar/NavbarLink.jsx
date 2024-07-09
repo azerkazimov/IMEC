@@ -4,20 +4,20 @@ import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "./Dropdown.jsx";
 import { useState } from "react";
 
-const NavbarLink = ({ item, navOpen }) => {
-  const [dropdown, setDropDown] = useState(null);
+const NavbarLink = ({ category, navOpen }) => {
+  const [dropdown, setDropDown] = useState(false);
 
   const location = useLocation();
   const isMainPage = location.pathname === "/";
   const handleClickDropdown = () => {
     setDropDown(!dropdown);
   };
-  const router = useNavigate();
+  const navigate = useNavigate();
   const handleClickLink = (e, { items }) => {
     if (items) {
       e.preventDefault();
     } else {
-      router(e.target.href);
+      navigate(e.target.href);
     }
   };
 
@@ -30,23 +30,23 @@ const NavbarLink = ({ item, navOpen }) => {
   return (
     <li
       className="nav-link-wrapper"
-      key={item.id}
+      key={category.id}
       onClick={handleClickDropdown}
     >
       <div className="flex-container flex-align-center flex-justify-center">
-        <RouterLink to={item.path} className={linkClassName}>
-          {item.name}
+        <RouterLink to={category.path} className={linkClassName}>
+          {category.name}
         </RouterLink>
-        {item.items && (
+        {category.items && (
           <div className="ml-1 flex-container flex-justify-center flex-align-center">
             <HiOutlineChevronDown
               color="#fff"
-              onClick={(e) => handleClickLink(e, item)}
+              onClick={(e) => handleClickLink(e, category)}
             />
           </div>
         )}
       </div>
-      {item.items && <Dropdown isOpen={dropdown} items={item.items} />}
+      {category.items && <Dropdown isOpen={dropdown} items={category.items} />}
     </li>
   );
 };
