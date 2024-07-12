@@ -28,29 +28,14 @@ import ServiceSupport from "./views/Support/ServiceSupport";
 import Support from "./views/Support/Support";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [industries, setIndustries] = useState([]);
-  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/industies")
-      .then((res) => setIndustries(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/products")
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
@@ -65,13 +50,13 @@ function App() {
             <Route path="/engineering" element={<Engineering />} />
             <Route path="/partnership-agreement" element={<Partner />} />
             <Route path="/industries" element={<Industry />} />
-            <Route
-              path="/industries/:path"
-              element={<Industries industries={industries} />}
-            />
+            <Route path="/industries/:path" element={<Industries />} />
             <Route path="/about-imec" element={<Company />} />
             <Route path="/products" element={<Categories />} />
-            <Route path="/product-item/:categoryPath/:itemPath" element={<CategoryItem products={products} />} />
+            <Route
+              path="/product-item/:categoryPath/:itemPath"
+              element={<CategoryItem />}
+            />
             <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/maintenance/service" element={<Service />} />
             <Route path="/maintenance/repair" element={<Repair />} />

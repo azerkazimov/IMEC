@@ -1,12 +1,18 @@
+import axios from "axios";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-function Industries({ industries }) {
+function Industries() {
+  const [industry, setIndustry] = useState([]);
   const { path } = useParams();
-  const industry = industries.find(
-    (item) => item.path === `/industries/${path}`
-  );
 
+  useEffect(() => {
+    axios
+      .get(`https://imec-db.vercel.app/industies?path=${path}`)
+      .then((res) => setIndustry(res.data[0]))
+      .catch((err) => console.log(err));
+  }, [path]);
   if (!industry) {
     return <div>Indystry not Found!</div>;
   }

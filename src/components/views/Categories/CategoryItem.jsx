@@ -2,45 +2,62 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 import PropTypes from "prop-types";
+import axios from "axios";
 
-function CategoryItem({ products }) {
+function CategoryItem() {
   const { categoryPath, itemPath } = useParams();
-  const [product, setProduct] = useState(null);
-
+  const [products, setProducts] = useState([]);
+  const [currentItem, setCurrentItem] = useState(null);
+  console.log(categoryPath, itemPath);
   useEffect(() => {
-    const foundProduct = products
-      .flatMap(category => category.items)
-      .flatMap(item => item.subItems)
-      .find(subitem => subitem.path === itemPath);
+    axios
+      .get("https://imec-db.vercel.app/products")
+      .then((res) => res.data)
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  useEffect(() => {
+    const findProduct = (products, itemPath) => {
+      products[0].items.forEach((item) => {
+        item.subItems.forEach((subItem) => {
+          if (subItem.path.includes(itemPath)) {
+            setCurrentItem(subItem);
+          }
+        });
+      });
+    };
+    if (products[0]) {
+      findProduct(products, itemPath);
+    }
+  }, [products, itemPath]);
 
-    setProduct(foundProduct);
-  }, [categoryPath, itemPath, products]);
-
-  if (!product) {
+  if (!products || !currentItem) {
     return <div>Loading...</div>;
   }
 
   return (
     <>
-      <PageHeader name={product.name} />
-      <div className="product-element">
+      <PageHeader name={currentItem.name} />
+      <div className="currentItem-element">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6">
               <div className="img-container">
                 <img
-                  src={`https://imec-db.vercel.app${product.img}`}
-                  alt={product.name}
+                  src={`https://imec-db.vercel.app${currentItem.img}`}
+                  alt={currentItem.name}
                   className="main-img"
                 />
               </div>
             </div>
             <div className="col-12 col-md-6 flex-container flex-align-center">
               <div className="element-description">
-                <h2>{product.name}</h2>
-                <span>Category: {product.category}</span>
-                <p>{product.description}</p>
-                <span>Brand-name: {product.brand}</span>
+                <h2>{currentItem.name}</h2>
+                <span>Category: {currentItem.category}</span>
+                <p>{currentItem.description}</p>
+                <span>Brand-name: {currentItem.brand}</span>
               </div>
             </div>
           </div>
