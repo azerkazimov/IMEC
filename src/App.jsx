@@ -1,5 +1,4 @@
 // ------ IMEC Main Routes -------
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
@@ -30,12 +29,12 @@ import Support from "./views/Support/Support";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>

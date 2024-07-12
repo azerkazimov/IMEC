@@ -1,14 +1,27 @@
-import { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../layout/PageHeader/PageHeader";
-import PropTypes from "prop-types";
-import axios from "axios";
 
 function CategoryItem() {
-  const { categoryPath, itemPath } = useParams();
+  const { itemPath } = useParams();
   const [products, setProducts] = useState([]);
   const [currentItem, setCurrentItem] = useState(null);
-  console.log(categoryPath, itemPath);
+  const imgContainerRef = useRef(null);
+  const zoomRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } =
+      imgContainerRef.current.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+
+    const posX = (x / width) * 100;
+    const posY = (y / height) * 100;
+
+    zoomRef.current.style.backgroundPosition = `${posX}% ${posY}%`;
+  };
+
   useEffect(() => {
     axios
       .get("https://imec-db.vercel.app/products")
@@ -18,6 +31,7 @@ function CategoryItem() {
       })
       .catch((err) => console.log(err));
   }, []);
+
   useEffect(() => {
     const findProduct = (products, itemPath) => {
       products[0].items.forEach((item) => {
@@ -44,12 +58,23 @@ function CategoryItem() {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6">
-              <div className="img-container">
+              <div
+                className="img-container"
+                ref={imgContainerRef}
+                onMouseMove={handleMouseMove}
+              >
                 <img
                   src={`https://imec-db.vercel.app${currentItem.img}`}
                   alt={currentItem.name}
                   className="main-img"
                 />
+                <div
+                  className="zoom-img"
+                  ref={zoomRef}
+                  style={{
+                    backgroundImage: `url(https://imec-db.vercel.app${currentItem.img})`,
+                  }}
+                ></div>
               </div>
             </div>
             <div className="col-12 col-md-6 flex-container flex-align-center">
@@ -66,9 +91,5 @@ function CategoryItem() {
     </>
   );
 }
-
-CategoryItem.propTypes = {
-  products: PropTypes.array.isRequired,
-};
 
 export default CategoryItem;
