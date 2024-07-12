@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 
-function ItemPage() {
+function ProductPage() {
   const { id, name } = useParams();
   const location = useLocation();
   const { category, description, brand, img } = location.state || {};
@@ -63,4 +63,4 @@ function ItemPage() {
   );
 }
 
-export default ItemPage;
+export default ProductPage;

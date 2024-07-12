@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import loader from "../../../assets/imec-load.mp4";
 
 function Loader() {
-  const [isLoading, setIsLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);

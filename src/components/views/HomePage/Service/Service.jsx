@@ -24,10 +24,9 @@ function Service() {
             icon={<GiOilPump />}
             head="Oil & Gas"
             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, iure sint voluptatum laboriosam veritatis."
-            />
+          />
           <ServiceItem
-            icon={<FaTractor  />}
-
+            icon={<FaTractor />}
             head="Agro"
             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, iure sint voluptatum laboriosam veritatis."
           />

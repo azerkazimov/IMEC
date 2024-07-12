@@ -14,10 +14,9 @@ function Header() {
       <div className="main-content">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 flex-container flex-align-center">
               <h1>
-                Industrial Mechanical{" "}
-                <span className="highlight">Engineering</span> Company
+                Imec <span className="highlight">Engineering</span> Company
               </h1>
             </div>
             <div className="col-12 col-md-6 flex-container flex-align-center">

@@ -1,17 +1,16 @@
 import axios from "axios";
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 
-function Categories({ url }) {
+function Categories() {
   const [data, setData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     axios
-      .get(url)
+      .get("https://imec-db.vercel.app/products")
       .then((res) => {
         setData(res.data);
         if (res.data.length > 0 && res.data[0].items.length > 0) {
@@ -20,9 +19,7 @@ function Categories({ url }) {
         }
       })
       .catch((error) => console.log(error));
-  }, [url]);
-
-
+  }, []);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -39,7 +36,10 @@ function Categories({ url }) {
               {data.map((category) => (
                 <ul key={category.id} className="category-container row">
                   {category.items.map((item) => (
-                    <RouterLink onClick={() => handleCategoryClick(item)} key={item.id}>
+                    <RouterLink
+                      onClick={() => handleCategoryClick(item)}
+                      key={item.id}
+                    >
                       <li
                         className={
                           selectedItem === item.id ? "active-category" : ""
@@ -79,7 +79,4 @@ function Categories({ url }) {
   );
 }
 
-Categories.propTypes = {
-  url: PropTypes.string,
-};
 export default Categories;

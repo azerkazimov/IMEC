@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router-dom";
 
-function Card({ key, img, title, content, path }) {
+function IndustryCard({ key, img, title, content, path }) {
   return (
     <>
       <div className="row card m-2">
@@ -20,7 +20,7 @@ function Card({ key, img, title, content, path }) {
   );
 }
 
-Card.propTypes = {
+IndustryCard.propTypes = {
   key: PropTypes.number,
   img: PropTypes.string,
   title: PropTypes.string,
@@ -28,4 +28,4 @@ Card.propTypes = {
   path: PropTypes.string,
 };
 
-export default Card;
+export default IndustryCard;

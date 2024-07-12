@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 import axios from "axios";
-import Card from "../../components/common/Card/Card";
+import { useEffect, useState } from "react";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
+import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
+import IndustryCard from "./IndustryCard";
 
 function Industry() {
   const [industry, setIndustry] = useState([]);
@@ -30,7 +30,7 @@ function Industry() {
           />
           <div className="container">
             {industry.map((item) => (
-              <Card
+              <IndustryCard
                 img={item.img}
                 title={item.title}
                 key={item.id}
