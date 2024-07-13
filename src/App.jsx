@@ -27,7 +27,7 @@ import ServiceSupport from "./views/Support/ServiceSupport";
 import Support from "./views/Support/Support";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 
 function CategoryItem() {
@@ -54,7 +54,7 @@ function CategoryItem() {
   return (
     <>
       <PageHeader name={currentItem.name} />
-      <div className="currentItem-element">
+      <div className="currentItem-element my-5">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6">
@@ -64,7 +64,7 @@ function CategoryItem() {
                 onMouseMove={handleMouseMove}
               >
                 <img
-                  src={`https://imec-db.vercel.app${currentItem.img}`}
+                  src={`https://imec-db.vercel.app${currentItem.sectionImg}`}
                   alt={currentItem.name}
                   className="main-img"
                 />
@@ -72,17 +72,34 @@ function CategoryItem() {
                   className="zoom-img"
                   ref={zoomRef}
                   style={{
-                    backgroundImage: `url(https://imec-db.vercel.app${currentItem.img})`,
+                    backgroundImage: `url(https://imec-db.vercel.app${currentItem.sectionImg})`,
                   }}
                 ></div>
               </div>
             </div>
-            <div className="col-12 col-md-6 flex-container flex-align-center">
+            <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
               <div className="element-description">
                 <h2>{currentItem.name}</h2>
-                <span>Category: {currentItem.category}</span>
                 <p>{currentItem.description}</p>
-                <span>Brand-name: {currentItem.brand}</span>
+                <Link to="/products">
+                  <button className="btn">Back to Products</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mt-10">
+            <div className="row">
+              <div className="col-12 element-subtypes">
+                <h2>{currentItem.typesHeader}</h2>
+                <p>{currentItem.typesDescription}</p>
+                <ul>
+                  {currentItem.types.map((type) => (
+                    <li key={type.id}>
+                      <span>{type.type}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

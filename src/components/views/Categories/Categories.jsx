@@ -65,7 +65,7 @@ function Categories() {
                           src={`https://imec-db.vercel.app${subitem.img}`}
                           alt={subitem.name}
                         />
-                        {subitem.name}
+                        <p>{subitem.name}</p>
                       </RouterLink>
                     </div>
                   ))}
