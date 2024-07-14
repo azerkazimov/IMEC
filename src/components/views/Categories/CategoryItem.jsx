@@ -79,7 +79,7 @@ function CategoryItem() {
             </div>
             <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
               <div className="element-description">
-                <h2>{currentItem.name}</h2>
+                <h2>{currentItem.title}</h2>
                 <p>{currentItem.description}</p>
                 <Link to="/products">
                   <button className="btn">Back to Products</button>

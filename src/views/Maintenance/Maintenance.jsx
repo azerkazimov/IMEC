@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import axios from "axios";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
+import { Link as RouterLink } from "react-router-dom";
 
 function Maintenance() {
   const [service, setService] = useState([]);
@@ -11,7 +12,7 @@ function Maintenance() {
     axios
       .get("https://imec-db.vercel.app/maintenance")
       .then((res) => {
-        const maintenanceData = res.data[0]
+        const maintenanceData = res.data[0];
         setService(maintenanceData.service);
         setRepair(maintenanceData.repair);
       })
@@ -35,11 +36,15 @@ function Maintenance() {
                   className="col-12 col-md-6 col-lg-4 maintenance-item p-3"
                   key={item.id}
                 >
-                  <img
-                    src={`https://imec-db.vercel.app${item.img}`}
-                    alt={item.title}
-                  />
-                  <p>{item.title}</p>
+                  <RouterLink to={item.path}>
+                    <div className="maintenance-img">
+                      <img
+                        src={`https://imec-db.vercel.app${item.img}`}
+                        alt={item.title}
+                      />
+                    </div>
+                    <p>{item.title}</p>
+                  </RouterLink>
                 </div>
               ))}
             </div>
@@ -58,11 +63,15 @@ function Maintenance() {
                   className="col-12 col-md-6 col-lg-4 maintenance-item p-3"
                   key={item.id}
                 >
-                  <img
-                    src={`https://imec-db.vercel.app${item.img}`}
-                    alt={item.title}
-                  />
-                  <p>{item.title}</p>
+                  <RouterLink to={item.path}>
+                    <div className="maintenance-img">
+                      <img
+                        src={`https://imec-db.vercel.app${item.img}`}
+                        alt={item.title}
+                      />
+                    </div>
+                    <p>{item.title}</p>
+                  </RouterLink>
                 </div>
               ))}
             </div>

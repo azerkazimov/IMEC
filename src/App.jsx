@@ -25,6 +25,7 @@ import Service from "./views/ServicePage/Service";
 import SalesSupport from "./views/Support/SalesSupport";
 import ServiceSupport from "./views/Support/ServiceSupport";
 import Support from "./views/Support/Support";
+import MaintenanceItem from "./views/Maintenance/MaintenanceItem";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,6 +58,10 @@ function App() {
               element={<CategoryItem />}
             />
             <Route path="/maintenance" element={<Maintenance />} />
+            <Route
+              path="/maintenance/:type/:path"
+              element={<MaintenanceItem />}
+            />
             <Route path="/maintenance/service" element={<Service />} />
             <Route path="/maintenance/repair" element={<Repair />} />
             <Route path="/process-optimization" element={<Process />} />
