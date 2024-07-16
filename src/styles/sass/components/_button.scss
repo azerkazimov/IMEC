@@ -69,6 +69,13 @@
     flex-wrap: wrap;
     gap: 10px;
 }
+.btn-store-start {
+    @extend .flex-container;
+    @extend .flex-align-center;
+    @extend .flex-justify-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 .wp {
     background-color: #25D366 !important;

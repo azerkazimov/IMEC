@@ -26,6 +26,7 @@ import SalesSupport from "./views/Support/SalesSupport";
 import ServiceSupport from "./views/Support/ServiceSupport";
 import Support from "./views/Support/Support";
 import MaintenanceItem from "./views/Maintenance/MaintenanceItem";
+import GetAQuoteForm from "./components/common/GetAQuoteForm/GetAQuoteFomr";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/basket" element={<Basket />} />
+            <Route path="/get-a-quote" element={<GetAQuoteForm />} />
             <Route path="/engineering" element={<Engineering />} />
             <Route path="/partnership-agreement" element={<Partner />} />
             <Route path="/industries" element={<Industry />} />

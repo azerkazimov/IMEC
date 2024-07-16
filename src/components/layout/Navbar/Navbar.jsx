@@ -97,7 +97,7 @@ const Navbar = () => {
           </menu>
           <div className="col-2 col-md-3 btn-store">
             <button className="btn d-none">
-              <RouterLink to="/">Get a Quote</RouterLink>
+              <RouterLink to="/get-a-quote">Get a Quote</RouterLink>
             </button>
             <button
               className={

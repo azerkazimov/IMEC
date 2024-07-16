@@ -22,3 +22,43 @@
         }
     }
 }
+
+.maintenance-element {
+    .maintenance-content {
+        @extend .px-5;
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 10px;
+
+        p {
+            color: map-get($colors, overlay);
+        }
+    }
+
+    .maintenance-description {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 10px;
+
+        ul {
+            padding-left: 1em;
+            @extend .flex-container;
+            @extend .flex-column;
+            gap: 5px;
+
+            li {
+                position: relative;
+                padding-left: 1em;
+                color: map-get($colors, overlay );
+
+                &::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: transparent; // Hide the default bullet
+                    text-shadow: 0 0 0 black; // Create a dotted effect
+                }
+            }
+        }
+    }
+}

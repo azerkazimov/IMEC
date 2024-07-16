@@ -206,7 +206,7 @@ a {
   padding-left: 25px !important;
 }
 
-.px-5 {
+.px-5, .maintenance-element .maintenance-content {
   padding-left: 25px !important;
   padding-right: 25px !important;
 }
@@ -965,7 +965,7 @@ a {
     width: calc(8.3333333333% * 12);
   }
 }
-.flex-justify-start, .dropdown-item {
+.flex-justify-start, .btn-store-start, .dropdown-item {
   justify-content: start !important;
 }
 
@@ -993,7 +993,7 @@ a {
   justify-content: center !important;
 }
 
-.flex-align-center, .partnership-agreement .partner-overlay, .basket-tab .basket-title, .page-header, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.flex-align-center, .partnership-agreement .partner-overlay, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
 .footer .footer-blog li {
   align-items: center !important;
 }
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .industry-item .industry-content, .industry .industry-overlay, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.flex-container, .industry-item .industry-content, .industry .industry-overlay, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .industry-item .industry-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .industry-item .industry-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -2466,6 +2466,11 @@ a {
   gap: 10px;
 }
 
+.btn-store-start {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .wp {
   background-color: #25D366 !important;
   transition: all 0.2s ease;
@@ -2798,6 +2803,32 @@ a {
 .maintenance .maintenance-item img:hover {
   transform: scale(1.1);
   overflow: hidden;
+}
+
+.maintenance-element .maintenance-content {
+  gap: 10px;
+}
+.maintenance-element .maintenance-content p {
+  color: rgba(41, 43, 44, 0.537254902);
+}
+.maintenance-element .maintenance-description {
+  gap: 10px;
+}
+.maintenance-element .maintenance-description ul {
+  padding-left: 1em;
+  gap: 5px;
+}
+.maintenance-element .maintenance-description ul li {
+  position: relative;
+  padding-left: 1em;
+  color: rgba(41, 43, 44, 0.537254902);
+}
+.maintenance-element .maintenance-description ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: transparent;
+  text-shadow: 0 0 0 black;
 }
 
 .partnership-agreement {

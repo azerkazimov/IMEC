@@ -40,7 +40,7 @@ function Maintenance() {
                     <div className="maintenance-img">
                       <img
                         src={`https://imec-db.vercel.app${item.img}`}
-                        alt={item.title}
+                        alt={item.name}
                       />
                     </div>
                     <p>{item.title}</p>
