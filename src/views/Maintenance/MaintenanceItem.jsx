@@ -43,7 +43,7 @@ function MaintenanceItem() {
               <h5>{currentService.header}</h5>
               <p>{currentService.description}</p>
               <div className="btn-store-start">
-                <Link to="/">
+                <Link to="/get-a-quote">
                   <button className="btn">More Info</button>
                 </Link>
                 <Link to="/maintenance">

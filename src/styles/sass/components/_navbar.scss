@@ -79,6 +79,7 @@
 .active {
   box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
   background-color: map-get($colors, inky);
+  border-bottom: 3px solid map-get($colors, primary );
 }
 
 .other-page {

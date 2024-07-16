@@ -81,9 +81,14 @@ function CategoryItem() {
               <div className="element-description">
                 <h2>{currentItem.title}</h2>
                 <p>{currentItem.description}</p>
-                <Link to="/products">
-                  <button className="btn">Back to Products</button>
-                </Link>
+                <div className="btn-store-start">
+                  <Link to="/get-a-quote">
+                    <button className="btn">More Info</button>
+                  </Link>
+                  <Link to="/products">
+                    <button className="btn">Back to Products</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
