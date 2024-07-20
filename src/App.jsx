@@ -27,6 +27,7 @@ import ServiceSupport from "./views/Support/ServiceSupport";
 import Support from "./views/Support/Support";
 import MaintenanceItem from "./views/Maintenance/MaintenanceItem";
 import GetAQuoteForm from "./components/common/GetAQuoteForm/GetAQuoteFomr";
+import PartnerItem from "./views/Partner/PartnerItem";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +51,8 @@ function App() {
             <Route path="/basket" element={<Basket />} />
             <Route path="/get-a-quote" element={<GetAQuoteForm />} />
             <Route path="/engineering" element={<Engineering />} />
-            <Route path="/partnership-agreement" element={<Partner />} />
+            <Route path="/partner" element={<Partner />} />
+            <Route path="/partner/:path" element={<PartnerItem />} />
             <Route path="/industries" element={<Industry />} />
             <Route path="/industries/:path" element={<Industries />} />
             <Route path="/about-imec" element={<Company />} />

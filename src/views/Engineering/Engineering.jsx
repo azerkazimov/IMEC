@@ -3,6 +3,7 @@ import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 import axios from "axios";
 import Catalogue from "../Catalogue/Catalogue";
+import { Link } from "react-router-dom";
 
 function Engineering() {
   const [partner, setPartner] = useState([]);
@@ -37,9 +38,17 @@ function Engineering() {
             />
             <div className="row">
               {partner.map((item) => (
-                <div className="col-12 col-md-6 col-lg-3 partner-item" key={item.id}>
-                  <img src={`https://imec-db.vercel.app${item.img}`} alt={item.title} />
-                  <div className="">{item.title}</div>
+                <div
+                  className="col-12 col-md-6 col-lg-3 partner-icon"
+                  key={item.id}
+                >
+                  <Link to={`/partner/${item.path}`}>
+                    <img
+                      src={`https://imec-db.vercel.app${item.logo}`}
+                      alt={item.title}
+                    />
+                  </Link>
+                  <div>{item.title}</div>
                 </div>
               ))}
             </div>
@@ -49,7 +58,7 @@ function Engineering() {
           <Catalogue />
         </div>
         <div className="industries">
-        <div className="container">
+          <div className="container">
             <SectionHeader
               span="industries"
               textPosition="center"
@@ -57,9 +66,19 @@ function Engineering() {
             />
             <div className="row">
               {industry.map((item) => (
-                <div className="col-12 col-md-4 industry-item p-3" key={item.id}>
-                  <img src={`https://imec-db.vercel.app${item.img}`} alt="" />
-                  <div className="">{item.title}</div>
+                <div
+                  className="col-12 col-md-4 industry-item p-3"
+                  key={item.id}
+                >
+                  <Link to={`/industries/${item.path}`}>
+                    <div className="industry-img">
+                      <img
+                        src={`https://imec-db.vercel.app${item.img}`}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">{item.title}</div>
+                  </Link>
                 </div>
               ))}
             </div>

@@ -12,13 +12,13 @@ function Partner() {
         <div className="partner-overlay">
           <div className="container">
             <div className="row">
-              <div className="col-12 col-md-6 flex-container flex-column flex-justify-center flex-align-start">
+              <div className="col-12 col-md-6 flex-container flex-column flex-justify-start flex-align-start">
                 <SectionHeader
                   head="Become an IMEC partner"
                   span="Partnership agreement"
                   textColor="white"
                 />
-                <div className="btn mx-4">Learn More</div>
+                <button className="btn mx-4">Learn More</button>
               </div>
               <div className="col-12 col-md-6">
                 <div className="partner-image">

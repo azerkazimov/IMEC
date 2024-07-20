@@ -206,7 +206,7 @@ a {
   padding-left: 25px !important;
 }
 
-.px-5, .maintenance-element .maintenance-content {
+.px-5, .partner-item .partner-item-description .partner-item-content, .maintenance-element .maintenance-content {
   padding-left: 25px !important;
   padding-right: 25px !important;
 }
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .industry-item .industry-content, .industry .industry-overlay, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.flex-container, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .industry-item .industry-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1991,7 +1991,7 @@ a {
   font-weight: 600 !important;
 }
 
-.font-weight-700, .card h2, .section-header .head, .btn-content, .btn, .dropdown-item .sub-category-header, .about .about-image .about-counter span, .about, .header .main-content .main-counter span, .header .main-content h1 {
+.font-weight-700, .partner-item .partner-item-description .partner-item-content a, .card h2, .section-header .head, .btn-content, .btn, .dropdown-item .sub-category-header, .about .about-image .about-counter span, .about, .header .main-content .main-counter span, .header .main-content h1 {
   font-weight: 700 !important;
 }
 
@@ -2791,19 +2791,36 @@ a {
   color: #143256;
 }
 
-.engineering .partnership .partner-item img {
-  max-width: 200px;
-  max-height: 200px;
-  width: 100%;
-  height: 100%;
+.engineering .partnership .partner-icon {
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.engineering .partnership .partner-icon img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
 }
-.engineering .industries .industry-item img {
+.engineering .partnership .partner-icon:hover {
+  font-weight: 700;
+}
+.engineering .industries .industry-item .industry-img {
+  overflow: hidden;
   max-width: 400px;
   max-height: 250px;
   width: 100%;
   height: 100%;
+}
+.engineering .industries .industry-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: all 0.2s ease;
+}
+.engineering .industries .industry-item img:hover {
+  transform: scale(1.1);
+  overflow: hidden;
 }
 
 .maintenance .maintenance-item .maintenance-img {
@@ -2937,6 +2954,73 @@ a {
 .partnership-agreement .partner-content .description ul li span {
   color: #1d1d27;
   font-weight: 700;
+}
+
+.partner-item {
+  margin: 100px 0;
+}
+.partner-item .partner-item-overlay {
+  position: relative;
+}
+.partner-item .partner-item-overlay .partner-background img {
+  min-width: 100%;
+  max-height: 60vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.partner-item .partner-item-overlay::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0 0, 65% 0, 45% 100%, 0% 100%);
+  background-color: rgba(41, 43, 44, 0.537254902);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.partner-item .partner-item-overlay .partner-logo {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.partner-item .partner-item-overlay .partner-logo img {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 5px solid rgba(41, 43, 44, 0.537254902);
+}
+.partner-item .partner-item-description {
+  margin-top: 100px;
+}
+.partner-item .partner-item-description .partner-item-content {
+  gap: 10px;
+}
+.partner-item .partner-item-description .partner-item-content a {
+  color: #01a0e2;
+  transition: all 0.2s ease;
+}
+.partner-item .partner-item-description .partner-item-content a:hover {
+  color: #143256;
+}
+.partner-item .partner-item-description img {
+  max-width: 100%;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes waves {

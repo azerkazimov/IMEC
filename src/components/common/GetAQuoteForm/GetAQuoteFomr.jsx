@@ -120,7 +120,9 @@ const GetAQuoteForm = () => (
                   id="message"
                   name="message"
                   placeholder="Your message"
+                  rows="10"
                   className="form-control"
+                  style={{ minWidth: "100%", maxWidth: "100%" }}
                 />
                 <ErrorMessage
                   name="message"

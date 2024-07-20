@@ -1,14 +1,24 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 
+const fetchProducts = async () => {
+  const { data } = await axios.get("https://imec-db.vercel.app/products");
+  return data;
+};
+
 function CategoryItem() {
   const { itemPath } = useParams();
-  const [products, setProducts] = useState([]);
-  const [currentItem, setCurrentItem] = useState(null);
   const imgContainerRef = useRef(null);
   const zoomRef = useRef(null);
+
+  const { data: products, isLoading } = useQuery("products", fetchProducts);
+
+  const currentItem = products?.[0]?.items
+    .flatMap(item => item.subItems)
+    .find(subItem => subItem.path.includes(itemPath));
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } =
@@ -22,32 +32,7 @@ function CategoryItem() {
     zoomRef.current.style.backgroundPosition = `${posX}% ${posY}%`;
   };
 
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/products")
-      .then((res) => res.data)
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    const findProduct = (products, itemPath) => {
-      products[0].items.forEach((item) => {
-        item.subItems.forEach((subItem) => {
-          if (subItem.path.includes(itemPath)) {
-            setCurrentItem(subItem);
-          }
-        });
-      });
-    };
-    if (products[0]) {
-      findProduct(products, itemPath);
-    }
-  }, [products, itemPath]);
-
-  if (!products || !currentItem) {
+  if (isLoading || !currentItem) {
     return <div>Loading...</div>;
   }
 
