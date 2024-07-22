@@ -186,7 +186,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .basket-tab, .advantage, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .support .support-info .support-adress, .basket-tab, .advantage, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -421,7 +421,7 @@ a {
   margin-right: 5px !important;
 }
 
-.my-1, .footer .footer-blog p,
+.my-1, .support .support-info .support-adress, .footer .footer-blog p,
 .footer .footer-blog li {
   margin-top: 5px !important;
   margin-bottom: 5px !important;
@@ -525,7 +525,7 @@ a {
   margin-top: 25px !important;
 }
 
-.mb-5, .section-header p {
+.mb-5, .support .support-contact h3, .section-header p {
   margin-bottom: 25px !important;
 }
 
@@ -993,7 +993,7 @@ a {
   justify-content: center !important;
 }
 
-.flex-align-center, .partnership-agreement .partner-overlay, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .currentItem-element .element-subtypes ul li, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
 .footer .footer-blog li {
   align-items: center !important;
 }
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes ul li, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1595,7 +1595,7 @@ a {
   font-size: 11px !important;
 }
 
-.font-size-12, .form-group .form-error, .footer .footer-blog svg {
+.font-size-12, .support .support-info .support-adress ul li, .form-group .form-error, .footer .footer-blog svg {
   font-size: 12px !important;
 }
 
@@ -2093,8 +2093,9 @@ a {
 }
 
 .footer .footer-contact {
-  background-color: #01a0e2;
+  background-color: #1d1d27;
   color: #fff;
+  border-bottom: 5px solid #afb0b9;
 }
 .footer .footer-contact svg {
   color: #25D366;
@@ -2421,12 +2422,12 @@ a {
 .btn {
   border: none;
   text-transform: uppercase;
-  background-color: #01a0e2;
+  background-color: #143256;
   color: #fff;
   transition: all 0.2s ease;
 }
 .btn:hover {
-  background-color: #143256;
+  background-color: #01a0e2;
 }
 
 .btn-content {
@@ -2537,7 +2538,7 @@ a {
   height: 20vh;
   user-select: none;
   color: #fff;
-  background-color: #01a0e2;
+  background-color: #1d1d27;
   margin-top: 120px;
   text-transform: uppercase;
 }
@@ -2744,11 +2745,16 @@ a {
   padding-left: 1em;
 }
 .currentItem-element .element-subtypes ul li::before {
-  content: "•";
+  content: "";
   position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #01a0e2;
+  border: 1px solid #1d1d27;
   left: 0;
   color: transparent;
   text-shadow: 0 0 0 black;
+  transform: rotate(45deg);
 }
 
 .card {
@@ -3051,6 +3057,51 @@ a {
 }
 .industry-item .industry-content {
   gap: 10px;
+}
+
+.support .support-contact h3 {
+  width: max-content;
+  text-transform: uppercase;
+  color: #01a0e2;
+  position: relative;
+}
+.support .support-contact h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  min-width: 95%;
+  border-bottom: 6px solid rgba(19, 73, 118, 0.1);
+  border-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(99, 122, 191, 0.622) 0, rgba(86, 116, 181, 0.485) 3px) 3;
+}
+.support .support-info img {
+  width: 100%;
+}
+.support .support-info .support-adress {
+  gap: 20px;
+  border: 6px solid rgba(19, 73, 118, 0.1);
+  border-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(150, 150, 150, 0.622) 0, rgba(120, 120, 120, 0.485) 3px) 3;
+}
+.support .support-info .support-adress ul {
+  padding-left: 1em;
+  gap: 5px;
+}
+.support .support-info .support-adress ul li {
+  position: relative;
+  padding-left: 1em;
+  color: rgba(41, 43, 44, 0.537254902);
+}
+.support .support-info .support-adress ul li::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #01a0e2;
+  border: 1px solid #1d1d27;
+  left: 0;
+  color: transparent;
+  text-shadow: 0 0 0 black;
+  transform: rotate(45deg);
 }
 
 @media (min-width: 1200px) {

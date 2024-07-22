@@ -1,7 +1,8 @@
 .footer {
     .footer-contact{
-        background-color: map-get($colors, primary );
+        background-color: map-get($colors, inky );
         color: map-get($colors, natural );
+        border-bottom: 5px solid map-get($colors, silvery );
 
         svg{
             @extend .font-size-46;

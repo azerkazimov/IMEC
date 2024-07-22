@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Basket from "./components/common/Basket/Basket";
+import GetAQuoteForm from "./components/common/GetAQuoteForm/GetAQuoteFomr";
 import Footer from "./components/layout/Footer/Footer";
 import Loader from "./components/layout/Loader/Loader";
 import Navbar from "./components/layout/Navbar/Navbar";
@@ -15,19 +16,17 @@ import Industries from "./views/Industry/Industries";
 import Industry from "./views/Industry/Industry";
 import Main from "./views/Main/Main";
 import Maintenance from "./views/Maintenance/Maintenance";
+import MaintenanceItem from "./views/Maintenance/MaintenanceItem";
 import Partner from "./views/Partner/Partner";
+import PartnerItem from "./views/Partner/PartnerItem";
 import Construction from "./views/Process/Construction";
 import Consultation from "./views/Process/Consultation";
 import Installation from "./views/Process/Installation";
 import Process from "./views/Process/Process";
 import Repair from "./views/ServicePage/Repair";
 import Service from "./views/ServicePage/Service";
-import SalesSupport from "./views/Support/SalesSupport";
-import ServiceSupport from "./views/Support/ServiceSupport";
+import SingleSupport from "./views/Support/SingleSupport";
 import Support from "./views/Support/Support";
-import MaintenanceItem from "./views/Maintenance/MaintenanceItem";
-import GetAQuoteForm from "./components/common/GetAQuoteForm/GetAQuoteFomr";
-import PartnerItem from "./views/Partner/PartnerItem";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -82,8 +81,26 @@ function App() {
               element={<Consultation />}
             />
             <Route path="/support" element={<Support />} />
-            <Route path="/support/sales" element={<SalesSupport />} />
-            <Route path="/support/service" element={<ServiceSupport />} />
+            <Route
+              path="/support/sales"
+              element={
+                <SingleSupport
+                  header="Sales"
+                  number="+994 12 345 67 89"
+                  content="Our Customer Sales Support team is your trusted partner in navigating the industrial landscape. We offer a comprehensive, consultative approach tailored to your unique needs. Our experts provide insightful recommendations, prompt responses, and personalized assistance, ensuring you receive the best solutions for your operations. From the initial inquiry to post-purchase support, we are committed to enhancing your experience, optimizing your efficiency, and fostering long-term success. Trust us to deliver exceptional service and innovative solutions that drive your business forward."
+                />
+              }
+            />
+            <Route
+              path="/support/service"
+              element={
+                <SingleSupport
+                  header="Service"
+                  number="+994 12 987 65 43"
+                  content="Our Customer Service Support is dedicated to providing exceptional assistance tailored to your specific needs. We prioritize your satisfaction by offering prompt and effective solutions to any challenges you may face. Our knowledgeable and friendly team is available to guide you through every step, ensuring seamless communication and resolution. Whether you need technical support, product information, or service scheduling, we are here to help. With our commitment to excellence, you can trust us to keep your operations running smoothly and efficiently. Experience unparalleled support with our dedicated customer service team."
+                />
+              }
+            />
             <Route path="/catalogue" element={<Catalogue />} />
           </Routes>
         )}

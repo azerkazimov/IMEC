@@ -77,15 +77,23 @@
             padding-left: 1em;
 
             li {
+                @extend .flex-container;
+                @extend .flex-align-center;
+
                 position: relative;
                 padding-left: 1em;
 
                 &::before {
-                    content: "•";
+                    content: "";
                     position: absolute;
+                    width: 3px;
+                    height: 3px;
+                    background-color: map-get($colors, primary);
+                    border: 1px solid map-get($colors, inky);
                     left: 0;
-                    color: transparent; // Hide the default bullet
-                    text-shadow: 0 0 0 black; // Create a dotted effect
+                    color: transparent;
+                    text-shadow: 0 0 0 black;
+                    transform: rotate(45deg);
                 }
             }
         }

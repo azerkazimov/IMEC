@@ -36,7 +36,7 @@ function Footer() {
             ></iframe>
           </div>
         </div>
-        <div className="col-12 col-md-8 bg-inky p-5">
+        <div className="col-12 col-md-8 bg-dark p-5">
           <div className="footer-blog">
             <div className="container">
               <div className="row">

@@ -6,12 +6,12 @@
 
     border: none;
     text-transform: uppercase;
-    background-color: map-get($colors, primary);
+    background-color: map-get($colors, secondary);
     color: map-get($colors, natural);
     transition: all 0.2s ease;
 
     &:hover {
-        background-color: map-get($colors, secondary);
+        background-color: map-get($colors, primary);
     }
 }
 
