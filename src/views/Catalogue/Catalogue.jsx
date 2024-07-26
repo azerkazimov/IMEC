@@ -1,21 +1,31 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loader from "../../components/layout/Loader/Loader";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 import CatalogueItem from "./CatalogueItem";
 
 function Catalogue() {
-  const url = "https://imec-db.vercel.app/catalogue";
-  const [data, setData] = useState([]);
+  const fetchCatalogue = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/catalogue");
+    return data;
+  };
+  const { data, error, isLoading } = useQuery("catalogue", fetchCatalogue);
 
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
-      <SectionHeader span="IMEC provide" textPosition="center" head="Catalogue" />
+      <SectionHeader
+        span="IMEC provide"
+        textPosition="center"
+        head="Catalogue"
+      />
       <div className="container">
         <div className="row">
           {data.map((item) => (

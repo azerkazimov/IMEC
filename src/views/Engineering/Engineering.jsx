@@ -1,30 +1,28 @@
-import { useEffect, useState } from "react";
+import axios from "axios";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
-import axios from "axios";
 import Catalogue from "../Catalogue/Catalogue";
-import { Link } from "react-router-dom";
+
+const fetchPartner = async () => {
+  const { data } = await axios.get("https://imec-db.vercel.app/partner");
+  return data;
+};
+
+const fetchIndustry = async () => {
+  const { data } = await axios.get("https://imec-db.vercel.app/industies");
+  return data;
+};
 
 function Engineering() {
-  const [partner, setPartner] = useState([]);
-  const [industry, setIndustry] = useState([]);
+  const { data: partner, error: partnerError, isLoading: partnerLoading } = useQuery("partner", fetchPartner);
+  const { data: industry, error: industryError, isLoading: industryLoading } = useQuery("industries", fetchIndustry);
 
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/partner")
-      .then((res) => {
-        setPartner(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/industies")
-      .then((res) => {
-        setIndustry(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  if (partnerLoading || industryLoading) return <div>Loading...</div>;
+  if (partnerError) return <div>Error fetching partners: {partnerError.message}</div>;
+  if (industryError) return <div>Error fetching industries: {industryError.message}</div>;
+
   return (
     <>
       <PageHeader name="IMEC Engineering Company" />

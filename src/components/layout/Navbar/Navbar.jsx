@@ -6,10 +6,16 @@ import logo from "../../../assets/logo.png";
 import useOrderStore from "../../../store/orderStore.jsx";
 import BasketTab from "../../common/Basket/BasketTab.jsx";
 import NavbarLink from "./NavbarLink.jsx";
+import { useQuery } from "react-query";
+import Loader from "../Loader/Loader.jsx";
 
 const Navbar = () => {
+  const fetchNavBar = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/navBar");
+    return data;
+  };
+  const { data, error, isLoading } = useQuery("navBar", fetchNavBar);
   const [navScrolled, setNavScrolled] = useState(false);
-  const [data, setData] = useState([]);
   const [basketTab, setBasketTab] = useState(false);
   const [isOpenNav, setIsOpenNav] = useState(false);
   const navRef = useRef(null);
@@ -26,13 +32,6 @@ const Navbar = () => {
     window.addEventListener("scroll", changeBG);
     return () => window.removeEventListener("scroll", changeBG);
   }, [changeBG]);
-
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/navBar")
-      .then((res) => setData(res.data))
-      .catch((error) => console.log(error));
-  }, []);
 
   const order = useOrderStore((state) => state.order);
   const basketTabCount = order.length;
@@ -78,6 +77,14 @@ const Navbar = () => {
     ? "bg-natural"
     : "bg-inky";
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <div>Error loading navbar data.</div>;
+  }
+
   return (
     <div className={navCondition}>
       <div className="container">
@@ -88,11 +95,17 @@ const Navbar = () => {
             </RouterLink>
           </div>
           <menu
-            className={`${isOpenNav ? "open text-natural" : "menu"} col-7 nav-links`}
+            className={`${
+              isOpenNav ? "open text-natural" : "menu"
+            } col-7 nav-links`}
             ref={navRef}
           >
             {data.map((category) => (
-              <NavbarLink key={category.id} category={category} navOpen={isOpenNav} />
+              <NavbarLink
+                key={category.id}
+                category={category}
+                navOpen={isOpenNav}
+              />
             ))}
           </menu>
           <div className="col-2 col-md-3 btn-store">

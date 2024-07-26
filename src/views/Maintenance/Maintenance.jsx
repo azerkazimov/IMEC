@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
-import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import axios from "axios";
-import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
+import { useQuery } from "react-query";
 import { Link as RouterLink } from "react-router-dom";
+import Loader from "../../components/layout/Loader/Loader";
+import PageHeader from "../../components/layout/PageHeader/PageHeader";
+import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 
 function Maintenance() {
-  const [service, setService] = useState([]);
-  const [repair, setRepair] = useState([]);
+  const fetchMaintenance = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/maintenance");
+    return data[0];
+  };
 
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/maintenance")
-      .then((res) => {
-        const maintenanceData = res.data[0];
-        setService(maintenanceData.service);
-        setRepair(maintenanceData.repair);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const { data, error, isLoading } = useQuery("maintenance", fetchMaintenance);
+
+  if (isLoading) return <Loader />;
+  if (error) return <div>Error: {error.message}</div>;
+
+  const { service, repair } = data || { service: [], repair: [] };
 
   return (
     <>

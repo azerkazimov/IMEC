@@ -1,18 +1,23 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loader from "../../components/layout/Loader/Loader";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 import IndustryCard from "./IndustryCard";
 
 function Industry() {
-  const [industry, setIndustry] = useState([]);
+  const fetchIndusty = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/industies");
+    return data;
+  };
+  const {
+    data: industry,
+    error,
+    isLoading,
+  } = useQuery("industry", fetchIndusty);
 
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/industies")
-      .then((res) => setIndustry(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <>
@@ -36,6 +41,7 @@ function Industry() {
                 key={item.id}
                 content={item.content}
                 path={item.path}
+                id={item.id}
               />
             ))}
           </div>

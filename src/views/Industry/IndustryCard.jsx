@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router-dom";
 
-function IndustryCard({ key, img, title, content, path }) {
+function IndustryCard({ img, title, content, path }) {
   return (
     <>
       <div className="row card m-2">
-        <div className="col-12 col-md-6 p-1" key={key}>
+        <div className="col-12 col-md-6 p-1">
           <img src={`https://imec-db.vercel.app${img}`} alt={title} />
         </div>
         <div className="col-12 col-md-6 p-5 card-content">
@@ -21,11 +21,11 @@ function IndustryCard({ key, img, title, content, path }) {
 }
 
 IndustryCard.propTypes = {
-  key: PropTypes.number,
   img: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.string,
   path: PropTypes.string,
+  id: PropTypes.number,
 };
 
 export default IndustryCard;

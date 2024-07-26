@@ -1,25 +1,26 @@
-import { Link, useParams } from "react-router-dom";
-import PageHeader from "../../components/layout/PageHeader/PageHeader";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useQuery } from "react-query";
+import { Link, useParams } from "react-router-dom";
+import Loader from "../../components/layout/Loader/Loader";
+import PageHeader from "../../components/layout/PageHeader/PageHeader";
 
 function MaintenanceItem() {
-  const { path } = useParams();
-  const [currentService, setCurrentService] = useState(null);
+  const fetchMaintenanceData = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/maintenance");
+    return data[0];
+  };
 
-  useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/maintenance")
-      .then((res) => res.data)
-      .then((data) => {
-        if (data.length > 0) {
-          const allItems = [...data[0].service, ...data[0].repair];
-          const foundItem = allItems.find((item) => item.path.includes(path));
-          setCurrentService(foundItem);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, [path]);
+  const { path } = useParams();
+  const { data, error, isLoading } = useQuery(
+    "maintenance",
+    fetchMaintenanceData
+  );
+
+  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) return <Loader />;
+
+  const allItems = [...data.service, ...data.repair];
+  const currentService = allItems.find((item) => item.path.includes(path));
 
   if (!currentService) {
     return <div>Service not found...</div>;

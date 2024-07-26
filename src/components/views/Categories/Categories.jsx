@@ -1,30 +1,39 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import { Link as RouterLink } from "react-router-dom";
+import Loader from "../../layout/Loader/Loader";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 
 function Categories() {
-  const [data, setData] = useState([]);
+  const fetchCategories = async () => {
+    const { data } = await axios.get("https://imec-db.vercel.app/products");
+    return data;
+  };
+
+  const { data, error, isLoading } = useQuery("products", fetchCategories);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("https://imec-db.vercel.app/products")
-      .then((res) => {
-        setData(res.data);
-        if (res.data.length > 0 && res.data[0].items.length > 0) {
-          setSelectedCategory(res.data[0].items[0]);
-          setSelectedItem(res.data[0].items[0]?.id);
-        }
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    if (data && data.length > 0 && data[0].items.length > 0) {
+      setSelectedCategory(data[0].items[0]);
+      setSelectedItem(data[0].items[0].id);
+    }
+  }, [data]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setSelectedItem(category.id);
   };
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
