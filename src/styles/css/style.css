@@ -2806,7 +2806,7 @@ a {
   max-height: 300px;
   width: 90%;
   height: 90%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .engineering .partnership .partner-icon:hover {
   font-weight: 700;

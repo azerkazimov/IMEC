@@ -23,8 +23,6 @@ import Construction from "./views/Process/Construction";
 import Consultation from "./views/Process/Consultation";
 import Installation from "./views/Process/Installation";
 import Process from "./views/Process/Process";
-import Repair from "./views/ServicePage/Repair";
-import Service from "./views/ServicePage/Service";
 import SingleSupport from "./views/Support/SingleSupport";
 import Support from "./views/Support/Support";
 
@@ -65,8 +63,6 @@ function App() {
               path="/maintenance/:type/:path"
               element={<MaintenanceItem />}
             />
-            <Route path="/maintenance/service" element={<Service />} />
-            <Route path="/maintenance/repair" element={<Repair />} />
             <Route path="/process-optimization" element={<Process />} />
             <Route
               path="/process-optimization/design-construction-plant"
