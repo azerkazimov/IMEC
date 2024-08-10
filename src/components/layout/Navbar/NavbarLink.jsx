@@ -9,14 +9,18 @@ const NavbarLink = ({ category, navOpen }) => {
 
   const location = useLocation();
   const isMainPage = location.pathname === "/";
-  const handleClickDropdown = () => {
-    setDropDown(!dropdown);
-  };
   const navigate = useNavigate();
+
+  const handleClickDropdown = () => {
+    setDropDown((prev) => !prev);
+  };
+
   const handleClickLink = (e, { items }) => {
     if (items) {
       e.preventDefault();
+      setDropDown((prev) => !prev);
     } else {
+      setDropDown(false)
       navigate(e.target.href);
     }
   };

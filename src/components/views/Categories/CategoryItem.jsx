@@ -1,7 +1,19 @@
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import axios from "axios";
-import { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Lightbox } from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Loader from "../../layout/Loader/Loader";
 import PageHeader from "../../layout/PageHeader/PageHeader";
 
 const fetchProducts = async () => {
@@ -11,16 +23,41 @@ const fetchProducts = async () => {
 
 function CategoryItem() {
   const { itemPath } = useParams();
+  const navigate = useNavigate();
   const imgContainerRef = useRef(null);
   const zoomRef = useRef(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const { data: products, isLoading } = useQuery("products", fetchProducts);
 
-  const currentItem = products?.[0]?.items
-    .flatMap(item => item.subItems)
-    .find(subItem => subItem.path.includes(itemPath));
+  useEffect(() => {
+    setCurrentIndex(0);
+    setIsLightboxOpen(false);
+  }, []);
+
+  if (isLoading || !products) {
+    return <Loader />;
+  }
+
+  const currentItem = products
+    ?.flatMap((product) => product.items.flatMap((item) => item.subItems))
+    .find((subItem) => subItem.path.includes(itemPath));
+
+  if (!currentItem) {
+    return <div>No item found</div>;
+  }
+
+  let elemImages = [];
+  if (currentItem && currentItem.images && currentItem.images.length > 0) {
+    elemImages = currentItem.images.map((img) => ({
+      src: `https://imec-db.vercel.app${img.imgPath}`,
+      alt: img.alt,
+    }));
+  }
 
   const handleMouseMove = (e) => {
+    if (!imgContainerRef.current || !zoomRef.current) return;
     const { left, top, width, height } =
       imgContainerRef.current.getBoundingClientRect();
     const x = e.clientX - left;
@@ -32,9 +69,18 @@ function CategoryItem() {
     zoomRef.current.style.backgroundPosition = `${posX}% ${posY}%`;
   };
 
-  if (isLoading || !currentItem) {
-    return <div>Loading...</div>;
-  }
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  const handleDetailsClick = (subCatPath) => {
+    navigate(subCatPath);
+  };
 
   return (
     <>
@@ -78,21 +124,134 @@ function CategoryItem() {
             </div>
           </div>
 
-          <div className="container mt-10">
-            <div className="row">
-              <div className="col-12 element-subtypes">
-                <h2>{currentItem.typesHeader}</h2>
-                <p>{currentItem.typesDescription}</p>
-                <ul>
-                  {currentItem.types.map((type) => (
-                    <li key={type.id}>
-                      <span>{type.type}</span>
-                    </li>
-                  ))}
-                </ul>
+          {currentItem.types && currentItem.types.length > 0 && (
+            <div className="container mt-10">
+              <div className="row">
+                <div className="col-12 element-subtypes">
+                  <h2>{currentItem.typesHeader}</h2>
+                  <p>{currentItem.typesDescription}</p>
+                  <h4>{currentItem.types.typeHead}</h4>
+                  <ul>
+                    {currentItem.types.map((type) => (
+                      <li key={type.id}>
+                        <span>{type.type}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {currentItem.subCats && currentItem.subCats.length > 0 && (
+            <div className="container">
+              <h2 className="my-5">Sub Categories</h2>
+              <div className="row">
+                {currentItem.subCats.map((subcat, index) => (
+                  <div className="col-12 col-md-6 col-lg-4 p-1" key={index}>
+                    <div className="element-subcat">
+                      <img
+                        src={`https://imec-db.vercel.app${subcat.img}`}
+                        alt={subcat.name}
+                      />
+                      <span>{subcat.name}</span>
+                      <button
+                        className="btn"
+                        onClick={() => handleDetailsClick(subcat.path)}
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {currentItem.categories && currentItem.categories.length > 0 && (
+            <div className="container">
+              <TableContainer component={Paper}>
+                <Table aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="center">Category</TableCell>
+                      <TableCell align="center">Model</TableCell>
+                      <TableCell align="center">Dimension</TableCell>
+                      <TableCell align="center">Setting</TableCell>
+                      <TableCell align="center">Capacity</TableCell>
+                      <TableCell align="center">Power</TableCell>
+                      <TableCell align="center">Weight</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {currentItem.categories.map((category, categoryIndex) => (
+                      <React.Fragment key={categoryIndex}>
+                        <TableRow>
+                          <TableCell
+                            align="center"
+                            colSpan={7}
+                            style={{
+                              backgroundColor: "#f0f0f0",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            {category.category}
+                          </TableCell>
+                        </TableRow>
+                        {category.models.map((model, modelIndex) => (
+                          <TableRow key={modelIndex}>
+                            <TableCell align="center">
+                              {category.category}
+                            </TableCell>
+                            <TableCell align="center">{model.model}</TableCell>
+                            <TableCell align="center">
+                              {model.dimension}
+                            </TableCell>
+                            <TableCell align="center">
+                              {model.setting}
+                            </TableCell>
+                            <TableCell align="center">
+                              {model.capacity}
+                            </TableCell>
+                            <TableCell align="center">{model.power}</TableCell>
+                            <TableCell align="center">{model.weight}</TableCell>
+                          </TableRow>
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+          )}
+
+          {currentItem.images && currentItem.images.length > 0 && (
+            <div className="my-10">
+              <div className="col-12 element-subtypes">
+                <h2>{currentItem.typesHeader}</h2>
+              </div>
+              <div className="row element-images">
+                {currentItem.images.map((img, index) => (
+                  <div className="col-12 col-md-4 p-1" key={index}>
+                    <img
+                      src={`https://imec-db.vercel.app${img.imgPath}`}
+                      alt={img.alt}
+                      onClick={() => openLightbox(index)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <Lightbox
+            open={isLightboxOpen}
+            close={closeLightbox}
+            slides={elemImages}
+            currentIndex={currentIndex}
+            onSlideChange={(index) => setCurrentIndex(index)}
+          />
         </div>
       </div>
     </>

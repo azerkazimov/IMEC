@@ -1,16 +1,18 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Loader from "../../components/layout/Loader/Loader";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 
 function MaintenanceItem() {
+  const { path } = useParams();
+  const navigate = useNavigate();
+  
   const fetchMaintenanceData = async () => {
     const { data } = await axios.get("https://imec-db.vercel.app/maintenance");
     return data[0];
   };
 
-  const { path } = useParams();
   const { data, error, isLoading } = useQuery(
     "maintenance",
     fetchMaintenanceData
@@ -25,6 +27,10 @@ function MaintenanceItem() {
   if (!currentService) {
     return <div>Service not found...</div>;
   }
+
+  const handleDetailsClick = (subCatPath) => {
+    navigate(subCatPath);
+  };
 
   return (
     <>
@@ -53,6 +59,32 @@ function MaintenanceItem() {
               </div>
             </div>
           </div>
+
+          {currentService.subCats && currentService.subCats.length > 0 && (
+            <div className="container">
+              <h2 className="my-5">Sub Categories</h2>
+              <div className="row">
+                {currentService.subCats.map((subcat, index) => (
+                  <div className="col-12 col-md-6 col-lg-4 p-1" key={index}>
+                    <div className="element-subcat">
+                      <img
+                        src={`https://imec-db.vercel.app${subcat.img}`}
+                        alt={subcat.name}
+                      />
+                      <span>{subcat.name}</span>
+                      <button
+                        className="btn"
+                        onClick={() => handleDetailsClick(subcat.path)}
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="row mt-10">
             <div className="col-12">
               <div className="maintenance-description">

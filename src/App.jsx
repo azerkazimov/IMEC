@@ -25,6 +25,7 @@ import Installation from "./views/Process/Installation";
 import Process from "./views/Process/Process";
 import SingleSupport from "./views/Support/SingleSupport";
 import Support from "./views/Support/Support";
+import CategorySubItem from "./components/views/Categories/CategorySubItem";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,10 +59,18 @@ function App() {
               path="/product-item/:categoryPath/:itemPath"
               element={<CategoryItem />}
             />
+            <Route
+              path="/product-item/:categoryPath/:itemPath/:subCats"
+              element={<CategorySubItem type="product" />}
+            />
             <Route path="/maintenance" element={<Maintenance />} />
             <Route
               path="/maintenance/:type/:path"
               element={<MaintenanceItem />}
+            />
+            <Route
+              path="/maintenance/:type/:path/:subCat"
+              element={<CategorySubItem type="service" />}
             />
             <Route path="/process-optimization" element={<Process />} />
             <Route

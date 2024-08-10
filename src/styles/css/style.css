@@ -126,7 +126,7 @@ a {
   padding-bottom: 10px !important;
 }
 
-.p-3, .form-group .form-control {
+.p-3, .element-subcat, .form-group .form-control {
   padding: 15px !important;
 }
 
@@ -482,7 +482,7 @@ a {
   margin-right: 15px !important;
 }
 
-.my-3, .orders-tab, .footer .footer-blog h4 {
+.my-3, .element-subcat, .orders-tab, .footer .footer-blog h4 {
   margin-top: 15px !important;
   margin-bottom: 15px !important;
 }
@@ -671,7 +671,7 @@ a {
   margin: 50px !important;
 }
 
-.mt-10, .currentItem-element .element-subtypes {
+.mt-10, .element-subtypes {
   margin-top: 50px !important;
 }
 
@@ -993,7 +993,7 @@ a {
   justify-content: center !important;
 }
 
-.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .currentItem-element .element-subtypes ul li, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .element-subtypes ul li, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
 .footer .footer-blog li {
   align-items: center !important;
 }
@@ -1002,7 +1002,7 @@ a {
   text-align: center !important;
 }
 
-.flex-justify-space-between, .card .card-content, .basket-tab .basket-title {
+.flex-justify-space-between, .card .card-content, .element-subcat, .basket-tab .basket-title {
   justify-content: space-between !important;
 }
 
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes ul li, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes ul li, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .currentItem-element .element-subtypes, .currentItem-element .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1619,7 +1619,7 @@ a {
   font-size: 17px !important;
 }
 
-.font-size-18, .dropdown-item .sub-category-header {
+.font-size-18, .element-subcat span, .dropdown-item .sub-category-header {
   font-size: 18px !important;
 }
 
@@ -1991,7 +1991,7 @@ a {
   font-weight: 600 !important;
 }
 
-.font-weight-700, .partner-item .partner-item-description .partner-item-content a, .card h2, .section-header .head, .btn-content, .btn, .dropdown-item .sub-category-header, .about .about-image .about-counter span, .about, .header .main-content .main-counter span, .header .main-content h1 {
+.font-weight-700, .partner-item .partner-item-description .partner-item-content a, .card h2, .element-subcat span, .section-header .head, .btn-content, .btn, .dropdown-item .sub-category-header, .about .about-image .about-counter span, .about, .header .main-content .main-counter span, .header .main-content h1 {
   font-weight: 700 !important;
 }
 
@@ -2725,26 +2725,61 @@ a {
   transform: scale(1.1);
 }
 
-.currentItem-element .element-description {
+.element-description {
   gap: 10px;
 }
-.currentItem-element .element-description p {
+.element-description p {
   color: rgba(41, 43, 44, 0.537254902);
 }
-.currentItem-element .element-subtypes {
+
+.img-container img {
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.element-images img {
+  width: 100%;
+  object-fit: contain;
+  min-height: 350px;
+  height: 100%;
+}
+
+.element-subcat {
+  min-height: 500px;
+  gap: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+.element-subcat img {
+  width: 100%;
+  object-fit: contain;
+  min-height: 300px;
+  max-height: 300px;
+  height: 100%;
+}
+.element-subcat span {
+  color: #01a0e2;
+}
+.element-subcat:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.element-subtypes {
   gap: 10px;
 }
-.currentItem-element .element-subtypes p {
+.element-subtypes p {
   color: rgba(41, 43, 44, 0.537254902);
 }
-.currentItem-element .element-subtypes ul {
+.element-subtypes ul {
   padding-left: 1em;
 }
-.currentItem-element .element-subtypes ul li {
+.element-subtypes ul li {
   position: relative;
   padding-left: 1em;
 }
-.currentItem-element .element-subtypes ul li::before {
+.element-subtypes ul li::before {
   content: "";
   position: absolute;
   width: 3px;
@@ -2755,6 +2790,33 @@ a {
   color: transparent;
   text-shadow: 0 0 0 black;
   transform: rotate(45deg);
+}
+
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+
+.image-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.image-modal img {
+  max-width: 100%;
+  height: auto;
 }
 
 .card {

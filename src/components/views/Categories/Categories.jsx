@@ -12,6 +12,7 @@ function Categories() {
   };
 
   const { data, error, isLoading } = useQuery("products", fetchCategories);
+
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -27,13 +28,8 @@ function Categories() {
     setSelectedItem(category.id);
   };
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (isLoading) {
-    return <Loader />;
-  }
+  if (isLoading || !data) return <Loader />;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <>
