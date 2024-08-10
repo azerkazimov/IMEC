@@ -28,14 +28,14 @@ import Support from "./views/Support/Support";
 import CategorySubItem from "./components/views/Categories/CategorySubItem";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 4000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
@@ -69,7 +69,7 @@ function App() {
               element={<MaintenanceItem />}
             />
             <Route
-              path="/maintenance/:type/:path/:subCat"
+              path="/maintenance/:type/:itemPath/:subCats"
               element={<CategorySubItem type="service" />}
             />
             <Route path="/process-optimization" element={<Process />} />

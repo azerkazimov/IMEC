@@ -24,19 +24,18 @@ const fetchSubCatData = async (categoryPath, itemPath, subCat, type) => {
       );
     }
   } else if (type === "repair" || type === "service") {
-    const firstItem = data;
-    console.log(firstItem);
-    console.log(itemPath);
+    const firstItem = data[0];
+    // console.log("first item", firstItem);
+    // console.log(itemPath);
 
-    const items = type === "service" ? firstItem.repair : firstItem.service;
+    const items = type === "service" ? firstItem.service : firstItem.repair;
     console.log(items);
 
-    const maintenanceItem = items.find((item) => item.path === itemPath);
-    console.log(maintenanceItem);
+    const maintenanceItem = items.find((item) => item.path.includes(itemPath));
 
     if (maintenanceItem && maintenanceItem.subCats) {
       return maintenanceItem.subCats.find(
-        (cat) => cat.path && cat.path === subCat
+        (cat) => cat.path && cat.path.includes(subCat)
       );
     }
   }
