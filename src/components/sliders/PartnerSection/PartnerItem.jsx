@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 function PartnerItem({ img, name, content }) {
   return (
     <div className="partner-item">
-      <img src={img} alt={name} />
+      <div className="partner-logo">
+        <img src={img} alt={name} />
+      </div>
       <div className="partner-item-content">
         <h4>{name}</h4>
         <p>{content}</p>

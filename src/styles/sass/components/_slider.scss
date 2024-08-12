@@ -5,3 +5,82 @@
 
     user-select: none;
 }
+
+.partnership {
+    .swiper {
+
+        .swiper-slide {
+            @extend .flex-container;
+            @extend .flex-justify-center;
+            @extend .flex-align-center;
+
+            transition: transform 0.3s ease-in-out;
+
+            &.swiper-slide-active {
+                .partner-item .partner-logo img {
+                    filter: blur(0) grayscale(0);
+                }
+
+                .partner-item .partner-item-content h4 {
+                    color: map-get($colors, primary);
+                }
+            }
+
+            .partner-item {
+                @extend .flex-container;
+                @extend .flex-column;
+                @extend .flex-justify-center;
+                @extend .flex-align-center;
+                
+                position: relative;
+                background-color: map-get($colors, natural );
+                width: 100%;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                .partner-logo {
+                    position: relative;
+                    padding: 10px;
+                    border-radius: 50%;
+                    max-width: 150px;
+                    max-height: 150px;
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 20px;
+                    z-index: 2;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        object-fit: contain;
+                        border-radius: 50%;
+                        border: 4px solid map-get($colors, light);
+                        filter: blur(2px) grayscale(100%);
+                        transition: filter 0.3s ease-in-out;
+                    }
+                }
+
+                .partner-item-content {
+                    z-index: 2;
+
+                    h4 {
+                        @extend .font-size-14;
+
+                        margin-bottom: 10px;
+                        color: map-get($colors, overlay);
+                    }
+
+                    p {
+                        @extend .font-size-12;
+                    }
+                }
+            }
+        }
+    }
+}

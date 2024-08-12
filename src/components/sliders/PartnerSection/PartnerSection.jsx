@@ -5,6 +5,10 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import PartnerItem from "./PartnerItem";
 import SectionHeader from "../../layout/SectionHeader/SectionHeader";
+import rise from "../../../assets/images/rise-logo.png";
+import marquimm from "../../../assets/images/marquimm-logo.png";
+import mt from "../../../assets/images/mt-logo.png";
+import rhsonic from "../../../assets/images/rhosonics-logo.png";
 
 function PartnerSection() {
   return (
@@ -17,81 +21,65 @@ function PartnerSection() {
       <div className="container">
         <Swiper
           effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={3}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 100,
+            depth: 200,
             modifier: 1,
             scale: 1.1,
-            slideShadows: true,
+            slideShadows: false,
           }}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={3}
           pagination={{ clickable: true }}
           loop={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
+          breakpoints={{
+            767: {
+              slidesPerView: 3,
+            },
+            576: {
+              slidesPerView: 1,
+            },
+          }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper"
         >
           <SwiperSlide>
-            <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
-            />
+            <PartnerItem img={rise} name="Ri-Se" content="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PartnerItem img={marquimm} name="Marquimm" content="" />
           </SwiperSlide>
           <SwiperSlide>
             <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
+              img={mt}
+              name="Deep Mineral Process Teknoloji"
+              content=""
             />
           </SwiperSlide>
           <SwiperSlide>
-            <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
-            />
+            <PartnerItem img={rhsonic} name="Rhsonics" content="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PartnerItem img={rise} name="Ri-Se" content="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <PartnerItem img={marquimm} name="Marquimm" content="" />
           </SwiperSlide>
           <SwiperSlide>
             <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
+              img={mt}
+              name="Deep Mineral Process Teknoloji"
+              content=""
             />
           </SwiperSlide>
           <SwiperSlide>
-            <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PartnerItem
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcX4jYdDQCz2IEAa9AsdnIUls0ihhsIx_EaqTHRYAsvzgGFzhuZVMBRS_K6uls5ss6ZRg&usqp=CAU"
-              name="Partner Name"
-              content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat,
-              pariatur a illo in incidunt molestias!"
-            />
+            <PartnerItem img={rhsonic} name="Rhsonics" content="" />
           </SwiperSlide>
         </Swiper>
       </div>

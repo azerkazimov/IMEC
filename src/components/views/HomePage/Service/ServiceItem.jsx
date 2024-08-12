@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-function ServiceItem({ head, content, icon }) {
+function ServiceItem({ head, content, img }) {
   return (
-    <div className="col-12 col-md-4 p-1">
-      <div className="service-item text-align-center">
-        <div className="icon">{icon}</div>
+    <div className="col-12 col-md-6 col-lg-4 service-item">
+      <img src={img} alt="" />
+      <div className="item flex-container flex-column text-align-center flex-justify-space-around">
         <h4>{head}</h4>
         <p>{content}</p>
       </div>
@@ -13,9 +13,9 @@ function ServiceItem({ head, content, icon }) {
 }
 
 ServiceItem.propTypes = {
-  icon: PropTypes.element,
   head: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  img: PropTypes.string,
 };
 
 export default ServiceItem;

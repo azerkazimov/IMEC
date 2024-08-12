@@ -125,6 +125,20 @@ function CategorySubItem({ type }) {
           </div>
         </div>
       )}
+      {subCatData.link_1 && (
+        <div className="container row flex-justify-center my-10">
+          <iframe
+            width="560"
+            height="315"
+            src={subCatData.link_1}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
       {subCatData.sectionImg_2 && subCatData.paragraph_2 && (
         <div className="container my-10">
           <div className="row">
@@ -199,6 +213,20 @@ function CategorySubItem({ type }) {
               </div>
             </div>
           </div>
+        </div>
+      )}
+      {subCatData.link_2 && (
+        <div className="container row flex-justify-center">
+          <iframe
+            width="560"
+            height="315"
+            src={subCatData.link_2}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       )}
 

@@ -186,7 +186,7 @@ a {
   padding-bottom: 20px !important;
 }
 
-.p-5, .support .support-info .support-adress, .basket-tab, .advantage, .service-section .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
+.p-5, .support .support-info .support-adress, .basket-tab, .advantage, .service-item, .about .about-image .about-counter, .header .main-content .main-counter {
   padding: 25px !important;
 }
 
@@ -194,7 +194,7 @@ a {
   padding-top: 25px !important;
 }
 
-.pb-5, .service-section {
+.pb-5, .service {
   padding-bottom: 25px !important;
 }
 
@@ -989,11 +989,11 @@ a {
   text-align: end !important;
 }
 
-.flex-justify-center, .page-header, .btn-store, .partnership .partner-item, .advantage-item-icon, .advantage-item {
+.flex-justify-center, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .btn-store, .partnership .partner-item, .advantage-item-icon, .advantage-item {
   justify-content: center !important;
 }
 
-.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .element-subtypes ul li, .basket-tab .basket-title, .page-header, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .element-subtypes ul li, .basket-tab .basket-title, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
 .footer .footer-blog li {
   align-items: center !important;
 }
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes ul li, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-section .service-item, .footer .footer-blog p,
+.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes ul li, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content .main-counter {
   display: flex;
 }
 
-.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-section .service-item, .header .main-content .main-counter {
+.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .card .card-content, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .partnership .swiper .swiper-slide .partner-item, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-item, .header .main-content .main-counter {
   flex-direction: column;
 }
 
@@ -1595,7 +1595,7 @@ a {
   font-size: 11px !important;
 }
 
-.font-size-12, .support .support-info .support-adress ul li, .form-group .form-error, .footer .footer-blog svg {
+.font-size-12, .support .support-info .support-adress ul li, .partnership .swiper .swiper-slide .partner-item .partner-item-content p, .form-group .form-error, .footer .footer-blog svg {
   font-size: 12px !important;
 }
 
@@ -1603,7 +1603,7 @@ a {
   font-size: 13px !important;
 }
 
-.font-size-14, .section-header p, .dropdown-item ul, .service-section .service-item p {
+.font-size-14, .section-header p, .partnership .swiper .swiper-slide .partner-item .partner-item-content h4, .dropdown-item ul, .service-item .item p {
   font-size: 14px !important;
 }
 
@@ -1691,7 +1691,7 @@ a {
   font-size: 35px !important;
 }
 
-.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span, .partnership .partner-item .partner-item-content h4, .service-section .service-item h4 {
+.font-size-36, .pop-up .pop-up-description span, .basket-tab .basket-title span, .partnership .partner-item .partner-item-content h4, .service-item .item h4 {
   font-size: 36px !important;
 }
 
@@ -1747,7 +1747,7 @@ a {
   font-size: 49px !important;
 }
 
-.font-size-50, .service-section .service-item .icon {
+.font-size-50 {
   font-size: 50px !important;
 }
 
@@ -1983,7 +1983,7 @@ a {
   font-weight: 400 !important;
 }
 
-.font-weight-500 {
+.font-weight-500, .service-item .item p {
   font-weight: 500 !important;
 }
 
@@ -2169,63 +2169,74 @@ a {
   right: -25px;
 }
 
-.service-section {
-  background: url("/images/pattern-illustration-vector.jpg");
+.service {
+  background: url("/images/Pattern-Transparent.png");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   position: relative;
   z-index: 0;
 }
-.service-section::after {
+.service::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.3;
   background-color: #f4f2ff;
   z-index: -1;
 }
-.service-section .service-item {
-  border: 2px solid #01a0e2;
+.service-item {
+  min-height: 500px;
+  border: 1px solid #fff;
   background-color: #fff;
   gap: 20px;
   transition: all 0.2s ease;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
 }
-.service-section .service-item .icon {
-  transform: scale(1);
-  color: #01a0e2;
-  transition: all 0.2s ease;
+.service-item img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  filter: blur(8px) grayscale(80%);
+  transition: all 0.3s ease;
 }
-.service-section .service-item h4 {
-  color: #143256;
+.service-item:first-child {
+  border-radius: 80px 0 0 0;
+}
+.service-item:last-child {
+  border-radius: 0 0 80px 0;
+}
+.service-item .item {
+  height: 100%;
+  z-index: 1;
+}
+.service-item .item h4 {
+  color: #fff;
   transform: translateY(0) scale(1);
   transition: all 0.2s ease;
 }
-.service-section .service-item p {
-  color: #afb0b9;
+.service-item .item p {
+  color: #f4f2ff;
   transition: all 0.2s ease;
 }
-.service-section .service-item:hover {
-  background-color: #01a0e2;
-  transform: translateY(-10px);
-}
-.service-section .service-item:hover .icon {
-  transform: scale(1.4);
+.service-item .item:hover h4 {
+  transform: translateY(30px) scale(1.1);
   color: #fff;
 }
-.service-section .service-item:hover h4 {
-  transform: translateY(30px) scale(1.4);
+.service-item .item:hover p {
   color: #fff;
 }
-.service-section .service-item:hover p {
-  color: #fff;
-  transform: scale(0.1);
-  visibility: hidden;
+.service-item:hover img {
+  filter: blur(0) grayscale(0);
 }
 
 .advantage-item {
@@ -2510,6 +2521,54 @@ a {
   width: 100%;
 }
 
+.partnership .swiper .swiper-slide {
+  transition: transform 0.3s ease-in-out;
+}
+.partnership .swiper .swiper-slide.swiper-slide-active .partner-item .partner-logo img {
+  filter: blur(0) grayscale(0);
+}
+.partnership .swiper .swiper-slide.swiper-slide-active .partner-item .partner-item-content h4 {
+  color: #01a0e2;
+}
+.partnership .swiper .swiper-slide .partner-item {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.partnership .swiper .swiper-slide .partner-item:hover {
+  transform: scale(1.05);
+}
+.partnership .swiper .swiper-slide .partner-item .partner-logo {
+  position: relative;
+  padding: 10px;
+  border-radius: 50%;
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+.partnership .swiper .swiper-slide .partner-item .partner-logo img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid #f4f2ff;
+  filter: blur(2px) grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+.partnership .swiper .swiper-slide .partner-item .partner-item-content {
+  z-index: 2;
+}
+.partnership .swiper .swiper-slide .partner-item .partner-item-content h4 {
+  margin-bottom: 10px;
+  color: rgba(41, 43, 44, 0.537254902);
+}
 .section-header .head {
   text-transform: uppercase;
   position: relative;
