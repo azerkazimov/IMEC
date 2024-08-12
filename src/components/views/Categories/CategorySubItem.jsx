@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Lightbox from "yet-another-react-lightbox";
 import Loader from "../../layout/Loader/Loader";
 import PageHeader from "../../layout/PageHeader/PageHeader";
@@ -25,11 +25,8 @@ const fetchSubCatData = async (categoryPath, itemPath, subCat, type) => {
     }
   } else if (type === "repair" || type === "service") {
     const firstItem = data[0];
-    // console.log("first item", firstItem);
-    // console.log(itemPath);
 
     const items = type === "service" ? firstItem.service : firstItem.repair;
-    console.log(items);
 
     const maintenanceItem = items.find((item) => item.path.includes(itemPath));
 
@@ -118,6 +115,11 @@ function CategorySubItem({ type }) {
                 ) : (
                   <p>{subCatData.paragraph_1}</p>
                 )}
+                <button className="btn">
+                  <Link to={`/maintenance/service/${itemPath}`}>
+                    Back to Product
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
