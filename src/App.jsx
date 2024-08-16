@@ -53,7 +53,7 @@ function App() {
             <Route path="/partner/:path" element={<PartnerItem />} />
             <Route path="/industries" element={<Industry />} />
             <Route path="/industries/:path" element={<Industries />} />
-            <Route path="/about-imec" element={<Company />} />
+            <Route path="/about-imec/overview" element={<Company />} />
             <Route path="/products" element={<Categories />} />
             <Route
               path="/product-item/:categoryPath/:itemPath"

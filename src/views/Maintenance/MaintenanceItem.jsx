@@ -7,7 +7,7 @@ import PageHeader from "../../components/layout/PageHeader/PageHeader";
 function MaintenanceItem() {
   const { path } = useParams();
   const navigate = useNavigate();
-  
+
   const fetchMaintenanceData = async () => {
     const { data } = await axios.get("https://imec-db.vercel.app/maintenance");
     return data[0];
