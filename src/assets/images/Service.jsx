@@ -3,7 +3,7 @@ import ServiceItem from "../../components/views/HomePage/Service/ServiceItem.jsx
 import rdi from "../images/rdi.jpg";
 import comressor from "../images/compressor.jpg";
 import acceptance from "../images/acceptance_3.jpg";
-import monitoring from "../images/acceptance_3.jpg";
+import monitoring from "../images/acceptance_5.jpg";
 import advance from "../images/advanced.jpg";
 import dynamic from "../images/dynamic_5.jpg";
 
