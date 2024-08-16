@@ -1,11 +1,11 @@
-import SectionHeader from "../../components/layout/SectionHeader/SectionHeader.jsx";
-import ServiceItem from "../../components/views/HomePage/Service/ServiceItem.jsx";
-import rdi from "../images/rdi.jpg";
-import comressor from "../images/compressor.jpg";
-import acceptance from "../images/acceptance_3.jpg";
-import monitoring from "../images/acceptance_5.jpg";
-import advance from "../images/advanced.jpg";
-import dynamic from "../images/dynamic_5.jpg";
+import rdi from "../../../../assets/images/rdi.jpg";
+import comressor from "../../../../assets/images/compressor.jpg";
+import acceptance from "../../../../assets/images/acceptance_3.jpg";
+import monitoring from "../../../../assets/images/acceptance_5.jpg";
+import advance from "../../../../assets/images/advanced.jpg";
+import dynamic from "../../../../assets/images/dynamic_5.jpg";
+import ServiceItem from "./ServiceItem.jsx";
+import SectionHeader from "../../../layout/SectionHeader/SectionHeader.jsx";
 
 function Service() {
   return (
