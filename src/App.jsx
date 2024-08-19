@@ -91,7 +91,8 @@ function App() {
               element={
                 <SingleSupport
                   header="Sales"
-                  number="+994 12 345 67 89"
+                  numberOne="+994 51 240 46 50"
+                  numberTwo="+994 50 483 44 41"
                   content="Our Customer Sales Support team is your trusted partner in navigating the industrial landscape. We offer a comprehensive, consultative approach tailored to your unique needs. Our experts provide insightful recommendations, prompt responses, and personalized assistance, ensuring you receive the best solutions for your operations. From the initial inquiry to post-purchase support, we are committed to enhancing your experience, optimizing your efficiency, and fostering long-term success. Trust us to deliver exceptional service and innovative solutions that drive your business forward."
                 />
               }
@@ -101,7 +102,7 @@ function App() {
               element={
                 <SingleSupport
                   header="Service"
-                  number="+994 12 987 65 43"
+                  number="+994 50 483 44 41"
                   content="Our Customer Service Support is dedicated to providing exceptional assistance tailored to your specific needs. We prioritize your satisfaction by offering prompt and effective solutions to any challenges you may face. Our knowledgeable and friendly team is available to guide you through every step, ensuring seamless communication and resolution. Whether you need technical support, product information, or service scheduling, we are here to help. With our commitment to excellence, you can trust us to keep your operations running smoothly and efficiently. Experience unparalleled support with our dedicated customer service team."
                 />
               }

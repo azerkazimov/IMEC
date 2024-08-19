@@ -3,7 +3,7 @@ import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
 import contact from "../../../public/images/contact-us.jpg";
 import PropTypes from "prop-types";
 
-function SingleSupport({ header, number, content }) {
+function SingleSupport({ header, numberOne, numberTwo, content }) {
   return (
     <>
       <PageHeader name="Sales" />
@@ -17,7 +17,8 @@ function SingleSupport({ header, number, content }) {
               />
               <div className="container">
                 <h3>Call us</h3>
-                <h4>{number}</h4>
+                <h4>{numberOne}</h4>
+                <h4>{numberTwo}</h4>
               </div>
             </div>
             <div className="col-12 col-md-4 p-5 my-5 support-info">
@@ -26,7 +27,7 @@ function SingleSupport({ header, number, content }) {
                 <h4>Adress</h4>
                 <ul>
                   <li>Baku, Azerbaijan</li>
-                  <li>Narimanov District, Alasgar Gayibov St., Dernegul</li>
+                  <li>1222 Alasgar Qayibov str. Narimanov reg. Baku / Azerbaijan</li>
                 </ul>
                 <h4>Email</h4>
                 <ul>
@@ -43,7 +44,8 @@ function SingleSupport({ header, number, content }) {
 
 SingleSupport.propTypes = {
   header: PropTypes.string,
-  number: PropTypes.string,
+  numberOne: PropTypes.string,
+  numberTwo: PropTypes.string,
   content: PropTypes.string,
 };
 

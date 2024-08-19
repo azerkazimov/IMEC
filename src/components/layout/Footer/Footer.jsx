@@ -9,7 +9,8 @@ function Footer() {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(url, "_blank");  };
+    window.open(url, "_blank");
+  };
   return (
     <section className="footer mt-10">
       <div className="container footer-contact p-10">
@@ -29,10 +30,10 @@ function Footer() {
         <div className="col-12 col-md-4">
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.7346014103387!2d49.83649331523463!3d40.37841947936862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d8336c3e4e3%3A0xd7e5d585ed54c4b6!2zMjggTWF5IFN0LCBCYWt1LCDQnNCw0LvQvtCy0L7QvQ!5e0!3m2!1sen!2saz!4v1628560524411!5m2!1sen!2saz"
-              allowFullScreen=""
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3037.7609244952005!2d49.87702017524469!3d40.41414677143994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s1222%20Alasgar%20Qayibov%20str.%20Narimanov%20reg.%20Baku%20%2F%20Azerbaijan!5e0!3m2!1sru!2saz!4v1723872976777!5m2!1sru!2saz"
+              allowfullscreen=""
               loading="lazy"
-              title="Google Map"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
@@ -43,9 +44,10 @@ function Footer() {
                 <div className="col-md-6 p-5">
                   <h4>IMEC activities</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Earum tempore reiciendis ea illum, consequatur enim ut
-                    officiis.
+                    IMEC is a reliable partner in the field of consulting and
+                    maintenance of industrial equipment, offering a wide range
+                    of professional services to optimize and maintain production
+                    processes.
                   </p>
                 </div>
                 <div className="col-md-6 p-5">
@@ -53,19 +55,19 @@ function Footer() {
                   <ul>
                     <li>
                       <FaChevronRight />
-                      <Link to="/company">About</Link>
+                      <Link to="/about-imec/overview">About</Link>
                     </li>
                     <li>
                       <FaChevronRight />
-                      <Link to="/service">Services</Link>
+                      <Link to="/maintenance">Services & Solution</Link>
                     </li>
                     <li>
                       <FaChevronRight />
-                      <Link to="/industry">Industry</Link>
+                      <Link to="/partner">Partnership Agreement</Link>
                     </li>
                     <li>
                       <FaChevronRight />
-                      <Link to="/products">Product</Link>
+                      <Link to="/products">Products & System</Link>
                     </li>
                   </ul>
                 </div>
@@ -73,24 +75,38 @@ function Footer() {
                   <h4>Services</h4>
                   <ul>
                     <li>
-                      <FaChevronRight /> <Link to="/">Equipment</Link>
+                      <FaChevronRight />{" "}
+                      <Link to="/maintenance/service/rdi-motion-amplification">
+                        RDI Motion Amplification Service
+                      </Link>
                     </li>
                     <li>
-                      <FaChevronRight /> <Link to="/">Maintenance</Link>
+                      <FaChevronRight />{" "}
+                      <Link to="/maintenance/service/advances-services">
+                        Advanced Services
+                      </Link>
                     </li>
                     <li>
-                      <FaChevronRight /> <Link to="/">Inspection</Link>
+                      <FaChevronRight />{" "}
+                      <Link to="/maintenance/service/compressor-services">
+                        Compressor Services
+                      </Link>
                     </li>
                     <li>
-                      <FaChevronRight /> <Link to="/">Solution</Link>
+                      <FaChevronRight />{" "}
+                      <Link to="/maintenance/service/conveyor-belt">
+                        Conveyor Belt Splicing
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="col-md-6 p-5">
                   <h4>Contact Us</h4>
-                  <p>123 Street, Baku Azerbaijan</p>
-                  <p>+994 12 345 67 89</p>
-                  <div className="form-group">
+                  <p>
+                    1222 Alasgar Qayibov str. Narimanov reg. Baku / Azerbaijan
+                  </p>
+                  <p>+994 51 240 46 50</p>
+                  <div className="flex-container">
                     <input
                       type="email"
                       name="email"

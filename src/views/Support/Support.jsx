@@ -12,7 +12,7 @@ function Support() {
               span="sales"
               head="IMEC Customer Sales Support"
               content="At IMEC, our Customer Sales Support team is dedicated to providing exceptional service and tailored solutions to meet your industrial needs. We offer expert advice, prompt assistance, and comprehensive support throughout the sales process, ensuring you find the right products and services for your operations. Our team is committed to delivering excellence and building long-term partnerships with our customers, helping you achieve optimal efficiency and performance in your industry."
-              btn="sales"
+              btn="Sales"
               link="/support/sales"
             />
           </div>

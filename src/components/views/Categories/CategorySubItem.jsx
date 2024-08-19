@@ -143,9 +143,17 @@ function CategorySubItem({ type }) {
         <div className="container my-10">
           <div className="row">
             <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
-              <div className="element-description">
+              <div className="element-description element-subtypes">
                 <h2>{subCatData.head_2}</h2>
-                <p>{subCatData.paragraph_2}</p>
+                {Array.isArray(subCatData.paragraph_2) ? (
+                  <ul>
+                    {subCatData.paragraph_2.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{subCatData.paragraph_2}</p>
+                )}
               </div>
             </div>
             <div className="col-12 col-md-6 img-container">
@@ -169,9 +177,17 @@ function CategorySubItem({ type }) {
               />
             </div>
             <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
-              <div className="element-description">
+              <div className="element-description element-subtypes">
                 <h2>{subCatData.head_3}</h2>
-                <p>{subCatData.paragraph_3}</p>
+                {Array.isArray(subCatData.paragraph_3) ? (
+                  <ul>
+                    {subCatData.paragraph_3.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{subCatData.paragraph_3}</p>
+                )}
               </div>
             </div>
           </div>
@@ -181,9 +197,17 @@ function CategorySubItem({ type }) {
         <div className="container my-10">
           <div className="row">
             <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
-              <div className="element-description">
+              <div className="element-description element-subtypes">
                 <h2>{subCatData.head_4}</h2>
-                <p>{subCatData.paragraph_4}</p>
+                {Array.isArray(subCatData.paragraph_4) ? (
+                  <ul>
+                    {subCatData.paragraph_4.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{subCatData.paragraph_4}</p>
+                )}
               </div>
             </div>
             <div className="col-12 col-md-6 img-container">
@@ -207,9 +231,17 @@ function CategorySubItem({ type }) {
               />
             </div>
             <div className="col-12 col-md-6 px-5 flex-container flex-align-center">
-              <div className="element-description">
+              <div className="element-description element-subtypes">
                 <h2>{subCatData.head_5}</h2>
-                <p>{subCatData.paragraph_5}</p>
+                {Array.isArray(subCatData.paragraph_5) ? (
+                  <ul>
+                    {subCatData.paragraph_5.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{subCatData.paragraph_5}</p>
+                )}
               </div>
             </div>
           </div>
@@ -234,6 +266,7 @@ function CategorySubItem({ type }) {
         <div className="container my-10">
           <div className="col-12 element-subtypes">
             <h2>{subCatData.typesHeader}</h2>
+            <p>{subCatData.typesDescription}</p>
           </div>
           <div className="row element-images">
             {subCatData.images.map((img, index) => (

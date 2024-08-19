@@ -2,6 +2,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import SectionHeader from "../../../layout/SectionHeader/SectionHeader";
 import { MdEngineering } from "react-icons/md";
 import { IoSearchSharp } from "react-icons/io5";
+import { Ri24HoursLine } from "react-icons/ri";
 
 function ChooseUs() {
   return (
@@ -26,9 +27,9 @@ function ChooseUs() {
           <div className="col-12 col-md-6 col-lg-3 mb-5">
             <div className="advantage-item">
               <div className="advantage-item-icon">
-              <MdEngineering />
+              <Ri24HoursLine />
               </div>
-              <p>Engineer Solution</p>
+              <p>7/24 support</p>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 mb-5">
