@@ -2103,6 +2103,8 @@ a {
   color: #01a0e2;
 }
 .header .main-content-counter {
+  min-height: 40px;
+  height: 100%;
   gap: 15px;
   color: #fff;
   text-transform: uppercase;
@@ -2549,8 +2551,14 @@ a {
 .slider {
   user-select: none;
 }
+.slider .slider-custom .swiper-scrollbar {
+  display: none;
+}
 .slider img {
   width: 100%;
+  min-height: 120px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .partnership .swiper .swiper-slide {

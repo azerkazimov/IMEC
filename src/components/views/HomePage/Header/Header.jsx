@@ -29,26 +29,26 @@ function Header() {
         <div className="container row">
           <div className="col-12 col-md-6 col-lg-3 p-4 ">
             <div className="main-content-counter">
-              <Counter end={15} interval={100} />
-              <p className="counter-header">Section</p>
+              <Counter end={94} interval={100} />
+              <p className="counter-header">Local Cooperation</p>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 p-4">
             <div className="main-content-counter">
-              <Counter end={100} interval={100} />
-              <p className="counter-header">Section</p>
+              <Counter end={8} interval={100} />
+              <p className="counter-header">Foreign Cooperation</p>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 p-4 ">
             <div className="main-content-counter">
-              <Counter end={25} interval={100} />
-              <p className="counter-header">Section</p>
+              <Counter end={11} interval={100} />
+              <p className="counter-header">Regular Customer</p>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 p-4">
             <div className="main-content-counter">
-              <Counter end={55} interval={100} />
-              <p className="counter-header">Section</p>
+              <Counter end={4} interval={100} />
+              <p className="counter-header">Distributor</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,14 @@
 .slider {
+
+    .slider-custom .swiper-scrollbar {
+        display: none;
+    }
+
     img {
         width: 100%;
+        min-height: 120px;
+        height: 100%;
+        object-fit: contain;
     }
 
     user-select: none;
@@ -31,9 +39,9 @@
                 @extend .flex-column;
                 @extend .flex-justify-center;
                 @extend .flex-align-center;
-                
+
                 position: relative;
-                background-color: map-get($colors, natural );
+                background-color: map-get($colors, natural);
                 width: 100%;
                 padding: 20px;
                 border-radius: 15px;

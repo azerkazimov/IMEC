@@ -71,6 +71,8 @@
             @extend .p-5;
             @extend .flex-container;
             @extend .flex-column;
+            min-height: 40px;
+            height: 100%;
             gap: 15px;
             color: map-get($colors, natural);
             text-transform: uppercase;
