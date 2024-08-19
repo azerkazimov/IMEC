@@ -1,8 +1,20 @@
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:${email}?subject=Subject&body=Body%20Text`;
+    
+    window.location.href = mailtoLink;
+
+    setEmail('');
+  };
+
   const handleWhatsappClick = () => {
     const phoneNumber = "+994777224001";
     const message = "Welcome to IMEC! I need more information";
@@ -106,15 +118,18 @@ function Footer() {
                     1222 Alasgar Qayibov str. Narimanov reg. Baku / Azerbaijan
                   </p>
                   <p>+994 51 240 46 50</p>
+                  <p>+994 50 243 34 41</p>
                   <div className="flex-container">
                     <input
                       type="email"
                       name="email"
                       id="email"
                       placeholder="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="form-control"
                     />
-                    <button className="btn">
+                    <button className="btn" onClick={sendEmail}>
                       <TbSend />
                     </button>
                   </div>
