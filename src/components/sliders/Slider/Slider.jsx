@@ -24,8 +24,8 @@ import { Autoplay } from "swiper/modules";
 
 function Slider() {
   return (
-    <div className="slider">
-      <div className="container my-10">
+    <div className="slider ">
+      <div className="container my-10 px-10">
         <Swiper
           className="slider-custom"
           modules={[Autoplay]}
