@@ -92,7 +92,7 @@ function App() {
                 <SingleSupport
                   header="Sales"
                   numberOne="+994 51 240 46 50"
-                  numberTwo="+994 50 483 44 41"
+                  numberTwo="+994 50 243 34 41"
                   content="Our Customer Sales Support team is your trusted partner in navigating the industrial landscape. We offer a comprehensive, consultative approach tailored to your unique needs. Our experts provide insightful recommendations, prompt responses, and personalized assistance, ensuring you receive the best solutions for your operations. From the initial inquiry to post-purchase support, we are committed to enhancing your experience, optimizing your efficiency, and fostering long-term success. Trust us to deliver exceptional service and innovative solutions that drive your business forward."
                 />
               }

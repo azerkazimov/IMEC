@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { Link as RouterLink } from "react-router-dom";
 import Loader from "../../layout/Loader/Loader";
 import PageHeader from "../../layout/PageHeader/PageHeader";
+import { FaAngleRight } from "react-icons/fa";
 
 function Categories() {
   const fetchCategories = async () => {
@@ -34,7 +35,7 @@ function Categories() {
   return (
     <>
       <PageHeader name="Product & System" />
-      <div className="product-categories">
+      <div className="product-categories mt-5">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-3 category-name flex-container flex-align-sm-center p-3">
@@ -57,21 +58,28 @@ function Categories() {
                 </ul>
               ))}
             </div>
-            <div className="col-12 col-md-9 categories">
+            <div className="col-12 col-md-9">
               {selectedCategory && (
-                <div className="row">
+                <div className="categories row">
                   {selectedCategory.subItems.map((subitem) => (
                     <div
-                      className="col-12 col-md-6 col-lg-4 category-item p-3"
+                      className="col-12 col-md-6 col-lg-4 p-1"
                       key={subitem.id}
                     >
-                      <RouterLink to={subitem.path}>
-                        <img
-                          src={`https://imec-db.vercel.app${subitem.img}`}
-                          alt={subitem.name}
-                        />
-                        <p>{subitem.name}</p>
-                      </RouterLink>
+                      <div className="category-item p-1">
+                        <RouterLink to={subitem.path}>
+                          <div className="category-item-img">
+                            <img
+                              src={`https://imec-db.vercel.app${subitem.img}`}
+                              alt={subitem.name}
+                            />
+                          </div>
+                          <div className="category-item-name">
+                            <p>{subitem.name}</p>
+                            <FaAngleRight />
+                          </div>
+                        </RouterLink>
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Loader from "../../components/layout/Loader/Loader";
 import PageHeader from "../../components/layout/PageHeader/PageHeader";
 import SectionHeader from "../../components/layout/SectionHeader/SectionHeader";
+import { FaAngleRight } from "react-icons/fa";
 
 function Maintenance() {
   const fetchMaintenance = async () => {
@@ -31,18 +32,18 @@ function Maintenance() {
           <div className="container">
             <div className="row">
               {service.map((item) => (
-                <div
-                  className="col-12 col-md-6 col-lg-4 maintenance-item p-3"
-                  key={item.id}
-                >
-                  <RouterLink to={item.path}>
-                    <div className="maintenance-img">
+                <div className="col-12 col-md-6 col-lg-4 p-1" key={item.id}>
+                  <RouterLink to={item.path} className="maintenance-item">
+                    <div className="maintenance-item-img">
                       <img
                         src={`https://imec-db.vercel.app${item.img}`}
                         alt={item.name}
                       />
                     </div>
-                    <p>{item.title}</p>
+                    <div className="maintenance-item-name">
+                      <p>{item.title}</p>
+                      <FaAngleRight />
+                    </div>
                   </RouterLink>
                 </div>
               ))}
@@ -58,18 +59,18 @@ function Maintenance() {
           <div className="container">
             <div className="row">
               {repair.map((item) => (
-                <div
-                  className="col-12 col-md-6 col-lg-4 maintenance-item p-3"
-                  key={item.id}
-                >
-                  <RouterLink to={item.path}>
-                    <div className="maintenance-img">
+                <div className="col-12 col-md-6 col-lg-4  p-1" key={item.id}>
+                  <RouterLink to={item.path} className="maintenance-item">
+                    <div className="maintenance-item-img">
                       <img
                         src={`https://imec-db.vercel.app${item.img}`}
                         alt={item.title}
                       />
                     </div>
-                    <p>{item.title}</p>
+                    <div className="maintenance-item-name">
+                      <p>{item.title}</p>
+                      <FaAngleRight />
+                    </div>
                   </RouterLink>
                 </div>
               ))}

@@ -447,7 +447,7 @@ a {
   margin-left: 10px !important;
 }
 
-.mx-2 {
+.mx-2, .maintenance .maintenance-item-name {
   margin-left: 10px !important;
   margin-right: 10px !important;
 }
@@ -457,7 +457,7 @@ a {
   margin-bottom: 10px !important;
 }
 
-.m-3 {
+.m-3, .product-categories .categories .category-item-name {
   margin: 15px !important;
 }
 
@@ -542,7 +542,7 @@ a {
   margin-right: 25px !important;
 }
 
-.my-5, .section-header h2, .section-header {
+.my-5, .maintenance .maintenance-item-name, .section-header h2, .section-header {
   margin-top: 25px !important;
   margin-bottom: 25px !important;
 }
@@ -993,7 +993,7 @@ a {
   justify-content: center !important;
 }
 
-.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .company-page .company-content li, .element-subtypes ul li, .basket-tab .basket-title, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
+.flex-align-center, .support .support-info .support-adress ul li, .partnership-agreement .partner-overlay, .maintenance .maintenance-item-name, .company-page .company-content li, .element-subtypes ul li, .product-categories .categories .category-item-name, .basket-tab .basket-title, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .partnership .partner-item, .advantage-item-icon, .advantage-item, .footer .footer-blog p,
 .footer .footer-blog li {
   align-items: center !important;
 }
@@ -1446,12 +1446,12 @@ a {
     margin-left: 41.6666666667%;
   }
 }
-.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .company-page .company-content li, .company-page .company-content, .card .card-content, .element-subtypes ul li, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-item, .footer .footer-blog p,
+.flex-container, .support .support-info .support-adress ul li, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .industry .industry-overlay, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .partnership-agreement .partner-overlay, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .maintenance .maintenance-item-name, .maintenance .maintenance-item, .company-page .company-content li, .company-page .company-content, .card .card-content, .element-subtypes ul li, .element-subtypes, .element-subcat, .element-description, .product-categories .categories .category-item-name, .product-categories .categories .category-item, .pop-up .pop-up-description, .orders-tab, .basket-tab .basket-title, .basket, .page-header, .partnership .swiper .swiper-slide .partner-item, .partnership .swiper .swiper-slide, .form-group, .btn-store-start, .btn-store, .btn-content, .dropdown-item ul li, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item-icon, .advantage-item, .service-item, .footer .footer-blog p,
 .footer .footer-blog li, .header .main-content-counter {
   display: flex;
 }
 
-.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .company-page .company-content, .card .card-content, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .partnership .swiper .swiper-slide .partner-item, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-item, .header .main-content-counter {
+.flex-column, .support .support-info .support-adress ul, .support .support-info .support-adress, .industry-item .industry-content, .partner-item .partner-item-description .partner-item-content, .partnership-agreement .partner-content .description ul, .partnership-agreement .partner-content .description, .maintenance-element .maintenance-description ul, .maintenance-element .maintenance-description, .maintenance-element .maintenance-content, .maintenance .maintenance-item, .company-page .company-content, .card .card-content, .element-subtypes, .element-subcat, .element-description, .pop-up .pop-up-description, .orders-tab, .partnership .swiper .swiper-slide .partner-item, .form-group, .dropdown-item ul, .dropdown-item, .dropdown, .partnership .partner-item, .advantage-item, .service-item, .header .main-content-counter {
   flex-direction: column;
 }
 
@@ -1599,6 +1599,18 @@ a {
   border-color: rgba(41, 43, 44, 0.537254902) !important;
 }
 
+.bg-overlay30 {
+  background-color: rgba(255, 255, 255, 0.6470588235) !important;
+}
+
+.text-overlay30 {
+  color: rgba(255, 255, 255, 0.6470588235) !important;
+}
+
+.border-overlay30 {
+  border-color: rgba(255, 255, 255, 0.6470588235) !important;
+}
+
 .font-size-10 {
   font-size: 10px !important;
 }
@@ -1615,7 +1627,7 @@ a {
   font-size: 13px !important;
 }
 
-.font-size-14, .section-header p, .partnership .swiper .swiper-slide .partner-item .partner-item-content h4, .dropdown-item ul, .service-item .item p {
+.font-size-14, .maintenance .maintenance-item-name p, .product-categories .categories .category-item-name p, .product-categories .category-container li, .section-header p, .partnership .swiper .swiper-slide .partner-item .partner-item-content h4, .dropdown-item ul, .service-item .item p {
   font-size: 14px !important;
 }
 
@@ -2793,38 +2805,67 @@ a {
 }
 
 .product-categories .category-container {
-  gap: 2px;
+  gap: 8px;
 }
 .product-categories .category-container a {
   width: 100%;
 }
-.product-categories .category-container li:hover {
-  background-color: #afb0b9;
-}
-.product-categories .category-container .active-category {
-  background-color: #afb0b9;
-}
-.product-categories .categories .category-item {
+.product-categories .category-container li {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  color: #143256;
   transition: all 0.2s ease;
 }
-.product-categories .categories .category-item img {
+.product-categories .category-container li:hover {
+  background-color: #01a0e2;
+  color: #fff;
+}
+.product-categories .category-container .active-category {
+  background-color: #143256;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.product-categories .categories .category-item {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  min-height: 380px;
+  transition: all 0.2s ease;
+}
+.product-categories .categories .category-item-img {
   max-width: 400px;
   max-height: 300px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.product-categories .categories .category-item-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   transform: scale(1);
   transition: transform 0.2s ease;
 }
-.product-categories .categories .category-item p {
-  transition: all 0.2s ease;
+.product-categories .categories .category-item-name p {
+  text-transform: uppercase;
 }
-.product-categories .categories .category-item:hover p {
+.product-categories .categories .category-item-name p,
+.product-categories .categories .category-item-name svg {
+  transition: all 0.2s ease;
+  color: rgba(41, 43, 44, 0.537254902);
+}
+.product-categories .categories .category-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.product-categories .categories .category-item:hover p,
+.product-categories .categories .category-item:hover svg {
   font-weight: 700;
   color: #01a0e2;
 }
+.product-categories .categories .category-item:hover svg {
+  transform: translateX(5px);
+}
 .product-categories .categories .category-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .element-description {
@@ -3033,22 +3074,52 @@ a {
   overflow: hidden;
 }
 
-.maintenance .maintenance-item .maintenance-img {
-  max-width: 350px;
+.maintenance .maintenance-item {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.6470588235);
+  min-height: 380px;
+  height: 100%;
+  overflow: hidden;
+}
+.maintenance .maintenance-item-img {
   max-height: 300px;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.maintenance .maintenance-item img {
+.maintenance .maintenance-item-img img {
+  border-radius: 4px 4px 0 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: all 0.2s ease;
 }
-.maintenance .maintenance-item img:hover {
+.maintenance .maintenance-item-img img:hover {
   transform: scale(1.1);
   overflow: hidden;
+}
+.maintenance .maintenance-item-name p {
+  text-transform: uppercase;
+}
+.maintenance .maintenance-item-name p,
+.maintenance .maintenance-item-name svg {
+  transition: all 0.2s ease;
+  color: rgba(41, 43, 44, 0.537254902);
+}
+.maintenance .maintenance-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.maintenance .maintenance-item:hover p,
+.maintenance .maintenance-item:hover svg {
+  font-weight: 700;
+  color: #01a0e2;
+}
+.maintenance .maintenance-item:hover svg {
+  transform: translateX(5px);
+}
+.maintenance .maintenance-item:hover img {
+  transform: scale(1.05);
 }
 
 .maintenance-element .maintenance-content {

@@ -15,13 +15,17 @@ const NavbarLink = ({ category, navOpen }) => {
     setDropDown((prev) => !prev);
   };
 
-  const handleClickLink = (e, { items }) => {
+  const closeDropdown = () => {
+    setDropDown(false);
+  };
+
+  const handleClickLink = (e, { items, path }) => {
     if (items) {
       e.preventDefault();
       setDropDown((prev) => !prev);
     } else {
-      setDropDown(false)
-      navigate(e.target.href);
+      setDropDown(false);
+      navigate(path);
     }
   };
 
@@ -30,6 +34,8 @@ const NavbarLink = ({ category, navOpen }) => {
     : isMainPage
     ? "text-natural"
     : "text-inky";
+
+  const chevronColor = navOpen ? "#fff" : isMainPage ? "#fff" : "#000";
 
   return (
     <li
@@ -44,13 +50,19 @@ const NavbarLink = ({ category, navOpen }) => {
         {category.items && (
           <div className="ml-1 flex-container flex-justify-center flex-align-center">
             <HiOutlineChevronDown
-              color="#fff"
+              color={chevronColor}
               onClick={(e) => handleClickLink(e, category)}
             />
           </div>
         )}
       </div>
-      {category.items && <Dropdown isOpen={dropdown} items={category.items} />}
+      {category.items && (
+        <Dropdown
+          isOpen={dropdown}
+          items={category.items}
+          closeDropdown={closeDropdown}
+        />
+      )}
     </li>
   );
 };

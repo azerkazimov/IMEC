@@ -1,6 +1,6 @@
 .product-categories {
     .category-container {
-        gap: 2px;
+        gap: 8px;
 
         a {
             width: 100%;
@@ -8,44 +8,89 @@
 
         li {
             @extend .p-2;
+            @extend .font-size-14;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            color: map-get($colors, secondary);
+            transition: all 0.2s ease;
 
             &:hover {
-                background-color: map-get($colors, silvery);
+                background-color: map-get($colors, primary);
+                color: map-get($colors, natural);
+
             }
 
         }
 
         .active-category {
-            background-color: map-get($colors, silvery);
+            background-color: map-get($colors, secondary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: map-get($colors, natural);
+
         }
     }
 
     .categories {
+
         .category-item {
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            @extend .flex-container;
+            min-height: 380px;
             transition: all 0.2s ease;
 
-            img {
+            &-img {
                 max-width: 400px;
                 max-height: 300px;
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
-                transform: scale(1);
-                transition: transform 0.2s ease;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    transform: scale(1);
+                    transition: transform 0.2s ease;
+                }
             }
 
-            p {
-                transition: all 0.2s ease;
+            &-name {
+                @extend .m-3;
+                @extend .flex-container;
+                @extend .flex-align-center;
+
+                p {
+                    @extend .font-size-14;
+                    text-transform: uppercase;
+                }
+
+                p,
+                svg {
+                    transition: all 0.2s ease;
+                    color: map-get($colors, overlay);
+                }
+
+
             }
+
+
 
             &:hover {
-                p {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+                p,
+                svg {
                     font-weight: 700;
                     color: map-get($colors, primary);
                 }
 
+                svg {
+                    transform: translateX(5px);
+                }
+
                 img {
-                    transform: scale(1.1);
+                    transform: scale(1.05);
                 }
             }
         }

@@ -1,23 +1,69 @@
 .maintenance {
     .maintenance-item {
+        @extend .flex-container;
+        @extend .flex-column;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        background-color: map-get($colors, overlay30);
 
-        .maintenance-img {
-            max-width: 350px;
+        min-height: 380px;
+        height: 100%;
+        overflow: hidden;
+
+        &-img {
             max-height: 300px;
             width: 100%;
             height: 100%;
             overflow: hidden;
+
+            img {
+                border-radius: 4px 4px 0 0;
+
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    overflow: hidden;
+                }
+            }
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.2s ease;
+        &-name {
+            @extend .my-5;
+            @extend .mx-2;
+            @extend .flex-container;
+            @extend .flex-align-center;
 
-            &:hover {
-                transform: scale(1.1);
-                overflow: hidden;
+            p {
+                @extend .font-size-14;
+                text-transform: uppercase;
+            }
+
+            p,
+            svg {
+                transition: all 0.2s ease;
+                color: map-get($colors, overlay);
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            p,
+            svg {
+                font-weight: 700;
+                color: map-get($colors, primary);
+            }
+
+            svg {
+                transform: translateX(5px);
+            }
+
+            img {
+                transform: scale(1.05);
             }
         }
     }
@@ -49,7 +95,7 @@
             li {
                 position: relative;
                 padding-left: 1em;
-                color: map-get($colors, overlay );
+                color: map-get($colors, overlay);
 
                 &::before {
                     content: "•";
