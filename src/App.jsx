@@ -102,7 +102,7 @@ function App() {
               element={
                 <SingleSupport
                   header="Service"
-                  number="+994 50 483 44 41"
+                  numberOne="+994 50 243 34 41"
                   content="Our Customer Service Support is dedicated to providing exceptional assistance tailored to your specific needs. We prioritize your satisfaction by offering prompt and effective solutions to any challenges you may face. Our knowledgeable and friendly team is available to guide you through every step, ensuring seamless communication and resolution. Whether you need technical support, product information, or service scheduling, we are here to help. With our commitment to excellence, you can trust us to keep your operations running smoothly and efficiently. Experience unparalleled support with our dedicated customer service team."
                 />
               }
