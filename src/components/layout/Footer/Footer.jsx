@@ -16,7 +16,7 @@ function Footer() {
   };
 
   const handleWhatsappClick = () => {
-    const phoneNumber = "+994777224001";
+    const phoneNumber = "+994502433441";
     const message = "Welcome to IMEC! I need more information";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message

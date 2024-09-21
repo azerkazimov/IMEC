@@ -12,6 +12,7 @@ function Main() {
     <>
       <Helmet>
         <link rel="canonical" href="https://imec.az/" />
+        <title>IMEC</title>
         <meta name="description" content="imec engineering company" />
         <meta name="keywords" content="imec maintenance " />
         <meta property="og:type" content="website" />
