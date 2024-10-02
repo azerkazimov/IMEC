@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /nogooglebot/
+
+Sitemap: https://imec.az/sitemap.xml

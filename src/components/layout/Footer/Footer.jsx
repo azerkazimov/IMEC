@@ -9,20 +9,57 @@ function Footer() {
   const sendEmail = (e) => {
     e.preventDefault();
     const mailtoLink = `mailto:${email}?subject=Subject&body=Body%20Text`;
-    
     window.location.href = mailtoLink;
-
-    setEmail('');
+    setEmail("");
   };
 
+  const links = [
+    {
+      href: "/about-imec/overview",
+      title: "About",
+    },
+    {
+      href: "/maintenance",
+      title: "Services & Solution",
+    },
+    {
+      href: "/partner",
+      title: "Partnership Agreement",
+    },
+    {
+      href: "/products",
+      title: "Products & System",
+    },
+  ];
+
+  const serviceLinks = [
+    {
+      href: "/maintenance/service/rdi-motion-amplification",
+      title: "RDI Motion Amplification Service",
+    },
+    {
+      href: "/maintenance/service/advances-services",
+      title: "Advanced Services",
+    },
+    {
+      href: "/maintenance/service/compressor-services",
+      title: "Compressor Services",
+    },
+    {
+      href: "/maintenance/service/conveyor-belt",
+      title: "Conveyor Belt Splicing",
+    },
+  ];
+
   const handleWhatsappClick = () => {
-    const phoneNumber = "+994502433441";
+    const phoneNumber = "+994512404650";
     const message = "Welcome to IMEC! I need more information";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
   };
+
   return (
     <section className="footer mt-10">
       <div className="container footer-contact p-10">
@@ -65,51 +102,23 @@ function Footer() {
                 <div className="col-md-6 p-5">
                   <h4>Additional Link</h4>
                   <ul>
-                    <li>
-                      <FaChevronRight />
-                      <Link to="/about-imec/overview">About</Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />
-                      <Link to="/maintenance">Services & Solution</Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />
-                      <Link to="/partner">Partnership Agreement</Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />
-                      <Link to="/products">Products & System</Link>
-                    </li>
+                    {links.map((link) => (
+                      <li key={link.href}>
+                        <FaChevronRight />
+                        <Link to={link.href}>{link.title}</Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="col-md-6 p-5">
                   <h4>Services</h4>
                   <ul>
-                    <li>
-                      <FaChevronRight />{" "}
-                      <Link to="/maintenance/service/rdi-motion-amplification">
-                        RDI Motion Amplification Service
-                      </Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />{" "}
-                      <Link to="/maintenance/service/advances-services">
-                        Advanced Services
-                      </Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />{" "}
-                      <Link to="/maintenance/service/compressor-services">
-                        Compressor Services
-                      </Link>
-                    </li>
-                    <li>
-                      <FaChevronRight />{" "}
-                      <Link to="/maintenance/service/conveyor-belt">
-                        Conveyor Belt Splicing
-                      </Link>
-                    </li>
+                    {serviceLinks.map((link) => (
+                      <li key={link.href}>
+                        <FaChevronRight />
+                        <Link to={link.href}>{link.title}</Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="col-md-6 p-5">
