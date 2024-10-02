@@ -1,12 +1,6 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import Sitemap from "vite-plugin-sitemap";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    Sitemap({
-      hostname: "https://imec.az",
-    }),
-  ],
+  plugins: [react()],
 });
